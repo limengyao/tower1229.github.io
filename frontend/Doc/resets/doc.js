@@ -46,7 +46,7 @@ define(function(require) {
 			window.DemoTitle = $(this).parents('tr').find('td').eq(0).text();
 			window.DemoHtml = $(this).parents('td').find('pre').eq(-2).text();
 			window.DemoJs = $(this).parents('td').find('pre').eq(-1).text();
-			window.open('demo.htm');
+			window.open('demo.html');
 		});
 
 	/*代码着色*/
@@ -90,7 +90,7 @@ define(function(require) {
 				delay:3000
 			});
 		} else {
-			require.async('/Doc/resets/highlight/highlight.pack', function(hl) {
+			require.async('./highlight/highlight.pack', function(hl) {
 				$('pre').each(function(i, e) {
 					if ($(e).find('code').length) {
 						$(e).data('code', $(e).text())
