@@ -1,0 +1,111 @@
+{
+	"cssConfig": {
+		"leftWidth": {
+			"name": "左边宽度(%)",
+			"value": "48",
+			"type": "number"
+		},
+		"rightWidth":{
+			"name": "右边宽度(%)",
+			"value": "48",
+			"type": "number"
+		},
+		"titleSize":{
+			"name": "标题字号(px)",
+			"value": 18,
+			"type": "number"
+		},
+		"titleWeight":{
+			"name": "标题粗细",
+			"value": "bold",
+			"type": "text"
+		},
+		"titleColor":{
+			"name": "标题颜色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"textMT":{
+			"name": "介绍上间距(px)",
+			"value": "15",
+			"type": "number"
+		},
+		"priceMT":{
+			"name": "价格上间距(px)",
+			"value": "15",
+			"type": "number"
+		},
+		"priceSize":{
+			"name": "价格字号(px)",
+			"value": "22",
+			"type": "number"
+		},
+		"priceColor":{
+			"name": "价格颜色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"btnMt":{
+			"name": "按钮上间距(px)",
+			"value": "20",
+			"type": "number"
+		},
+		"btnHeight":{
+			"name": "按钮高度(px)",
+			"value": "34",
+			"type": "number"
+		},
+		"btnSize":{
+			"name": "按钮字号(px)",
+			"value": "14",
+			"type": "number"
+		},
+		"btnSizeColor":{
+			"name": "按钮字体颜色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"btnBGC":{
+			"name": "按钮背景颜色",
+			"value": "#ededed",
+			"type": "text"
+		},
+		"btnBDC":{
+			"name": "按钮框颜色",
+			"value": "#cccccc",
+			"type": "text"
+		},
+		"btnBGCHover":{
+			"name": "按钮悬浮背景色",
+			"value": "#0e90d2",
+			"type": "text"
+		},
+		"btnSizeColorHover":{
+			"name": "按钮悬浮字体颜色",
+			"value": "#ffffff",
+			"type": "text"
+		},
+		"btnBDCHover":{
+			"name": "按钮悬浮框颜色",
+			"value": "#3bb4f2",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"imgProp": {
+			"name": "图片宽高比(%)",
+			"value": 75,
+			"type": "select",
+			"option": [75,618,5625,100]
+		},
+		"bigImg":{
+			"name": "大图尺寸",
+			"value": "800x600",
+			"type": "text"
+		}
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"cssConfig": {
+		"titleBG": {
+			"name": "标题背景",
+			"value": "#ededed",
+			"type": "text"
+		},
+		"titleHeight": {
+			"name": "标题高度",
+			"value": "34",
+			"type": "number"
+		},
+		"titleWeight": {
+			"name": "标题加粗",
+			"value": "normal",
+			"type": "select",
+			"option": ["normal","bold"]
+		},
+		"proBorderC":{
+			"name":"边线颜色",
+			"value": "#cccccc",
+			"type": "text"
+		},
+		"proBPD":{
+			"name":"产品间距(px)",
+			"value": "5",
+			"type": "number"
+		},
+		"proImgH":{
+			"name":"图片高度(px)",
+			"value": "70",
+			"type": "number"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"proImg":{
+			"name": "大图尺寸",
+			"value": "400x300",
+			"type": "text"
+		}
+	}
+}

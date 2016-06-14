@@ -1,0 +1,23 @@
+.widget-form-3 ._welcome { width:98%; background:url(/widget/form/3/bg1.png) 0 bottom repeat-x; padding:20px 10px; color:${welcomeColor.value}; font-size:14px; margin-bottom:10px;}
+.widget-form-3 .control-label { text-align:right; padding-top:.4em; font-weight:normal;}
+.widget-form-3 .text-danger { margin:0 3px;}
+.widget-form-3 .blank { min-height:20px;}
+.widget-form-3 .validation { width:30%; min-width:80px; float:left; margin-right:10px;}
+.widget-form-3 b { font-weight:normal; margin-left:10px;}
+.widget-form-3 .btn-primary { width:112px; float:left; margin-right:20px;}
+.widget-form-3 ._links { padding-top:.4em; display:inline-block;}
+.widget-form-3 ._links a { display:inline-block; white-space:nowrap;}
+.widget-form-3 ._weibo,.widget-form-3 ._qq { display:inline-block; width:16px; height:20px; vertical-align:middle; margin:0 5px; background-repeat:no-repeat;}
+.widget-form-3 ._weibo { background-image:url(/widget/form/3/weibo.png);}
+.widget-form-3 ._qq { background-image:url(/widget/form/3/qq.png);}
+
+.widget-form-3 .form-control{border-radius: ${borderRadius.value};border-color:${borderColor.value}}
+.widget-form-3 .btn-primary{background:${okColor.value};border-color:${okBorderColor.value};}
+.widget-form-3 .btn-default{background:${resetColor.value};border-color:${resetBorderColor.value}}
+
+@media screen and (max-width: 640px) {
+
+.widget-form-3 .control-label { text-align:left;}
+.widget-form-3 .blank { display:none;}
+
+}

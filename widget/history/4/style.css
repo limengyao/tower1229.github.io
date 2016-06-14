@@ -1,0 +1,18 @@
+.widget-history-4-T { height: 50px; }
+.widget-history-4 .tab_t { width: 106px; background: url(/widget/history/4/dot_normal.png) center bottom no-repeat; font-size: 14px; text-align:center; }
+.widget-history-4 .tab_t_cur { background-image: url(/widget/history/4/dot_cur.png); color: ${curColor.value}; font-weight: bold; font-size: 18px; }
+.widget-history-4 .tab_c { margin-top: -7px; border-top: 1px solid #dbdfe1; }
+.widget-history-4 .tab_c ul { background: url(/widget/history/4/line.png) center 0 repeat-y; padding-top: 30px; }
+.widget-history-4 .tab_c li { background: url(/widget/history/4/dot.png) center 25px no-repeat; padding-bottom: 20px; }
+.widget-history-4 .tab_c ._img { float: right; width: 47%; }
+.widget-history-4 .tab_c ._img img { height: 104px; margin: 0 15px 15px 0; }
+.widget-history-4 .tab_c ._text { float: left; width: 47%; text-align: right; }
+.widget-history-4 .tab_c ._title { font-size: 24px; color: ${monthsColor.value}; line-height: 1.8em; }
+.widget-history-4 ._even ._img { float: left; text-align: right; }
+.widget-history-4 ._even ._img img { margin: 0 0 15px 15px; }
+.widget-history-4 ._even ._text { float: right; text-align: left; }
+
+@media only screen and (max-width: 40rem) {
+.widget-history-4 .tab_c ._img, .widget-history-4 .tab_c ._text { width: 45%; }
+.widget-history-4 .tab_c ._img img { margin: 0 0 15px; width: 100%; }
+}

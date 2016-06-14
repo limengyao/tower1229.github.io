@@ -1,0 +1,45 @@
+<form class="widget-form-3" id="${id}">
+  <div class="row">
+    <div class="span-${leftWidth.value} smal-12">
+      <div class="_welcome">欢迎来到三站购，请登录！</div>
+      <div class="form-group row">
+        <label class="control-label span-${labelWidth.value} midd-3 smal-12" for="formcontrol1"><em class="text-danger">*</em>账　号：</label>
+        <div class="span-${controlWidth.value} smal-12">
+          <input type="text" id="formcontrol1" class="form-control" datatype="*" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label span-${labelWidth.value} midd-3 smal-12" for="formcontrol2"><em class="text-danger">*</em>密　码：</label>
+        <div class="span-${controlWidth.value} smal-12">
+          <input type="password" id="formcontrol2" class="form-control" datatype="s" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label span-${labelWidth.value} midd-3 smal-12" for="formcontrol3"><em class="text-danger">*</em>验证码：</label>
+        <div class="span-${controlWidth.value} smal-12">
+          <input type="text" id="formcontrol7" class="form-control validation" datatype="s2-8" nullmsg="请输入验证码！" />
+      	  <img src="/widget/form/3/yzm.png" id="changeImage"/><b>点击图片刷新</b>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label span-${labelWidth.value} midd-3 blank"></label>
+        <div class="span-${controlWidth.value} smal-12">
+          <input type="checkbox"> 两周内自动登录　<a href="#">忘记密码？</a>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="control-label span-${labelWidth.value} midd-3 blank"></label>
+        <div class="span-${controlWidth.value} smal-12">
+          <button type="submit" class="btn btn-block btn-primary">用户登录</button>
+          <span class="_links">
+            <a href="#">免费注册</a>
+            <a href="#"><i class="_weibo"></i>微博登录</a> | <a href="#"><i class="_qq"></i>QQ登录</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="span-${rightWidth.value} smal-hide">
+      <div class="_img UnmobilePush"><textarea><img src="/widget/form/3/bg.png"></textarea></div>
+    </div>
+  </div>
+</form>

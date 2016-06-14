@@ -1,0 +1,25 @@
+{
+	"cssConfig": {
+		"titleColor":{
+			"name": "默认标题文字色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"hoverColor":{
+			"name": "悬停文字色",
+			"value": "#dda300",
+			"type": "text"
+		},
+		"btnColor":{
+			"name": "按钮背景色",
+			"value": "#dda300",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12
+	}
+}

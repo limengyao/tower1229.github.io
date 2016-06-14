@@ -1,0 +1,45 @@
+{
+	"cssConfig": {
+		"fontSize": {
+			"name": "字号",
+			"value": "12px",
+			"type": "text"
+		},
+		"textColor": {
+			"name": "文字颜色",
+			"value": "#777777",
+			"type": "color"
+		},
+		"hoverColor": {
+			"name": "文字悬浮颜色",
+			"value": "#000",
+			"type": "color"
+		},
+		"iconSize": {
+			"name": "图标大小",
+			"value": "18px",
+			"type": "text"
+		},
+		"iconMargin": {
+			"name": "图标左右间距",
+			"value": "5px",
+			"type": "text"
+		},
+		"backgroundColor": {
+			"name": "背景颜色",
+			"value": "#007ac3",
+			"type": "color"
+		},
+		"backgroundColor2": {
+			"name": "背景悬浮颜色",
+			"value": "#f0f0f0",
+			"type": "color"
+		}
+	},
+	"jsConfig": {
+
+	},
+	"showConfig": {
+		"viewWidth": 12
+	}
+}

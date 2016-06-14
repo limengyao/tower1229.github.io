@@ -1,0 +1,11 @@
+<!--if:${jsType.value}=='风格1'-->
+require('hoverdir');
+$('.pBox').each(function(){ 
+	$(this).hoverdir({
+		speed:300,
+    easing:'ease',
+    hoverDelay:100,
+    inverse:false
+	});
+});
+<!--/if-->

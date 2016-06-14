@@ -1,0 +1,78 @@
+{
+	"cssConfig": {
+		"lineColor": {
+			"name": "线条颜色",
+			"value": "#cccccc",
+			"type": "text"
+		},
+		"titleSize": {
+			"name": "标题字号(px)",
+			"value": 18,
+			"type": "number"
+		},
+		"titleColor": {
+			"name": "标题颜色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"titleBold": {
+			"name": "标题粗细",
+			"value": "bold",
+			"type": "select",
+			"option": ["bold","normal"]
+		},
+		"greyColor": {
+			"name": "淡色",
+			"value": "#999999",
+			"type": "text"
+		},
+		"lightColor": {
+			"name": "亮色",
+			"value": "#0e90d2",
+			"type": "text"
+		},
+		"contPadd": {
+			"name": "内容上下边距(px)",
+			"value": 30,
+			"type": "number"
+		},
+		"relaBarHeight": {
+			"name": "关联文章行高(px)",
+			"value": 30,
+			"type": "number"
+		},
+		"pageFontSize": {
+			"name": "关联文章字号(px)",
+			"value": 14,
+			"type": "number"
+		}
+	},
+	"jsConfig": {
+		"shareSize": {
+			"name": "分享图标尺寸",
+			"value": 16,
+			"type": "select",
+			"option": [16,24,32]
+		},
+		"shareType": {
+			"name": "分享图标类型",
+			"value": 1,
+			"type": "select",
+			"option": [0,1,2]
+		}
+	},
+	"showConfig": {
+		"viewWidth": 9,
+		"prevTitle": {
+			"name": "上一条",
+			"value": "上一条",
+			"type": "text"
+		},
+		"nextTitle": {
+			"name": "下一条",
+			"value": "下一条",
+			"type": "text"
+		}
+
+	}
+}

@@ -1,0 +1,82 @@
+{
+	"cssConfig": {
+		"hdBG": {
+			"name": "标题栏背景",
+			"value": "#f4f6f7",
+			"type": "text"
+		},
+		"hdSize": {
+			"name": "标题栏字体大小(px)",
+			"value": "16",
+			"type": "number"
+		},
+		"hdColor": {
+			"name": "标题栏字体颜色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"listTitleSize": {
+			"name": "列表标题字体大小",
+			"value": "16",
+			"type": "number"
+		},
+		"dlColor": {
+			"name": "列表(下载/预览)字体颜色",
+			"value": "#ea5413",
+			"type": "text"
+		},
+		"hoverBG": {
+			"name": "列表悬停背景色",
+			"value": "#f6f6f6",
+			"type": "text"
+		},
+		"hoverTitleBG": {
+			"name": "列表悬停标题文字色",
+			"value": "#ea5413",
+			"type": "text"
+		},
+		"titleWidth": {
+			"name": "列表标题宽度(%)",
+			"value": "40",
+			"type": "number"
+		},
+		"dataWidth": {
+			"name": "列表日期宽度(%)",
+			"value": "20",
+			"type": "number"
+		},
+		"downloadWidth": {
+			"name": "列表下载宽度(%)",
+			"value": "20",
+			"type": "number"
+		},
+		"previewWidth": {
+			"name": "列表预览宽度(%)",
+			"value": "20",
+			"type": "number"
+		}
+	},
+	"jsConfig": {},
+	"showConfig": {
+		"viewWidth": 12,
+		"time": {
+			"name": "日期显示",
+			"value": "是",
+			"type": "select",
+			"option": ["是","否"]
+		},
+		"download": {
+			"name": "下载显示",
+			"value": "是",
+			"type": "select",
+			"option": ["是","否"]
+		}
+		,
+		"preview": {
+			"name": "预览显示",
+			"value": "是",
+			"type": "select",
+			"option": ["是","否"]
+		}
+	}
+}

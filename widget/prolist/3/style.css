@@ -1,0 +1,13 @@
+.widget-prolist-3 ul { border-left: 1px solid ${borderColor.value}; border-top: 1px solid ${borderColor.value}; overflow: hidden;  *zoom: 1;}
+.widget-prolist-3 ._layer { padding: ${proPD.value}px; border-right: 1px solid ${borderColor.value}; border-bottom: 1px solid ${borderColor.value};}
+.widget-prolist-3 ._title { font-weight:${titleWeight.value}; height: 34px; line-height: 34px; 
+overflow: hidden; font-size: ${titleSize.value}px; color: ${titleColor.value}; }
+.widget-prolist-3 ._title .ion{font-size:1.1em;}
+.widget-prolist-3 ._title a { color: ${titleColor.value}; }
+.widget-prolist-3 ._title a:hover { color: ${titleColorHover.value}; }
+.widget-prolist-3 ._img { float: left; width: 49%; }
+.widget-prolist-3 ._img img { width: 100%;}
+.widget-prolist-3 ._text { float: right; width: 49%; }
+.widget-prolist-3 ._p { line-height: 20px; height: 80px; overflow: hidden; }
+.widget-prolist-3 ._more { display: block; color: ${moreColor.value}; margin-top: 10px; }
+.widget-prolist-3 ._more:hover { color: ${moreColorHover.value}; }

@@ -1,0 +1,13 @@
+.widget-prolist-12 li { margin-bottom: ${proMB.value}px; }
+.widget-prolist-12 ._border { border: 1px solid #cccccc; }
+.widget-prolist-12 ._img { padding: ${imgPD.value}px; }
+.widget-prolist-12 ._name { margin: 0 ${infoPD.value}px; font-size:${titleSize.value}px; overflow: hidden; border-bottom: 1px solid #cccccc; font-weight:${titleWeight.value}; height:${titleHeight.value}px; line-height:${titleHeight.value}px; word-break:break-all; overflow:hidden; padding-bottom:5px; }
+.widget-prolist-12 ._canshu { padding: 5px ${infoPD.value}px; }
+.widget-prolist-12 ._canshu p { height: 26px; line-height: 26px; overflow: hidden; word-break:break-all; }
+.widget-prolist-12 ._cs_l { float: left; width: 50%; overflow: hidden; }
+.widget-prolist-12 ._cs_r { float: right; width: 48%; text-align: right; overflow: hidden; }
+.widget-prolist-12 ._cs_l ._price span { font-size: 18px; font-weight: 700; color:${priceColor.value}; }
+.widget-prolist-12 ._btn { text-align: center; padding: 5px; }
+.widget-prolist-12 ._btn a { display: inline-block; padding: 0 30px; border-radius: ${btnRadius.value}px; cursor: pointer; height: 26px; line-height: 26px; border: 1px solid ${btnBorderC.value}; background: ${btnBG.value}; font-size: ${btnFontSize.value}px; font-weight: 700; color: ${btnFontC.value}; }
+.widget-prolist-12 li.hover ._border { border-color: ${hoverBG.value}; }
+.widget-prolist-12 li.hover ._btn { background: ${hoverBG.value}; }

@@ -1,0 +1,126 @@
+{
+	"cssConfig": {
+		"boxBorderC": {
+			"name": "大框颜色",
+			"value": "#dddddd",
+			"type": "text"
+		},
+		"leftWidth": {
+			"name": "左边宽度(%)",
+			"value": 48,
+			"type": "number"
+		},
+		"rightWidth":{
+			"name": "右边宽度(%)",
+			"value": 48,
+			"type": "number"
+		},
+		"albumMT":{
+			"name": "缩略图上边距(px)",
+			"value":6,
+			"type":"number"
+		},
+		"albumBW":{
+			"name": "缩略图线宽(px)",
+			"value":2,
+			"type":"number"
+		},
+		"albumBC":{
+			"name": "缩略图线色",
+			"value": "transparent",
+			"type": "text"
+		},
+		"albumActiveBC":{
+			"name": "当前缩略图线色",
+			"value": "#0080cc",
+			"type": "text"
+		},
+		"titleSize":{
+			"name": "标题字号(px)",
+			"value": 18,
+			"type": "number"
+		},
+		"titleWeight":{
+			"name": "标题粗细",
+			"value": "bold",
+			"type": "text"
+		},
+		"titleHeight":{
+			"name": "标题高度(px)",
+			"value":34,
+			"type": "number"
+		},
+		"titleColor":{
+			"name": "标题颜色",
+			"value": "#333",
+			"type": "text"
+		},
+		"titleMB":{
+			"name": "标题下边距(px)",
+			"value": 5,
+			"type": "number"
+		},
+		"textMB":{
+			"name": "介绍下边距(px)",
+			"value": 10,
+			"type": "number"
+		},
+		"otherMB":{
+			"name": "其他标题下边距(px)",
+			"value": 5,
+			"type": "number"
+		},
+		"seleBG":{
+			"name": "下拉框背景色",
+			"value": "#ffffff",
+			"type": "text"
+		},
+		"seleHeight":{
+			"name": "下拉框高度(px)",
+			"value": 30,
+			"type": "number"
+		},
+		"seleWidth":{
+			"name": "下拉框宽度(px)",
+			"value": 200,
+			"type": "number"
+		},
+		"seleBorderC":{
+			"name": "下拉框颜色",
+			"value": "#aaaaaa",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+		"albumAct":{
+			"name":"缩略图触发动作",
+			"value": "mouseenter",
+			"type": "select",
+			"option": ["mouseenter","click"]
+		}
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"imgProp": {
+			"name": "图片宽高比(%)",
+			"value": 75,
+			"type": "select",
+			"option": [75,618,5625,100]
+		},
+		"bigImg":{
+			"name": "大图尺寸",
+			"value": "800x600",
+			"type": "text"
+		},
+		"albumImg":{
+			"name": "缩略图尺寸",
+			"value": "200x150",
+			"type": "text"
+		},
+		"albumWidth":{
+			"name": "缩略图宽度(栅格)",
+			"value": 3,
+			"type": "number"
+		}
+	}
+}

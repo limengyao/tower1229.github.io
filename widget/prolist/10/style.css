@@ -1,0 +1,6 @@
+.widget-prolist-10 li {  margin-bottom: ${proMB.value}px; }
+.widget-prolist-10 li ._img { border: 1px solid ${imgBorderC.value}; }
+.widget-prolist-10 li ._img .ion { position: absolute; right: 0px; bottom: 0px; color: ${icoColor.value}; font-size:${icoSize.value}px; }
+.widget-prolist-10 li ._name { text-align: center; margin-top:${titleMB.value}px; font-size: ${titleSize.value}px; font-weight:${titleWeight.value}; white-space:nowrap;text-overflow:ellipsis;overflow:hidden; }
+.widget-prolist-10 li ._price { text-align: center; }
+

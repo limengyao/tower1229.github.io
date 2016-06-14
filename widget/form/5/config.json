@@ -1,0 +1,18 @@
+{
+	"cssConfig": {
+		"mainColor": {
+			"name": "悬浮颜色",
+			"value": "#ffc800",
+			"type": "color"
+		},
+		"borderColor": {
+			"name": "线条颜色",
+			"value": "#cccccc",
+			"type": "color"
+		}
+	},
+	"jsConfig": {},
+	"showConfig": {
+		"viewWidth": 12
+	}
+}

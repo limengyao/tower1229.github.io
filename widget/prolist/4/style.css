@@ -1,0 +1,12 @@
+.widget-prolist-4 li { margin-bottom: 20px; }
+.widget-prolist-4 ._img { float: left; width: ${leftWidth.value}%; border: 1px solid ${imgBC.value}; }
+.widget-prolist-4 ._detail{ width:${rightWidth.value}%; float:right;}
+.widget-prolist-4 ._title { font-size: ${titleSize.value}px; font-weight:${titleWeight.value}; margin-bottom:${titleMB.value}px; }
+.widget-prolist-4 ._p { line-height: 20px; max-height: 60px; overflow: hidden; margin-bottom:${introMB.value}px; }
+.widget-prolist-4 ._list a { float: left; line-height: ${proHeight.value}px; margin: 0 ${proMRB.value}px ${proMRB.value}px 0; padding: 0 10px; background: ${proBG.value}; white-space:nowrap; }
+.widget-prolist-4 ._list a:hover { background: ${proBGHover.value}; color: ${proCHover.value}; }
+@media only screen and (max-width: 480px) {
+.widget-prolist-4 ._img { float: none; width: 99%; margin-bottom:10px; }
+.widget-prolist-4 ._detail{ width:100%; float:none;}
+
+}

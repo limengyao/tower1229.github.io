@@ -1,0 +1,75 @@
+{
+	"cssConfig": {
+		"defaultBG":{
+			"name": "默认背景色",
+			"value": "#ffffff",
+			"type": "text"
+		},
+		"listHeight":{
+			"name":"列表高度(px)",
+			"value":54,
+			"type":"number"
+		},
+		"iconSize":{
+			"name":"加减号字体大小(px)",
+			"value":18,
+			"type":"number"
+		},
+		"titleSize": {
+			"name": "默认标题字体大小(px)",
+			"value": "16",
+			"type": "number"
+		},
+		"titleColor": {
+			"name": "默认标题颜色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"dateColor": {
+			"name": "默认日期颜色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"textColor": {
+			"name": "默认内容文字颜色",
+			"value": "#8b8b8b",
+			"type": "text"
+		},
+		"curBG":{
+			"name": "当前背景",
+			"value": "#f4f4f4",
+			"type": "text"
+		},
+		"curTitleColor": {
+			"name": "当前标题文字颜色",
+			"value": "#ffffff",
+			"type": "text"
+		},
+		"curTitleBG": {
+			"name": "当前标题背景色",
+			"value": "#0e90d2",
+			"type": "text"
+		},
+		"curMarkColor":{
+			"name": "当前减号背景色",
+			"value": "#3bb4f2",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"titleText": {
+			"name": "标题",
+			"value": "质检总局：输台硅酸钙板抗弯强度须高于国标 ",
+			"type": "text"
+		},
+		"dateText": {
+			"name": "日期",
+			"value": "2014-06-24",
+			"type": "text"
+		}
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"cssConfig": {
+		"fontSize": {
+			"name": "字号",
+			"value": "12px",
+			"type": "text"
+		},
+		"textColor": {
+			"name": "文字颜色",
+			"value": "#777777",
+			"type": "color"
+		},
+		"hoverColor": {
+			"name": "文字悬浮颜色",
+			"value": "#286090",
+			"type": "color"
+		},
+		"sepColor": {
+			"name": "分隔符颜色",
+			"value": "#cccccc",
+			"type": "color"
+		},
+		"sepMargin": {
+			"name": "分隔符左右间距",
+			"value": "5px",
+			"type": "text"
+		}
+	},
+	"jsConfig": {},
+	"showConfig": {
+		"viewWidth": 12,
+		"headText": {
+			"name": "打头文字",
+			"value": "您当前的位置： ",
+			"type": "text"
+		},
+		"sep": {
+			"name": "分隔符",
+			"value": "/",
+			"type": "text"
+		}
+
+	}
+}

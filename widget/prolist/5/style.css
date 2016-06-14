@@ -1,0 +1,13 @@
+.widget-prolist-5 li { margin-bottom: 20px; }
+.widget-prolist-5 ._img { float: left; width: ${leftWidth.value}%; margin-right: 3%; }
+.widget-prolist-5 ._detail { float: left; width: ${rightWidth.value}%; margin-right: 3%; padding-top:10px;}
+.widget-prolist-5 ._title { font-size: ${titleSize.value}px; font-weight:${titleWeight.value}; margin-bottom:${titleMB.value}px;}
+.widget-prolist-5 ._p { line-height: 20px; height: 60px; overflow: hidden;  }
+.widget-prolist-5 ._link { margin-top: ${linkMT.value}px; }
+.widget-prolist-5 ._link a { color: ${linkColor.value}; margin-right: ${linkMR.value}px; }
+.widget-prolist-5 ._link .ion { font-size: 1.1em; }
+.widget-prolist-5 li:hover { background: ${proBGHover.value}; }
+@media only screen and (max-width: 480px) {
+.widget-prolist-5 li ._detail, .widget-prolist-5 _img { float: none; width: 100%; margin-right:0; }
+.widget-prolist-5 li:hover { background: none; }
+}

@@ -1,0 +1,20 @@
+{
+	"cssConfig": {
+		"yearColor":{
+			"name": "年份颜色",
+			"value": "#0e90d2",
+			"type": "text"
+		},
+		"curColor":{
+			"name": "年份选中颜色",
+			"value": "#0e90d2",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 10
+	}
+}

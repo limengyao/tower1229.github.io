@@ -1,0 +1,20 @@
+.widget-job-3 li { border-bottom: 1px dashed #cccccc; margin-bottom: 10px; padding-bottom: 10px; overflow: hidden;  *zoom: 1;
+}
+.widget-job-3 ._img { float: left; margin-right: 20px; max-width: 35%; height: 84px; }
+.widget-job-3 ._img img { height: 100%; }
+.widget-job-3 ._title { height: 26px; line-height: 26px; overflow: hidden; }
+.widget-job-3 ._title a { color: #333333; font-size: 14px; }
+.widget-job-3 ._text { line-height: 20px; height: 40px; overflow: hidden; margin: 5px 0 10px; }
+.widget-job-3 ._act { text-align: right; height: 20px; line-height: 20px; }
+.widget-job-3 ._act a { color: #999999; }
+.widget-job-3 ._act a:hover { color: #0e90d2; }
+.widget-job-3 ._act .ion { font-size: 14px; }
+@media only screen and (max-width: 40rem) {
+ .widget-job-3 ._text {
+ line-height: 26px;
+ height: 52px;
+}
+ .widget-job-3 ._act {
+ display: none;
+}
+}

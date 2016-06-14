@@ -1,0 +1,14 @@
+.widget-qa-3 { border-top: ${borderTW.value} solid ${borderTC.value}; }
+.widget-qa-3-title { position: relative; height: 26px; line-height: 26px; overflow: hidden; border-bottom: 1px #ededed solid; padding: 5px 10px; cursor: pointer; }
+.widget-qa-3-title ._title{ padding-left: 2em; font-size:${fontSizeT.value}; }
+.widget-qa-3-title ._data { float: left; color: ${colorTN.value}; font-size: ${fontSizeTNum.value}; font-weight: 700;  width:2em; }
+.widget-qa-3-title ._icoP { width: 20px; height: 20px; position: absolute; right: 0; top: 10px; }
+.widget-qa-3-title ._ico { background: url(/widget/qa/2/qa31.png); }
+.widget-qa-3 ._icoActive ._ico{ background: url(/widget/qa/2/qa32.png); }
+.widget-qa-3-content { padding: 10px; background: ${backgroundNC.value}; border-bottom: 1px solid #cccccc; display: none; }
+.widget-qa-3-content ._data { float: left; color: ${colorNN.value}; font-size: ${fontSizeNNum.value}; font-weight: 700; width:2em; }
+.widget-qa-3-content ._qaIntro { text-align: left; padding-left: 2em; }
+@media only screen and (max-width: 480px) {
+.widget-qa-3-title ._icoP { display: none;}
+.widget-qa-3-title ._ico {display: none;}
+}

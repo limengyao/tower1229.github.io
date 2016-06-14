@@ -1,0 +1,67 @@
+{
+	"cssConfig": {
+		"leftWidth": {
+			"name": "左边宽度(%)",
+			"value": "47",
+			"type": "number"
+		},
+		"rightWidth": {
+			"name": "右边宽度(%)",
+			"value": "47",
+			"type": "number"
+		},
+		"titleSize": {
+			"name": "标题大小(px)",
+			"value": "16",
+			"type": "number"
+		},
+		"titleWeight": {
+			"name": "标题加粗",
+			"value": "normal",
+			"type": "select",
+			"option": ["normal","bold"]
+		},
+		"titleMB": {
+			"name": "标题下间距(px)",
+			"value": "5",
+			"type": "number"
+		},
+		"linkMT": {
+			"name": "链接上间距(px)",
+			"value": "10",
+			"type": "number"
+		},
+		"linkMR": {
+			"name": "链接右间距(px)",
+			"value": "5",
+			"type": "number"
+		},
+		"linkColor": {
+			"name": "链接颜色",
+			"value": "#0e90d2",
+			"type": "text"
+		},
+		"proBGHover": {
+			"name": "产品悬停背景色",
+			"value": "#e2f4fd",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"imgProp": {
+			"name": "图片宽高比(%)",
+			"value": 75,
+			"type": "select",
+			"option": [75,618,5625,100]
+		},
+		"proImg":{
+			"name": "大图尺寸",
+			"value": "400x300",
+			"type": "text"
+		}
+	}
+}

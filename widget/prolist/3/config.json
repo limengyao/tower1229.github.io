@@ -1,0 +1,73 @@
+{
+	"cssConfig": {
+		"proPD": {
+			"name": "产品间距(px)",
+			"value": "5",
+			"type": "number"
+		},
+		"borderColor":{
+			"name":"边线颜色",
+			"value":"#cccccc",
+			"type":"text"
+		},
+		"titleSize": {
+			"name": "标题大小(px)",
+			"value": "14",
+			"type": "number"
+		},
+		"titleWeight": {
+			"name": "标题加粗",
+			"value": "normal",
+			"type": "select",
+			"option": ["normal","bold"]
+		},
+		"titleColor":{
+			"name":"标题颜色",
+			"value":"#0e90d2",
+			"type":"text"
+		},
+		"titleColorHover":{
+			"name":"标题悬停颜色",
+			"value":"#0b6fa2",
+			"type":"text"
+		},
+		"moreColor":{
+			"name":"更多颜色",
+			"value":"#f37b1d",
+			"type":"text"
+		},
+		"moreColorHover":{
+			"name":"更多悬停颜色",
+			"value":"#f37b1d",
+			"type":"text"
+		}
+		
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"imgProp": {
+			"name": "图片宽高比(%)",
+			"value": 100,
+			"type": "select",
+			"option": [75,618,5625,100]
+		},
+		"titleIcon":{
+			"name": "标题图标",
+			"value": "&#xe65b;",
+			"type": "text"
+		},
+		"proImg":{
+			"name": "大图尺寸",
+			"value": "300x300",
+			"type": "text"
+		},
+		"proWidth":{
+			"name": "产品宽度(栅格)",
+			"value": 3,
+			"type": "number"
+		}
+	}
+}

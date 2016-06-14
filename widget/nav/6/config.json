@@ -1,0 +1,25 @@
+{
+	"cssConfig": {
+		"layerWidth": {
+			"name": "下拉宽度(%或px)",
+			"value": "575px",
+			"type": "text"
+		},
+		"layerColor": {
+			"name": "下拉背景色",
+			"value": "#ededed",
+			"type": "color"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"placeImg":{
+			"name": "图片尺寸",
+			"value": "365x195",
+			"type": "text"
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.widget-prolist-6 { overflow: hidden;  *zoom: 1;}
+.widget-prolist-6-cell { margin-bottom: 10px; position:relative; }
+.widget-prolist-6-cell ._layer { padding: ${proPD.value}px; background: #ffffff; border: 1px solid ${proBorderC.value}; }
+.widget-prolist-6-cell ._title { font-size: ${titleSize.value}px; height: 34px; line-height: 34px; overflow: hidden; font-weight:${titleWeight.value}; margin-bottom:${titleMB.value}px; }
+.widget-prolist-6-cell ._img{ margin-bottom:${imgMB.value}px;}
+.widget-prolist-6-cell ._list { height: 88px; overflow: hidden; }
+.widget-prolist-6-cell ._list li { line-height: 22px; }
+.widget-prolist-6-cell ._mark { display: none; position: absolute; right: 0; bottom: 0; z-index: 2; width: 20px; height: 20px; line-height: 20px; text-align: center; background: ${icoBG.value}; }
+.widget-prolist-6-cell .ico_plus { color: ${icoColor.value}; margin: 0; font-size: 14px; }
+.widget-prolist-6-cell ._layer:hover { border-color: ${proBCHover.value}; background: ${proBGHover.value}; }
+@media only screen and (max-width: 64rem) {
+.widget-prolist-6-cell { width: 48%;}
+}
+@media only screen and (max-width: 480px) {
+.widget-prolist-6-cell { float: none; width: auto; margin-right: 0; }
+.widget-prolist-6-cell ._list,  .widget-prolist-6-cell ._img { height: auto; }
+}

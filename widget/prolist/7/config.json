@@ -1,0 +1,52 @@
+{
+	"cssConfig": {
+		"titleSize": {
+			"name": "标题大小(px)",
+			"value": "14",
+			"type": "number"
+		},
+		"titleWeight": {
+			"name": "标题加粗",
+			"value": "normal",
+			"type": "select",
+			"option": ["normal","bold"]
+		},
+		"titleMB": {
+			"name": "标题上间距(px)",
+			"value": "5",
+			"type": "number"
+		},
+		"icoCHover":{
+			"name":"图标悬停颜色",
+			"value":"#0e90d2",
+			"type":"text"
+		},
+		"proMB":{
+			"name":"产品间距(px)",
+			"value": "20",
+			"type": "number"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"imgProp": {
+			"name": "图片宽高比(%)",
+			"value": 75,
+			"type": "select",
+			"option": [75,618,5625,100]
+		},
+		"proImg":{
+			"name": "大图尺寸",
+			"value": "400x300",
+			"type": "text"
+		},
+		"proWidth":{
+			"name": "产品宽度(栅格)",
+			"value": 3,
+			"type": "number"
+		}
+	}
+}

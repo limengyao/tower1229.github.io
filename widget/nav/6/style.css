@@ -1,0 +1,37 @@
+.widget-nav { position:relative; z-index:10;}
+.widget-nav > ul > li { width:20%; float:left; position:relative;}
+.widget-nav > ul > li > a { display:block; text-align:center; font-size:14px; height:50px; line-height:50px; font-weight:bold;}
+
+/*下拉css*/
+.nav_layer06 { display:none; width:${layerWidth.value}; position:absolute; left:0; top:100%; background:${layerColor.value}; padding:0 0 0 15px;}
+.nav_layer06 ul { width:25%; float:left; padding:10px 0;}
+.nav_layer06 li { border-bottom:#ddd 1px solid; padding:0;}
+.nav_layer06 li a { display:block; line-height:1.5; padding:5px; text-align:left; font-weight:bold;}
+.nav_layer06 li a:hover { color:#0080cc;}
+.nav_layer06 ._img { width:63%; float:right; background:#fff; padding:20px 15px;}
+.nav_layer06 ._img img { width:100%; height:auto; display:block;}
+.nav_layer06 ._text { font-size:12px; color:#666; display:block; line-height:1.5; padding-top:5px;}
+/*下拉css end*/
+
+.widget-nav .nav4 .nav_layer06 { left:-190px;}
+.widget-nav .last .nav_layer06 { left:auto; right:0;}
+
+.widget-nav .hover > a { color:#0080cc;}
+.widget-nav .hover ._layer { display:block;}
+.mobile_key { display:none;}
+
+@media only screen and (max-width: 640px) {
+.mobile_key { display:block;}
+}
+
+
+
+
+
+
+
+
+
+
+
+

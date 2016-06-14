@@ -1,0 +1,4 @@
+.widget-bread-2 {font-size: ${fontSize.value}; color: ${textColor.value}; }
+.widget-bread-2 a { color: ${textColor.value};}
+.widget-bread-2 a:hover{color:${hoverColor.value};}
+.widget-bread-2 em { color:${sepColor.value}; margin: 0 ${sepMargin.value};}

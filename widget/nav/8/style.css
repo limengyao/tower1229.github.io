@@ -1,0 +1,21 @@
+.widget-nav { position:relative; z-index:10;position:relative;}
+.widget-nav > ul > li { padding: 0 4%; float:left; }
+.widget-nav > ul > li > a { display:block; text-align:center; font-size:14px; height:50px; line-height:50px; font-weight:bold;}
+
+/*下拉css*/
+.widget-nav li .nav_layer08{ position:absolute; top:40px; left:0;width: 100%; display:none; background-color:${backgroundColor.value};}
+.widget-nav li .nav_layer08 a{ display:inline-block;padding:0 3%; color:#fff; font-size: ${fontSize.value};line-height: 40px;}
+.widget-nav li .nav_layer08 li:hover a{ color:${hoverColor.value};}
+
+.widget-nav .nav3 .nav_layer08 p{padding-left: 22%;}
+.widget-nav .nav4 .nav_layer08 p{padding-left: 30%;}
+.widget-nav .nav5 .nav_layer08 p{padding-left: 52%;}
+.widget-nav .nav6 .nav_layer08{ text-align:right;}
+.widget-nav .last .nav_layer08 {text-align: right;}
+
+.widget-nav .hover > a { color:#0080cc;}
+.widget-nav .hover ._layer { display:block;}
+.mobile_key { display:none;}
+@media only screen and (max-width: 640px) {
+.mobile_key { display:block;}
+}

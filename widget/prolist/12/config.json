@@ -1,0 +1,92 @@
+{
+	"cssConfig": {
+		"titleSize": {
+			"name": "标题大小(px)",
+			"value": "14",
+			"type": "number"
+		},
+		"titleWeight": {
+			"name": "标题加粗",
+			"value": "normal",
+			"type": "select",
+			"option": ["normal","bold"]
+		},
+		"titleHeight": {
+			"name": "标题高度",
+			"value": "26",
+			"type": "number"
+		},
+		"imgPD": {
+			"name": "图片间距(px)",
+			"value": "5",
+			"type": "number"
+		},
+		"infoPD": {
+			"name": "文字间距(px)",
+			"value": "10",
+			"type": "number"
+		},
+		"priceColor":{
+			"name":"价格颜色",
+			"value":"#0e90d2",
+			"type":"text"
+		},
+		"btnBG":{
+			"name":"按钮背景颜色",
+			"value":"#ededed",
+			"type":"text"
+		},
+		"btnBorderC":{
+			"name":"按钮边线颜色",
+			"value":"#cccccc",
+			"type":"text"
+		},
+		"btnFontC":{
+			"name":"按钮文字颜色",
+			"value":"#999999",
+			"type":"text"
+		},
+		"btnFontSize":{
+			"name":"按钮文字大小(px)",
+			"value":"14",
+			"type":"number"
+		},
+		"btnRadius":{
+			"name":"按钮圆角大小(px)",
+			"value":"3",
+			"type":"number"
+		},
+		"hoverBG":{
+			"name":"悬停背景边框色",
+			"value":"#0e90d2",
+			"type":"text"
+		},
+		"proMB":{
+			"name":"产品间距(px)",
+			"value": "20",
+			"type": "number"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"imgProp": {
+			"name": "图片宽高比(%)",
+			"value": 75,
+			"type": "select",
+			"option": [75,618,5625,100]
+		},
+		"proImg":{
+			"name": "大图尺寸",
+			"value": "400x300",
+			"type": "text"
+		},
+		"proWidth":{
+			"name": "产品宽度(栅格)",
+			"value": 3,
+			"type": "number"
+		}
+	}
+}

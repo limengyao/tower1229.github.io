@@ -1,0 +1,11 @@
+.widget-history-5 { background: #ffffff; }
+.widget-history-5 ._year { position: relative; }
+.widget-history-5 ._year span { position: absolute; left: 0; top: 0; width: 100px; text-align: center; font-size: 28px; color: ${yearColor.value}; }
+.widget-history-5 ._list { margin-left: 110px; margin-bottom: 20px; padding-left: 20px; border-left: 1px solid ${borderColor.value}; line-height: 26px; }
+@media only screen and (max-width: 40rem) {
+.widget-history-5 ._year span { position: static; }
+.widget-history-5 ._list { margin-left: 0; border: 0; padding-left: 0; }
+}
+
+
+

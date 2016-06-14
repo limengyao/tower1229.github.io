@@ -1,0 +1,31 @@
+{
+	"cssConfig": {
+		"listBG": {
+			"name": "隔行变色",
+			"value": "#f7f7f7",
+			"type": "text"
+		},
+		"titleSize": {
+			"name": "标题字号(px)",
+			"value": 16,
+			"type": "number"
+		},
+		"hoverColor": {
+			"name": "悬停文字颜色",
+			"value": "#ff7900",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"downloadBtn": {
+			"name": "下载按钮",
+			"value": "显示",
+			"type": "select",
+			"option": ["显示","不显示"]
+		}
+	}
+}

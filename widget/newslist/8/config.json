@@ -1,0 +1,55 @@
+{
+	"cssConfig": {
+		"titleColor":{
+			"name": "默认标题文字色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"hoverColor":{
+			"name": "悬停文字色",
+			"value": "#dda300",
+			"type": "text"
+		},
+		"mainBG":{
+			"name": "主体背景色",
+			"value": "#eeeeee",
+			"type": "text"
+		},
+		"searchBG":{
+			"name": "检索背景色",
+			"value": "#d9d9d9",
+			"type": "text"
+		},
+		"searchTitleColor":{
+			"name": "检索标题文字色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"btnColor":{
+			"name": "按钮背景色",
+			"value": "#dda300",
+			"type": "text"
+		},
+		"titleSize":{
+			"name":"新闻标题字体大小(px)",
+			"value":20,
+			"type":"number"
+		},
+		"searchTitleSize": {
+			"name": "检索标题字体大小(px)",
+			"value": "20",
+			"type": "number"
+		}
+	},
+	"jsConfig": {
+		"slideEffect": {
+			"name": "轮播形式",
+			"value": "slide",
+			"type": "select",
+			"option": ["slide","fade","toggle"]
+		}
+	},
+	"showConfig": {
+		"viewWidth": 12
+	}
+}

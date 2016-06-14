@@ -1,0 +1,15 @@
+{
+	"cssConfig": {
+		"curColor":{
+			"name": "年份选中颜色",
+			"value": "#333333",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+		
+	},
+	"showConfig": {
+		"viewWidth": 10
+	}
+}

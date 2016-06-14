@@ -1,0 +1,70 @@
+{
+	"cssConfig": {
+		"listPadd": {
+			"name": "列表项内边距(px)",
+			"value": 10,
+			"type": "number"
+		},
+		"defaultB": {
+			"name": "默认背景色",
+			"value": "#ededed",
+			"type": "text"
+		},
+		"imgBorderColor": {
+			"name": "图片边框色",
+			"value": "#ffffff",
+			"type": "text"
+		},
+		"marginBottom": {
+			"name": "图片下边距(px)",
+			"value": 6,
+			"type": "number"
+		},
+		"titleSize": {
+			"name": "标题字号(px)",
+			"value": 16,
+			"type": "number"
+		},
+		"mainColor": {
+			"name": "亮色",
+			"value": "#0e90d2",
+			"type": "text"
+		},
+		"hoverB": {
+			"name": "悬停背景",
+			"value": "#f5f5f5",
+			"type": "text"
+		}
+	},
+	"jsConfig": {
+		"cellMargin":{
+			"name": "间距(px)",
+			"value": 15,
+			"type": "number"
+		},
+		"cols":{
+			"name": "列数",
+			"value": 4,
+			"type": "number"
+		}
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"titleText": {
+			"name": "标题",
+			"value": "硅酸钙保温板应用广泛 市场前景看好 ",
+			"type": "text"
+		},
+		"showData": {
+			"name": "显示日期",
+			"value": "显示",
+			"type": "select",
+			"option": ["显示", "不显示"]
+		},
+		"dateText": {
+			"name": "日期",
+			"value": "2014-06-24",
+			"type": "text"
+		}
+	}
+}

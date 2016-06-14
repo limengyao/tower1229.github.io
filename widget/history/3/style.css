@@ -1,0 +1,16 @@
+.widget-history-3 { background: #ffffff; cursor: default; }
+.widget-history-3-T { height: 48px; line-height: 40px; border-bottom: 1px dotted #cccccc; margin-bottom: 15px; overflow: hidden; }
+.widget-history-3-tab .tab_t { position: relative; width: 106px; font-size: 14px; font-weight: 700; color: #999999; }
+.widget-history-3-tab .tab_t_cur { font-size: 16px; color: ${curColor.value}; }
+.widget-history-3-tab .tab_t b { position: absolute; width: 0; height: 1em; border-left: 1px solid #cccccc; left: 50%; bottom: 0;}
+.widget-history-3-tab .tab_c { padding: 10px 0 0; }
+.widget-history-3_arrs { position: absolute; width: 37px; height: 37px; background: url(/widget/history/3/arr.png) no-repeat; top: 29px; cursor: pointer; transition: none; z-index: 3; }
+.widget-history-3_prev { left: -20px; }
+.widget-history-3_next { right: -20px; background-position: right 0; }
+.widget-history-3_prev:hover { background-position: 0 bottom; }
+.widget-history-3_next:hover { background-position: right bottom; }
+
+
+
+
+

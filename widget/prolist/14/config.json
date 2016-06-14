@@ -1,0 +1,83 @@
+{
+	"cssConfig": {
+		"titleSize": {
+			"name": "标题大小(px)",
+			"value": "16",
+			"type": "number"
+		},
+		"titleColor": {
+			"name": "默认标题文字色",
+			"value": "#ffffff",
+			"type": "text"
+		},
+		"titleBg": {
+			"name": "默认标题背景色",
+			"value": "eeeeee",
+			"type": "text"
+		},
+		"titleBg_RGB": {
+			"name": "默认标题背景色(R,G,B)",
+			"value": "238,238,238",
+			"type": "text"
+		},
+		"titleHoverColor": {
+			"name": "悬停标题文字色",
+			"value": "#333333",
+			"type": "text"
+		},
+		"hoverBtnBg": {
+			"name": "悬停按钮背景色",
+			"value": "#d95204",
+			"type": "text"
+		},
+		"hoverBtnColor": {
+			"name": "悬停按钮文字色",
+			"value": "#ffffff",
+			"type": "text"
+		},
+		"hoverBg": {
+			"name": "悬停背景色",
+			"value": "efcb23",
+			"type": "text"
+		},
+		"hoverBg_RGB": {
+			"name": "悬停背景色(R,G,B)",
+			"value": "239,203,35",
+			"type": "text"
+		},
+		"marginBottom": {
+			"name": "上下边距(px)",
+			"value": "0",
+			"type": "number"
+		},
+		"cssType": {
+			"name": "风格切换-css",
+			"value": "风格1",
+			"type": "select",
+			"option": ["风格1","风格2"]
+		}
+	},
+	"jsConfig": {
+		"jsType": {
+			"name": "风格切换-js",
+			"value": "风格1",
+			"type": "select",
+			"option": ["风格1","风格2"]
+		}
+	},
+	"showConfig": {
+		"viewWidth": 12,
+		"type": {
+			"name": "风格切换-html",
+			"value": "风格1",
+			"type": "select",
+			"option": ["风格1","风格2"]
+		},
+		"gridType": {
+			"name": "栅格间隙(是/否)",
+			"value": "否",
+			"type": "select",
+			"option": ["是","否"]
+		}
+	}
+}

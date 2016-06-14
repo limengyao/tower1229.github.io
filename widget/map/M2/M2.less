@@ -1,0 +1,26 @@
+@import (reference) "/less/set.less";
+.map-M2{}
+.map-M2-search{border:1px solid #ccc;padding:18px;margin-bottom: 15px;}
+.map-M2-map{height: 550px;}
+.map-M2-map img{max-width: none;}
+.map-M2-list{height: 530px;background:#f6f6f6;border:1px solid #ccc;padding:10px;position: relative;
+overflow: hidden;user-select:  none;-webkit-user-select:  none;}
+.map-M2-list li{margin-bottom: 10px;}
+.map-M2-list ._t{font-weight: 700;font-size:14px;}
+.map-M2-list ._t .ion{font-size:22px;color:#df001f;}
+.map-M2-list ._p{padding:0 30px;}
+.map-M2-list .scroll_slider{height: 70px;background:#df001f;position: relative;border-radius: 0;}
+.map-M2-list .scroll_slider:before{content: "";position: absolute;width: 80%;left: 10%;top:50%;
+margin-top: -3px;height: 1px;background:#fff;}
+.map-M2-list .scroll_slider:after{content: "";position: absolute;width: 80%;height: 2px;
+border-top:1px solid #fff;border-bottom:1px solid #fff;left: 10%;top:50%;}
+
+@media only screen and (max-width: @PadScreen) {
+
+}
+
+@media only screen and (max-width: @MobileScreen) {
+	.map-M2-list{height: auto;}
+	.map-M2-search{padding:0;border:0;}
+	.map-M2-search .form-control,.map-M2-search .btn{margin-bottom: .5em;}
+}
