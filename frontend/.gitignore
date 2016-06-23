@@ -1,0 +1,13 @@
+﻿/bin
+/resources/member
+/*.cfg
+/resources/web/form.htm
+/相对路径的seajs解决方案
+/test/*.mp3
+/test/*.flv
+/test/*.mp4
+/web.config
+/test/upload
+/resources/modules/ejs.js
+/resources/modules/helper.js
+/nginx.conf

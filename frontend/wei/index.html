@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微画册</title>
+<meta http-equiv="cleartype" content="on">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="">
+<meta name="HandheldFriendly" content="True">
+<script>
+//屏幕适配
+(function(){
+    var phoneScale = parseInt(window.screen.width) / 640;
+    var ua = navigator.userAgent;
+    var meta;
+    if (/Android (\d+\.\d+)/.test(ua)) {
+        var version = parseFloat(RegExp.$1);
+        meta = (version > 2.3) ? '<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">' : '<meta name="viewport" content="width=640, target-densitydpi=device-dpi">';
+    } else {
+        meta = '<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">';
+    }
+    document.write(meta);
+    //屏蔽触屏事件
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+})();
+</script>
+<link rel="stylesheet" href="./css/animate.css">
+<link rel="stylesheet" href="./css/ui.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div class="loading">
+    <div id="escapingBallG">
+        <div id="escapingBall_1" class="escapingBallG"></div>
+    </div>
+</div>
+<!-- 首屏擦除 -->
+<!-- <div class="cover-container">
+    <canvas id="clip-canvas" data-src="img/4.jpg"></canvas>
+</div> -->
+
+<div class="page-container" style="background-image: url(./img/b.jpg);">
+    <!-- 默认样式 -->
+    <div class="page" 
+    style="background-image: url(./img/1.jpg);">
+        <div class="page-content">
+            
+        </div>
+        <a href="javascript:;" class="ui-icon icon-up running"></a>
+    </div>
+    <!-- 幻灯片 -->
+    <div class="page" 
+    data-b="./img/2.jpg">
+        <div class="page-content page-flying">
+            <ul class="flying-items z-viewArea">
+                <li>
+                    <img src="img/1.jpg">
+                    <div class="imgText">
+                        KODICE，是設計師Kiki的名字和意大利語CODICE密碼的結合，KODICE的设计打破了饰品和时装的界限，造就独特的设计理念「wearable accessory-将饰品穿上身」。
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/2.jpg">
+                    <div class="imgText">
+                        为无数知名品牌拍摄过大片的立陶宛超模Giedre Dukauskaite，在镜头前总能不受限制，诠释各种不同的风格，14秋冬，KODICE再次携手Giedre演绎「wearable accessory-将饰品穿上身」的独特设计理念。
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/3.jpg">
+                    <div class="imgText">
+                        14秋冬大片，由台湾知名时装摄影师屠树礼掌镜，携手专业造型团队，完美呈现KODICE「wearable accessory-将饰品穿上身」的设计理念，此次拍摄特别始用干净的背景，与纯粹的灰阶色调，让视觉焦点回到衣服饰品的精彩设计与精湛工艺上。
+                    </div>
+                </li>
+            </ul>
+            <a href="javascript:;" class="ui-icon icon-left z-move"></a>
+            <a href="javascript:;" class="ui-icon icon-right z-move"></a>
+        </div>
+        <a href="javascript:;" class="ui-icon icon-up running"></a>
+    </div>
+    <!-- 链接 -->
+    <div class="page" 
+    data-b="./img/3.jpg">
+        <div class="page-content page-link">
+            <div class="p-link animated flipInX" style="">
+                <a href="javascript:;" class="p-link-img p-wechat-pop">
+                    <img src="./img/logo.png"></a>
+            </div>
+        </div>
+        <a href="javascript:;" class="ui-icon icon-up running"></a>
+    </div>
+    <!-- 文本 -->
+    <div class="page" 
+    data-b="./img/4.jpg">
+        <div class="page-content">
+            <div class="p-text">
+                <p>hello，weichat</p>
+                <p>hello，weichat</p>
+                <p>hello，weichat</p>
+            </div>
+        </div>
+        <a href="javascript:;" class="ui-icon icon-up running"></a>
+    </div>
+    <!-- 联系我们 -->
+    <div class="page" 
+    data-b="./img/1.jpg?v=5">
+        <div class="page-content">
+            <div class="p-contact">
+                <p><span class="p-contact-label">email：</span><a href="mailto:server@jerei.com">server@jerei.com</a></p>
+                <p><span class="p-contact-label">地址：</span>莱山区同和路26号</p>
+            </div>
+        </div>
+        <a href="javascript:;" class="ui-icon icon-up running"></a>
+    </div>
+    <!-- 视频 -->
+    <div class="page" 
+    data-b="./img/2.jpg?v=6">
+        <div class="page-content page-video">
+            <a href="javascript:;" class="m-btnPlay bounceIn"> <i></i>
+                <div></div>
+            </a>
+            <div class="u-maskLayer m-youkuVideoLayer z-hide">
+                <div class="m-youkuVideo" data-devid="XNzU5ODQ0NzEy" data-src="http://v.youku.com/v_show/id_XNzU5ODQ0NzEy.html" id="videoBody_1"></div>
+            </div>
+        </div>
+        <div class="logo-bar">
+            <a href="###" class="p-wechat-pop">
+                <img src="./img/bar2.png"></a>
+        </div>
+    </div>
+    <!-- 自定义表单 -->
+    <div class="page"
+    data-b="./img/3.jpg?v=7">
+        <div class="page-content page-form">
+            <div class="p-form">
+                <h3 class="p-form-title">自定义表单标题</h3>
+                <p class="p-form-desc">自定义表单描述</p>
+                <ul>
+                    <li><label>姓名：</label><input type="text" name="user"></li>
+                    <li><label>部门：</label><input type="text" name="part"></li>
+                    <li><label>公司：</label><input type="text" name="corp"></li>
+                </ul>
+            </div>
+            <div class="p-form-submit">
+                <a>提交</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 分享画面 -->
+<div class="pop-wechat">
+    <a href="javascript:;"><img src="./img/share.png"></a>
+</div>
+<!-- 背景音乐 -->
+<a href="javascript:;" class="ui-music"> <i class="ui-icon icon-music"></i>
+    <!-- <audio data-src="musics/music.mp3" autoplay="autoplay" loop="loop"></audio> -->
+    <audio data-src="http://7xnt8z.com1.z0.glb.clouddn.com/sample.mp3" autoplay="autoplay" loop="loop"></audio>
+</a>
+<script src="./js/lib/modernizr.custom.js"></script>
+<script src="../static/modules/seajs/sea.js" id="seajsnode"></script>
+<script>
+//seajs配置
+seajs.root = '/frontend';
+seajs.config({
+    base: seajs.root + "/static/modules",
+    alias: {
+        "jquery"            : "jquery/2/jquery",
+        "validform"         : "validform/validform",
+        "webuploader"       : "webuploader/webuploader",
+        "upload"            : "upload/upload",
+        "My97DatePicker"    : "My97DatePicker/WdatePicker"
+    },
+    paths: {
+        "wei" : seajs.root + "/wei/js"
+    }
+})
+//微画册配置
+var whc = {
+    launch: 0,              // 启动画面
+    launchType: 100,        // 启动画面类型 100：擦除 | 101：开门 | 102：kiss
+    bgMusic: 1,             // 背景音乐
+    pageSwitch: 0,          // 切换效果见animation.css， 0 ~ 69 | 可以在.page上单独添加 pageSwitch 属性
+    shareDesc: '微画册描述',
+    shareTitle: '微画册标题',
+    shareImage: seajs.root + "/wei/img/logo.png"
+
+}
+</script>
+<script>
+//高屏识别
+var phoneProp = window.screen.width/window.screen.height;
+if(phoneProp<.57){
+    document.getElementsByTagName("body")[0].className += "highScreen";
+}
+
+seajs.use('wei/main');
+</script>
+</body>
+</html>
