@@ -2,12 +2,12 @@
 * seajs.config.pc
 */
 // 网站根路径
-seajs.root = ''; 
+seajs.root = '/frontend'; 
 
 seajs.config({
-	base: seajs.root + "/resources/modules",
+	base: seajs.root + "/static/modules",
 	paths: {
-		"js" : seajs.root + "/resources/web/js"
+		
 	},
 	alias: {
 		"audio"		     : "audio/audio",

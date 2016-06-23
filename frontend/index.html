@@ -6,11 +6,11 @@
   <title>Frontend</title>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <link href="../resources/ui/ui.css" rel="stylesheet" />
+  <link href="../static/ui/ui.css" rel="stylesheet" />
   <link href="./css/style.css" rel="stylesheet" />
   <link href="./lib/responsive.css" rel="stylesheet" />
   <link href="./resets/highlight/styles/github.css" rel="stylesheet" />
-  <link rel="icon" href="/resources/favicon.ico" >
+  <link rel="icon" href="/static/favicon.ico" >
   <!--[if lt IE 9]><script src="./lib/H5shiv.js"></script><![endif]-->
 </head>
 <body class="hasNav">
@@ -24,18 +24,18 @@
       <h4>定位</h4>
       <p> Frontend是面向展示型网站的前端开发框架，致力于提升前端开发效率，并保留最大的页面定制性，因此与“快速搭建”类框架有很大不同，框架css部分只包含复用性较强的基础组件，项目中如果有大量定制化样式，都需要开发者自己编写，这种设定主要为了便于风格化定制，但效率方面提升有限，因此框架另有一个配套的<a href="http://zangtao.org/WDP/" target="_blank">组件库</a>项目，提供自定义组件的开发、演示、调试等功能，可以有效弥补框架UI的缺失；框架js部分内置了一套基于<a href="http://seajs.org/docs/" target="_blank">Seajs</a> 的模块库，封装了很多展示型网站常用的功能/效果，对于js模块化增加请求数的问题，框架也内置了本地存储方案来解决。另外，为满足集群建站需求（一个主域名下多个子项目），框架支持多项目并行，各子项目资源独立，互不干扰。</p>
       <h4>目录结构</h4>
-      <p>整站前端代码都在<code>/resources/</code>目录下，<code>./modules/</code>和<code>./ui/</code>分别是模块库和UI，他们构成框架的主体，路径不可更改，其余文件夹均为独立的前端项目，路径可随意更改，其中<code>./web/</code>、<code>./phone/</code>和<code>./wei/</code>是内置的项目模板，分别用于响应式/PC网站、移动端网站、微画册。</p>
+      <p>整站前端代码都在<code>/static/</code>目录下，<code>./modules/</code>和<code>./ui/</code>分别是模块库和UI，他们构成框架的主体，路径不可更改，其余文件夹均为独立的前端项目，路径可随意更改，其中<code>./web/</code>、<code>./mobile/</code>和<code>./wei/</code>是内置的项目模板，分别用于响应式/PC网站、移动端网站、微画册。</p>
    <pre>
       <code class="javascript"> 
   |--Doc/                   //框架文档
-  |--resources/             //整站前端文件
+  |--static/             //前端静态文件
   |    |-- modules/            //js模块库
   |    |-- ui/                 //css、栅格、图标
-  |    |-- phone/              //移动端项目【模板】
-  |    |-- web/                //Pc、多终端项目【模板】
-  |    |-- wei/                //微画册【模板】
   |    `-- favicon.ico 
-  `--test/                 //文档演示用数据
+  |-- mobile/                //移动端项目【模板】
+  |-- wei/                  //微画册【模板】
+  |-- web/                  //Pc、多终端项目【模板】
+  `--test/                  //文档演示用数据
         </code>
   </pre>
       <h4>开发环境</h4>
@@ -44,7 +44,6 @@
          <li>开启目录浏览</li>
          <li>默认文档添加，如：<code>index.html</code>（按需）</li>
          <li>MIME类型添加，常用：<code>json=application/json</code>，<code>woff=application/x-font-woff</code></li>
-         <li>设置http重定向，如：<code>/resources/web/</code>(按需)</li>
       </ol>
       <h4>开发规范</h4>
       <p>另见<a href="rule.html" target="_blank">开发规范(未完成)</a></p>
@@ -53,25 +52,25 @@
       <p>点这里<a href="http://git.oschina.net/tower1229/frontend/repository/archive/master" target="_self">直接下载</a></p>
       <h3 id="getStart">使用</h3>
       <h4>快速开始</h4>
-      <p>1. 拷贝<code>resources/</code>文件夹到项目根目录下，删掉文档和不需要的模板文件，得到如下目录结构</p>
+      <p>1. 拷贝<code>static/</code>文件夹和对应的模板文件夹，得到如下目录结构</p>
       <pre>
       <code class="javascript">    
-  resources/
-    |-- modules/
-    |-- ui/
-    |-- web/
-    |    |-- css/
-    |    |-- img/
-    |    |-- js/
-    |    |-- lib/
-    |    |-- index.html                      //空模板
-    |    |-- fullpage.html                   //整屏滚动模板
-    |    |-- index-p1.html&amp;index-p2.html  //PJAX模式模板及演示demo
-    |    `-- seajs.config.js                //seajs配置文件
-    `-- favicon.ico 
+  |--static/
+  |    |-- modules/
+  |    |-- ui/
+  |    `-- favicon.ico 
+  |-- web/
+       |-- css/
+       |-- img/
+       |-- js/
+       |-- lib/
+       |-- index.html                      //空模板
+       |-- fullpage.html                   //整屏滚动模板
+       |-- index-p1.html&amp;index-p2.html  //PJAX模式模板及演示demo
+       `-- seajs.config.js                //seajs配置文件
         </code>
     </pre>
-    <p>2. 配置本地服务，访问 <a href="http://localhost/resources/web/index.html" target="_blank">http://localhost/resources/web/index.html</a></p>
+    <p>2. 配置本地服务，访问 <a href="http://localhost/web/index.html" target="_blank">http://localhost/web/index.html</a></p>
     <h4>其他配置</h4>
     <p>每个项目根目录下都有一个<code>seajs.config.js</code>文件，这里包含seajs运行相关的所有配置，以下简称配置文件。</p>
     <h5>网站根路径</h5>
@@ -314,7 +313,7 @@
      </code>
    </pre>
    <h5>基于less生成</h5>
-   <p> 栅格系统less文件<code>/resources/ui/grid.less</code>，配置网格总数和间距将生成不同的栅格，最多支持24列： </p>
+   <p> 栅格系统less文件<code>/static/ui/grid.less</code>，配置网格总数和间距将生成不同的栅格，最多支持24列： </p>
    <table class="table table-hover">
       <tr>
          <td>@gridColumns</td>
@@ -335,7 +334,7 @@
    </table>
 
    <h4>flex栅格</h4>
-   <p><code>/resources/phone/css/style.css</code> 转为移动端内置flex栅格，沿用流式栅格系统的命名风格，解决flex三代规范演变带来的兼容问题。</p>
+   <p><code>/mobile/css/style.css</code> 转为移动端内置flex栅格，沿用流式栅格系统的命名风格，解决flex三代规范演变带来的兼容问题。</p>
    <table class="table table-hover">
       <tr>
          <td>.flex-col</td>
@@ -425,7 +424,7 @@
       <h4>Js三层结构</h4>
       <p>通常网站Js脚本可以分为 <strong>base</strong> + <strong>module</strong> + <strong>app</strong> 三层：</p>
       <p>base层提供更易用的语法和工具来简化开发，例如jquery，框架另外增加了base.js提供更多基础功能；</p>
-      <p>module是对特定功能的封装，如轮显效果、视频播放器，日期选择器，表单验证器等等，<code>/resources/modules/</code>里除了jquery、base和seajs以外，几乎全部都是已经封装的模块文件，涵盖了绝大部分建站常用效果；</p>
+      <p>module是对特定功能的封装，如轮显效果、视频播放器，日期选择器，表单验证器等等，<code>/static/modules/</code>里除了jquery、base和seajs以外，几乎全部都是已经封装的模块文件，涵盖了绝大部分建站常用效果；</p>
       <p>app是基于base和modules实现的具体页面脚本，每个页面都有一个对应的js文件放在项目内<code>app/</code>文件夹中，便于后期维护，<code>app/</code>里还有一个<code>common.js</code>用于管理整站通用代码。</p>
       <p>框架重点对base和module这两层做了封装，使开发者能基于这些封装快速、简单的实现页面，关于模块化开发的其他资料可以参考：<a href="https://github.com/seajs/seajs/issues/547" target="_blank">前端模块化开发的价值</a> <a href="https://github.com/seajs/seajs/issues/266" target="_blank">SeajsAPI快速参考</a></p>
       <h4>如何使用未模块化的js文件</h4>
@@ -1280,7 +1279,7 @@
   var player = videojs('really-cool-video', {
     width: 640,
     height: 264,
-    poster: '/resources/web/img/apple-touch-icon.png',
+    poster: seajs.root + '/web/img/apple-touch-icon.png',
     controls:true,
     autoplay:true,
     preload:'auto'
@@ -4290,7 +4289,7 @@ always: null            // complete function(done|fail)
   */
 
   // 当前url
-  http://localhost:8001/resources/web/pro-list.htm?cat_id=2643
+  http://localhost:8001/web/pro-list.htm?cat_id=2643
 
   // js
   console.log(base.getUrlParam('cat_id'));                // 输出 2643
@@ -4766,7 +4765,7 @@ Acknowledgements : seajs \ bootstrap \ foundation \ ... </p>
 </div>
 </footer>
 </body>
-<script src="../resources/modules/seajs/sea.js" id="seajs-node"></script>
+<script src="../static/modules/seajs/sea.js" id="seajs-node"></script>
 <script src="./seajs.config.js"></script>
 <script>
 seajs.use('./resets/doc')

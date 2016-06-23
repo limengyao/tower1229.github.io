@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>组件化</title>
-    <link href="/resources/Doc/css/style.css" rel="stylesheet" />
-    <link href="/resources/Doc/lib/responsive.css" rel="stylesheet" />
-    <!--[if lt IE 9]><script src="/resources/Doc/lib/H5shiv.js"></script><![endif]-->
+    <link href="../Doc/css/style.css" rel="stylesheet" />
+    <link href="../Doc/lib/responsive.css" rel="stylesheet" />
+    <!--[if lt IE 9]><script src="../Doc/lib/H5shiv.js"></script><![endif]-->
 </head>
 
 <body class="hasNav">
@@ -48,7 +48,7 @@
     |   `-- index.htm
     |--test/ 
     `--fis-conf.js 
-  resources/                            //前端部署目录（提交svn）
+  static/                            //前端部署目录（提交svn）
     |--modules/
     |--pkg/                                 
     |--web/
@@ -139,7 +139,7 @@
         <h4>fis-config.js</h4>
         <p>编译配置文件，编译中可以监听到配置文件变化，但是在下次运行pure release 命令之前不会生效。</p>
         <h4>部署目录</h4>
-        <p>最终发布出来的部署目录是与工程目录同级的resources/文件夹，内部包括modules/、pkg/、web/、widget/、map.json，打包后的js和css文件在pkg/中并自动在模板中引用，map.json是编译系统生成的静态资源表，包含项目中每一个资源文件的地址和依赖信息，用于后端做按需加载或资源使用量统计等。</p>
+        <p>最终发布出来的部署目录是与工程目录同级的static/文件夹，内部包括modules/、pkg/、web/、widget/、map.json，打包后的js和css文件在pkg/中并自动在模板中引用，map.json是编译系统生成的静态资源表，包含项目中每一个资源文件的地址和依赖信息，用于后端做按需加载或资源使用量统计等。</p>
         <h3 id="function-tools">css类</h3>
         <p>面向对象的css组织方式鼓励建立重用类库，像模块化框架中的style.css包含的common部分，重用类分两种：</p>
         <p>一种是工具类，可以直接完成一项特定任务，比如mt20等于margin-top:20px，工具类的意义是减少css代码量，缺点是功能往往很弱、增加HTML代码量、降低css维护性，改善维护性的方法是将样式值抽象，例如"mt-normal"，这种就可以方便的在样式表中修改样式值而不需要动HTML文件，但在面向展现的项目中需要更强的需求分析能力，一旦需求变化超出预期就会因为复杂的重用关系无法直接修改工具类，变的更难维护；<p>
@@ -272,10 +272,10 @@
         </div>
     </footer>
 </body>
-<script src="/resources/modules/seajs/sea.js" id="seajs-node"></script>
-<script src="/resources/Doc/seajs.config.js"></script>
+<script src="../static/modules/seajs/sea.js" id="seajs-node"></script>
+<script src="../Doc/seajs.config.js"></script>
 <script>
-seajs.use('/resources/Doc/resets/doc')
+seajs.use('../Doc/resets/doc')
 </script>
 
 </html>
