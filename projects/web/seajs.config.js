@@ -3,7 +3,7 @@
 */
 seajs.develop = true;
 // 模块根路径
-seajs.root = seajs.develop ? '/frontend' : ''; 
+seajs.root = seajs.develop ? '/projects' : ''; 
 // api管理
 seajs.api = {
 	test: seajs.develop ? '/d' : '/p'
