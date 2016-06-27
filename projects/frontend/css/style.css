@@ -50,7 +50,8 @@
 
 /* 设置 */
 body{font-size:16px; line-height: 1.6; color: #4d4e53;background: #fff;
-font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;}
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+overflow-x: hidden;}
 .wrap { max-width: 1000px; margin-right: auto; margin-left: auto; *width: 1000px;}
 a{color: inherit;}
 a:hover { color: #39f;}
@@ -109,7 +110,6 @@ pre{
 	border-radius: 5px;
 	width:90%;
 	max-width: 900px;
-	overflow: hidden;
 	*zoom:1;
 }
 .js-base-table pre{max-width: 700px;}

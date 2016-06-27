@@ -4367,17 +4367,18 @@ always: null            // complete function(done|fail)
          </td>
       </tr>
       <tr id="base-getScript">
-        <td>base.getScript(file, callabck, [option])</td>
+        <td>base.getScript(file, [callabck], [option])</td>
         <td>
           <p>加载未模块化的普通js文件，可控制jquery依赖、指定css依赖、添加回调，支持批量加载及批量线性依赖加载。</p>
           <pre>
             <code>
   /*
-  * @file:(string/array) 加载的js路径，规则与require/require.async相同，支持数组
-  * @callabck(function): 回调，接收2个参数：js文本内容、返回状态，批量加载的回调将返回数组最后一个js的信息
-  * @option.css(boolean/string): 依赖css，默认false，true将加载同名同级css，字符串将作为css路径加载
-  * @option.jquery(boolean): 是否依赖jquery，可以将封装jquery对象挂载到window上，默认false
-  * @option.rely(boolen): 批量加载是否线性依赖，既依次请求，默认false，将同时请求
+  * @file:(string/array) 加载的js路径，规则与require/require.async方法相同
+  * @callabck(function): 加载完成的回调，接收加载的js文本和返回状态，批量加载只返回最后一个js文本
+  * @option(object): 若callback是object格式将被作为option使用
+  * @option.css(boolean/string): 是否同事加载依赖css，默认false，<br>传入true将加载同名同级css文件，传入路径字符串将加载该指定css文件
+  * @option.jquery(boolean): 被加载脚本是否依赖jquery，默认false
+  * @option.rely(boolen): 批量加载的js是否保持线性顺序，默认false，将同时请求
   */
   //利用线性加载特定版本jquery的例子
   base.getScript(['http://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js', '/test/test2'], function(data) {

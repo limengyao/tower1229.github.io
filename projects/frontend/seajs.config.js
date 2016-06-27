@@ -2,7 +2,7 @@
 * seajs.config.pc
 */
 // 网站根路径
-seajs.root = '/projects'; 
+seajs.root = '/frontend'; 
 
 seajs.config({
 	base: seajs.root + "/static/modules",
