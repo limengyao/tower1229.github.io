@@ -49,6 +49,7 @@ border-right: 1px solid #ccc;color:#aaa;width: 0;overflow: hidden;-webkit-transi
 .filter{margin-bottom: 40px;}
 #configCode{height: 100px;resize:none;border-style: dashed;line-height: 1.7;
 font-family: 'Consolas', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, Helvetica, sans-serif;}
+.tagWrap .btn{margin-bottom: .5em;}
 /*组件列表*/
 .widget-list {position: relative; min-height: 300px;}
 .widget-list li{margin-bottom:30px;cursor: pointer;}

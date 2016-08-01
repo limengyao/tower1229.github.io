@@ -2,10 +2,10 @@
 * seajs.config.pc
 */
 // 网站根路径
-seajs.root = ''; 
+seajs.root = '/projects'; 
 
 seajs.config({
-	base: seajs.root + "/resources/modules",
+	base: seajs.root + "/static/modules",
 	paths: {
 		"js" : seajs.root + "/WDP/app"
 	},
