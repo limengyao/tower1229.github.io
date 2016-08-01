@@ -1,8 +1,8 @@
 /*
  * name: slide.js
- * version: v4.1.5
- * update: .slide_nav样式微调
- * date: 2016-06-20
+ * version: v4.1.8
+ * update: wrap默认找第一个匹配元素
+ * date: 2016-06-27
  */
 define('slide', function(require, exports, module) {
     seajs.importStyle('.slide{display:block;position:relative;overflow:hidden}\
@@ -14,7 +14,7 @@ define('slide', function(require, exports, module) {
         .slide_effect_slide .slide_prev{left:0;display:block}\
         .slide_effect_slide .slide_next{left:auto;right:0;display:block}\
         .slide_nav{position:absolute;z-index:8}\
-        .slide .arrs{position:absolute;cursor:pointer;z-index:9;display:none;-webkit-user-select:none;user-select:none}\
+        .slide .arrs{position:absolute;cursor:pointer;z-index:9;-webkit-user-select:none;user-select:none}\
         .arrs.unable{cursor:default}', module.uri);
     var $ = require('jquery'),
         base = require('base'),
@@ -45,7 +45,7 @@ define('slide', function(require, exports, module) {
         return $(this).each(function(i, e) {
             var $this = $(e),
                 opt = $.extend({}, def, config || {}),
-                $wrap = $this.find(opt.wrap),
+                $wrap = $this.find(opt.wrap).eq(0),
                 $cell = $wrap.find(opt.cell),
                 count = $cell.length,
                 timer,
@@ -75,11 +75,19 @@ define('slide', function(require, exports, module) {
                         .eq(current).addClass('on')
                         .end().eq(_prev).addClass("nav_prev")
                         .end().eq(_next).addClass("nav_next");
-                };
+                },H;
+            if ($this.css('height').indexOf('%') > 0) {
+                H = parseInt($this.parent().css('height')) * ($this.css('height').split('%')[0] / 100);
+            } else {
+                H = parseInt($this.outerHeight());
+            };
             //运行条件检测
             if (count <= 1) {
                 $this.addClass('unable');
-                $cell.unbind()._loadimg(opt.imgattr).show();
+                $wrap.css({
+                    'height': H
+                }).addClass('slide_wrap');
+                $cell.unbind().addClass('slide_c')._loadimg(opt.imgattr).show();
                 typeof(opt.callback) === 'function' && opt.callback($this, $cell, origin);
                 typeof(opt.ext) === 'function' && opt.ext($this, $cell, count);
                 return $this
@@ -90,14 +98,8 @@ define('slide', function(require, exports, module) {
             $this.addClass('slide slide_effect_' + opt.effect);
             //初始化
             (function() {
-                var _Target, _Direction, _Distance, _touchAction, H;
+                var _Target, _Direction, _Distance, _touchAction;
                 init = function() {
-                    if ($this.css('height').indexOf('%') > 0) {
-                        H = parseInt($this.parent().css('height')) * ($this.css('height').split('%')[0] / 100);
-                    } else {
-                        H = parseInt($this.outerHeight());
-                    };
-
                     if (opt.effect === 'slide') {
                         var touchStart,
                             _distance,
@@ -210,9 +212,7 @@ define('slide', function(require, exports, module) {
                         _prev = getPrev(current, _step),
                         _next = getNext(current, _step),
                         toggleCellClass = function(){
-                            $cell.removeClass('active slide_prev slide_next')
-                            .eq(_prev).addClass("slide_prev")
-                            .end().eq(_next).addClass("slide_next");
+                            $cell.removeClass('active').eq(current)._loadimg(opt.imgattr).addClass('active');
                         };
                     windowLock = true;
                     setNavs(current,step);
@@ -230,22 +230,19 @@ define('slide', function(require, exports, module) {
                             break;
                         case 'toggle':
                             toggleCellClass();
-                            $cell.eq(current)._loadimg(opt.imgattr).addClass('active');
                             break;
                         case 'slide':
                             direct == void(0) && (direct = true);
-                            var wrap_move = direct ? -_Distance * 2 : 0;
+                            var wrap_move = direct ? -_Distance * 2 : 0,
+                                targetClass = direct ? 'slide_next' : 'slide_prev';
                             if (isInit) {
                                 toggleCellClass();
-                                $cell.eq(current)
-                                ._loadimg(opt.imgattr)
-                                .addClass('active');
                             }else{
+                                $cell.removeClass('slide_prev slide_next').eq(current).addClass(targetClass);
                                 $wrap.css('transition', 'all ' + opt.duration + 'ms ' + opt.animate)._css(_Direction, wrap_move + 'px');
                                 setTimeout(function() {
                                     $wrap.css('transition', 'all 0s')._css(_Direction, -_Distance + 'px');
                                     toggleCellClass();
-                                    $cell.eq(current)._loadimg(opt.imgattr).addClass('active');
                                 }, opt.duration); 
                             };
                             break;

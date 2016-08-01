@@ -1,14 +1,14 @@
 /*
  * name: album.js
- * version: v2.2.9
+ * version: v2.2.10
  * update: 匹配slideV4
- * date: 2016-04-26
+ * date: 2016-06-27
  */
 define('album', function(require, exports, module) {
 	var $ = require('jquery');
 	seajs.importStyle('.album_ordinary,.album_wrap{width:100%;height:100%}\
 		.album_wrap{position:fixed!important;left:0;top:0;z-index:98;background:rgba(0,0,0,.8);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#99000000", endColorstr="#99000000")}\
-		.album_ordinary .slide_c{float:none;width:100%;margin-right:0;text-align:center}\
+		.album_ordinary .slide_c{text-align:center}\
 		.album_ordinary .slide_c img{vertical-align:middle;width:auto;max-height:100%}\
 		.album_ordinary .slide_c p{position:absolute;left:0;bottom:80px;width:100%;line-height:22px;color:#fff;font-size:16px}\
 		.album_ordinary .album_btns { position:absolute;z-index:99;}\

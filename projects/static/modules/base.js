@@ -1,8 +1,8 @@
 /*
  * name: base
- * version: 2.13.4
- * update: getScript线性加载css报错bug
- * date: 2016-05-26
+ * version: 2.13.5
+ * update: getScript支持第二个参数格式判定
+ * date: 2016-06-27
  */
 define('base', function(require, exports, module) {
 	'use strict';
@@ -403,7 +403,7 @@ define('base', function(require, exports, module) {
 					jquery: false,
 					rely: false
 				},
-				opt = $.extend({}, def, option || {}),
+				opt = $.extend({}, def, $.isPlainObject(callback) ? callback : option || {}),
 				loadScript = function(road, hold){
 					/*
 					@road:请求url
@@ -441,6 +441,7 @@ define('base', function(require, exports, module) {
 								window.$ = $;
 								window.jQuery = $;
 							};
+
 							script.type = "text/javascript";
 		                    script.onload = scriptOnload
 		                    script.onerror = errorCallback;

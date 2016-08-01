@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>Icons</title>
+<meta content="图标库" name="Keywords">
+<meta content="图标库" name="Description">
+<link rel="icon" href="../static/favicon.ico" >
+<meta name="format-detection" content="telephone=no">
+<link href="../static/css/grid.css" rel="stylesheet" />
+<link href="../static/css/ui.css" rel="stylesheet" />
+<link href="./css/style.css" rel="stylesheet" />
+<!--[if lt IE 9]><script src="./lib/H5shiv.js"></script><![endif]-->
+</head>
+<body>
+<header class="icon-head">
+	<div class="wrap fix">
+		<!-- <h1 class="logo"><a href="/"><img src="./images/logo.png" alt=""></a></h1> -->
+        <h1>图标库(ICON)</h1>
+        <p class="help"><a href="http://zangtao.org/projects/frontend/#css-icon" target="blank">使用帮助?</a></p>
+    </div>
+</header>
+
+<p class="search">
+    <input id="search" type="search" placeholder="Search">
+    <i class="ion-ios-search"></i>
+</p>
+<ul id="icons" class="demo fix light">
+	<!-- view -->
+</ul>
+
+<div class="hide boxToView tc">
+	<div style="height:110px">
+	<div id="mycanvas"></div>
+	</div>
+    <form class="pannel">
+        <div class="form-group row">
+        	<label class="span-2" for="filt_size">Size:</label>
+        	<div class="span-7">
+        		<input type="range" min="12" max="96" id="filt_size" data-code="48">
+        	</div>
+        	<div class="span-3">
+        		<input type="text" id="size_val" disabled>
+        		<label for="size_val">px</label>
+        	</div>
+        </div>
+        <div class="form-group row">
+        	<div class="span-2">
+        		<label for="filt_color">Color:</label>
+        	</div>
+        	<div class="span-3">
+        		<input type="color" id="filt_color" >
+        	</div>
+        </div>
+    </form>
+    <div class="acts">
+    	<button id="_download">下载PNG</button>
+    </div>
+</div>
+
+<dl class="quicklink">
+    <dd title="建议">
+        <a href="http://git.oschina.net/tower1229/Icons/issues" target="_blank">
+            <i class="ion">&#xe6dd;</i>
+        </a>
+    </dd>
+    <dd class="gotop" title="搜索">
+        <i class="ion">&#xe66c;</i>
+    </dd>
+</dl>
+<footer class="foot">
+    <div>
+        <p>© 2014 - 3014&emsp;Powered By <a href="http://zangtao.org/projects/frontend/" target="_blank">Frontend</a> </p>
+    </div>
+</footer>
+
+<script src="./lib/html2canvas.js"></script>
+<script src="./lib/canvas2bolb.js"></script>
+<script src="../static/modules/seajs/sea.js" id="seajsnode" ></script>
+<script src="./seajs.config.js"></script>
+<!-- <script src="../static/??modules/seajs/sea.js,modules/seajs/seajs-combo.js,web/seajs.config.js"></script> -->
+<script>seajs.use('./app/index')</script>
+</body>
+</html>

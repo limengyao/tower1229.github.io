@@ -6,7 +6,7 @@
   <title>Frontend</title>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <link href="../static/ui/ui.css" rel="stylesheet" />
+  <link href="../static/css/ui.css" rel="stylesheet" />
   <link href="./css/style.css" rel="stylesheet" />
   <link href="./lib/responsive.css" rel="stylesheet" />
   <link href="./resets/highlight/styles/github.css" rel="stylesheet" />
@@ -15,67 +15,56 @@
 </head>
 <body class="hasNav">
   <header>
-   <h1>Frontend <small>前端开发框架</small></h1>
+   <h1>Frontend <small>开发框架</small></h1>
   </header>
    <nav class="wrap nav" id="nav">导航生成中...</nav>
    <section class="wrap" id="overall">
       <h2>关于</h2>
       <h3 id="overall-intro">概述</h3>
-      <h4>定位</h4>
-      <p> Frontend是面向展示型网站的前端开发框架，致力于提升前端开发效率，并保留最大的页面定制性，因此与“快速搭建”类框架有很大不同，框架css部分只包含复用性较强的基础组件，项目中如果有大量定制化样式，都需要开发者自己编写，这种设定主要为了便于风格化定制，但效率方面提升有限，因此框架另有一个配套的<a href="http://zangtao.org/WDP/" target="_blank">组件库</a>项目，提供自定义组件的开发、演示、调试等功能，可以有效弥补框架UI的缺失；框架js部分内置了一套基于<a href="http://seajs.org/docs/" target="_blank">Seajs</a> 的模块库，封装了很多展示型网站常用的功能/效果，对于js模块化增加请求数的问题，框架也内置了本地存储方案来解决。另外，为满足集群建站需求（一个主域名下多个子项目），框架支持多项目并行，各子项目资源独立，互不干扰。</p>
+      <p> Frontend是一套致力于提高展示型网站开发效率的前端开发框架，提供常用基础CSS组件、基于<a href="http://seajs.org/docs/" target="_blank">Seajs</a> 的JS模块化方案、常用JS模块库，以及前端常见业务场景的系统解决方案。另外，为满足集群建站需求（一个主域名下多个子项目），框架从结构上将静态资源拆分为框架部分和项目部分，从而支持多项目并行。</p>
+      <p>另有一个配套的<a href="http://zangtao.org/WDP/" target="_blank">组件开发平台</a>项目，提供基于Frontend的组件开发、演示、调试等功能，用以建立企业内部前端组件库。</p>
+      <h4>兼容性</h4>
+      Frontend兼容IE7及以上版本浏览器（IE7可能有部分不影响功能的视觉误差）。
       <h4>目录结构</h4>
-      <p>整站前端代码都在<code>/static/</code>目录下，<code>./modules/</code>和<code>./ui/</code>分别是模块库和UI，他们构成框架的主体，路径不可更改，其余文件夹均为独立的前端项目，路径可随意更改，其中<code>./web/</code>、<code>./mobile/</code>和<code>./wei/</code>是内置的项目模板，分别用于响应式/PC网站、移动端网站、微画册。</p>
+      <p><code>/static/</code>是框架资源，其余文件夹均为独立的前端项目，其中<code>./web/</code>、<code>./mobile/</code>和<code>./wei/</code>是内置的项目模板，分别用于响应式/PC网站、移动端网站、微画册。</p>
    <pre>
       <code class="javascript"> 
-  |--Doc/                   //框架文档
-  |--static/             //前端静态文件
-  |    |-- modules/            //js模块库
-  |    |-- ui/                 //css、栅格、图标
+  |--Doc/                //框架文档
+  |--static/             //框架资源
+  |    |-- modules/
+  |    |-- css/
+       |-- font/
   |    `-- favicon.ico 
-  |-- mobile/                //移动端项目【模板】
-  |-- wei/                  //微画册【模板】
-  |-- web/                  //Pc、多终端项目【模板】
-  `--test/                  //文档演示用数据
+  |-- mobile/            //移动端【模板】
+  |-- wei/               //微画册【模板】
+  |-- web/               //响应式【模板】
+  `--test/               //前端测试数据
         </code>
   </pre>
-      <h4>开发环境</h4>
-      <p>框架默认采用绝对路径，开发中需要配置服务器环境，以IIS为例，建立站点后需要填写名称、网站文件地址、端口号，并检查以下设置：</p>
-      <ol>
-         <li>开启目录浏览</li>
-         <li>默认文档添加，如：<code>index.html</code>（按需）</li>
-         <li>MIME类型添加，常用：<code>json=application/json</code>，<code>woff=application/x-font-woff</code></li>
-      </ol>
-      <h4>开发规范</h4>
-      <p>另见<a href="rule.html" target="_blank">开发规范(未完成)</a></p>
-      <h3 id="download">下载</h3>
+      <h3 id="getStart">使用</h3>
+      <h4 id="download">下载</h4>
       <p>Git@OSC：<a href="http://git.oschina.net/tower1229/frontend" target="_blank">http://git.oschina.net/tower1229/frontend</a></p>
       <p>点这里<a href="http://git.oschina.net/tower1229/frontend/repository/archive/master" target="_self">直接下载</a></p>
-      <h3 id="getStart">使用</h3>
       <h4>快速开始</h4>
       <p>1. 拷贝<code>static/</code>文件夹和对应的模板文件夹，得到如下目录结构</p>
       <pre>
-      <code class="javascript">    
-  |--static/
-  |    |-- modules/
-  |    |-- ui/
-  |    `-- favicon.ico 
-  |-- web/
-       |-- css/
-       |-- img/
-       |-- js/
-       |-- lib/
-       |-- index.html                      //空模板
-       |-- fullpage.html                   //整屏滚动模板
-       |-- index-p1.html&amp;index-p2.html  //PJAX模式模板及演示demo
-       `-- seajs.config.js                //seajs配置文件
-        </code>
-    </pre>
-    <p>2. 配置本地服务，访问 <a href="http://localhost/web/index.html" target="_blank">http://localhost/web/index.html</a></p>
-    <h4>其他配置</h4>
-    <p>每个项目根目录下都有一个<code>seajs.config.js</code>文件，这里包含seajs运行相关的所有配置，以下简称配置文件。</p>
-    <h5>网站根路径</h5>
-    <p><code>seajs.root</code>定义了seajs加载的起始路径，这个路径决定了所有js文件能否正确加载，默认空，即网站根路径。假设一个网站有一个英文版本，访问域名是中文版域名+"/en"，这时英文站的配置文件中就要修改<code>seajs.root</code>为<code>/en</code>，否则按默认会从根路径加载，加载到的其实是中文站的js文件。</p>
-
+        <code class="javascript">    
+    |--static/
+    |-- web/
+         |-- css/
+         |-- img/
+         |-- js/
+         |-- lib/
+         |-- index.html                      //空模板
+         |-- fullpage.html                   //整屏滚动模板
+         |-- index-p1.html&amp;index-p2.html    //PJAX模式模板及演示demo
+         `-- seajs.config.js                //seajs配置文件
+          </code>
+      </pre>
+      <p>2. 配置网站根路径，每个子项目都有一个<code>seajs.config.js</code>文件，这里包含seajs运行及框架所需的所有配置，其中<code>seajs.root</code>定义了seajs加载的起始路径，这个路径决定了所有模块化的js文件能否正确加载，默认空，即从网站根路径开始查找，假设一个网站有英文版本，访问地址是域名+"/en"，这时英文站的配置文件中就要修改<code>seajs.root</code>为<code>/en</code>，否则按默认会从根路径加载，加载到的其实是中文站的js文件。</p>
+      <p>3. 启动本地服务，访问 <a href="http://localhost/web/index.html" target="_blank">http://localhost/web/index.html</a></p>
+      <h4>开发规范</h4>
+      <p>另见<a href="rule.html" target="_blank">开发规范(未完成)</a></p>
    </section>
    <section class="wrap" id="css">
      <h2>CSS</h2>
@@ -169,9 +158,9 @@
      <p><code>.wrap</code>是框架通用容器类，相当于Bootstrap中的<code>.container</code>，其默认宽度自适应，最大宽度1000px，在移动端左右两边各有2%的间距。</p>
 
      <h4>栅格系统</h4>
-     <p>兼容IE7+的响应式栅格系统，栅格包裹类名<code>row</code>，pc端栅格类名<code>span-number</code>，中屏栅格类名<code>midd-number</code>，小屏栅格类名<code>smal-number</code>，内置12列、24列、12和20混合三套栅格，栅格的响应点设置见【<a href="#CrossTerminal">多终端</a>】。</p>
+     <p>兼容IE7+的响应式栅格系统，栅格包裹类名<code>row</code>，pc端栅格类名<code>span-number</code>，中屏栅格类名<code>midd-number</code>，小屏栅格类名<code>smal-number</code>，内置12列、20列、12和20混合三套栅格，栅格的响应点设置见【<a href="#CrossTerminal">多终端</a>】。</p>
      <p>使用混合栅格（grid12_20.css）时默认<code>.row</code>代表12列栅格，<code>.row-20</code>代表20列，20列栅格的工具类都需要加上'-20'后缀，如<code>center-20</code>。</p>
-     <p>基于栅格系统的【<a href="http://192.168.0.10:1003/" target="_blank">可视化布局工具</a>】</p>
+
      <h5>基础栅格</h5>
      <pre>
         <code>
@@ -313,7 +302,7 @@
      </code>
    </pre>
    <h5>基于less生成</h5>
-   <p> 栅格系统less文件<code>/static/ui/grid.less</code>，配置网格总数和间距将生成不同的栅格，最多支持24列： </p>
+   <p> 栅格系统less文件<code>/static/css/grid.less</code>，配置网格总数和间距将生成不同的栅格，最多支持24列： </p>
    <table class="table table-hover">
       <tr>
          <td>@gridColumns</td>
@@ -334,7 +323,7 @@
    </table>
 
    <h4>flex栅格</h4>
-   <p><code>/mobile/css/style.css</code> 转为移动端内置flex栅格，沿用流式栅格系统的命名风格，解决flex三代规范演变带来的兼容问题。</p>
+   <p><code>/mobile/css/style.css</code> 专为移动端内置flex栅格，沿用流式栅格系统的命名风格，解决flex三代规范演变带来的兼容问题。</p>
    <table class="table table-hover">
       <tr>
          <td>.flex-col</td>
@@ -385,11 +374,9 @@
   &lt;/div&gt;
          </code>
     </pre>
-
-    <h3 id="css-widget">组件</h3>
-    <h4 id="css-icon">字体图标</h4>
-    <h5>使用</h5>
-    <p>UI自带图标基于开源图标<a href="http://ionicons.com/" target="_blank">ionicons</a>创建，图标类名改为"<code>.ion</code>"，为兼容IE7去掉了FontClass支持，只能用Unicode定义图标，如：</p>
+    <h3 id="css-icon">图标</h3>
+    <p>内置字体图标库基于<a href="http://ionicons.com/" target="_blank">ionicons</a>创建，图标类名改为"<code>.ion</code>"，为兼容IE7去掉了FontClass支持，只能用Unicode定义图标，借助<a href="http://www.iconfont.cn/" target="_blank">阿里巴巴矢量图标库</a>管理图标。</p>
+    <h4>示例</h4>
     <pre>
       <code>
   <i class="ion">&#xe64b;</i>:&lt;i class=&quot;ion&quot;&gt;&amp;#xe64b;&lt;/i&gt;
@@ -397,17 +384,11 @@
   <i class="ion">&#xe733;</i>:&lt;i class=&quot;ion&quot;&gt;&amp;#xe733;&lt;/i&gt;
       </code>
     </pre>
-    <h5>图标库</h5>
-    <p>为方便图标应用而创建的<a href="http://zangtao.org/Icon/" target="_blank">图标库</a>项目，提供图标检索、获取Unicode、PNG定制、PNG下载功能</p>
-    <p>面向设计师的PNG定制功能，可以实现图标大小和颜色调节，并在线生成PNG图片下载（不支持IE）</p>
-    <p>大部分功能都集成在图标右键菜单中，单击图标也可以快速选中图标Unicode，按“<code>Ctrl + C</code>”即可复制</p>
-    <h5>图标管理</h5>
-    <p>借助<a href="http://www.iconfont.cn/" target="_blank">阿里巴巴矢量图标库</a>管理图标，实现图标应用项目的增删改，并获取打包后的图标字体及Unicode</p>
+    <h4>图标库</h4>
+    <p>为方便图标使用而创建的<a href="http://zangtao.org/projects/icons/" target="_blank">图标库</a>项目，提供图标检索、获取Unicode、PNG定制、PNG下载功能。</p>
+    <p>大部分功能都集成在图标右键菜单中，单击图标也可以快速选中图标Unicode，直接按“<code>Ctrl + C</code>”即可复制，PNG定制功能，可以实现图标大小和颜色调节，并在线生成PNG图片下载（不支持IE）。</p>
 
-    <h4>css3动画</h4>
-    <p> <b>.rotation</b> 旋转，示例见【普通风格-同步】</p>
-    <p> <b>.heartbeat</b> 心跳，示例见【普通风格-心】</p>
-    <p> <b>.trigger</b> 触动，示例见【普通风格-关闭】</p>
+    <h3 id="css-widget">组件</h3>
     <h4>等比填充</h4>
     <p>...</p>
     <h4>表格</h4>
@@ -420,21 +401,17 @@
    </section>
    <section class="wrap" id="js">
       <h2>Javascript</h2>
-      <h3 id="js-seajs">概述</h3>
-      <h4>Js三层结构</h4>
-      <p>通常网站Js脚本可以分为 <strong>base</strong> + <strong>module</strong> + <strong>app</strong> 三层：</p>
-      <p>base层提供更易用的语法和工具来简化开发，例如jquery，框架另外增加了base.js提供更多基础功能；</p>
-      <p>module是对特定功能的封装，如轮显效果、视频播放器，日期选择器，表单验证器等等，<code>/static/modules/</code>里除了jquery、base和seajs以外，几乎全部都是已经封装的模块文件，涵盖了绝大部分建站常用效果；</p>
-      <p>app是基于base和modules实现的具体页面脚本，每个页面都有一个对应的js文件放在项目内<code>app/</code>文件夹中，便于后期维护，<code>app/</code>里还有一个<code>common.js</code>用于管理整站通用代码。</p>
-      <p>框架重点对base和module这两层做了封装，使开发者能基于这些封装快速、简单的实现页面，关于模块化开发的其他资料可以参考：<a href="https://github.com/seajs/seajs/issues/547" target="_blank">前端模块化开发的价值</a> <a href="https://github.com/seajs/seajs/issues/266" target="_blank">SeajsAPI快速参考</a></p>
-      <h4>如何使用未模块化的js文件</h4>
-       <h5>Q1：如何不破坏模块化开发体验</h5>
-       <p>模块化开发很重要优势是前后端分离，引用js不再是页面底部的一长串script标签，而是入口js中的若干"require"关键字，js功能的增删改都不需要编辑、发布前台模板，使js代码很容易维护，直接用script标签引入第三方插件，那这个页面的维护成本将会很高，也做不到按需加载，理想的方式是可以像引用模块一样的在js中动态载入；</p>
-       <h5>Q2：如何解决文件依赖</h5>
-       <p>一些复杂的插件可能包含多个js文件，甚至他们之间有严格依赖关系，需要满足多个文件依次加载；或者还有配套的css文件，这时又要能同时加载css，而展示类插件多基于jquery，最好还能让他们直接使用框架的jquery对象，并且这些都是按需的；</p>
-       <h5>A：base.getScript()：</h5>
-       <p>经过梳理，我们需要这样一个方法，可以动态载入js文件，这个文件可能依赖jquery、css或其他js，等他们都载入后执行回调，基于以上需求，base.js中封装了base.getScript方法，作为外链第三方js插件的解决方案，<a href="#base-getScript">【点此了解】</a>。</p>
-      <h3 id="js-app">app</h3>
+      <h3 id="js-seajs">代码组织</h3>
+      <h4>模块化</h4>
+      <p>框架中所有业务js文件都是模块化加载，模块化开发很重要优势是前后端分离，引用js不再是页面底部的一堆script标签，而是若干个"require"关键字，js的增删改都不需要编辑、发布前台模板，使js代码可以向css一样容易维护，更多资料可以参考：<a href="https://github.com/seajs/seajs/issues/547" target="_blank">前端模块化开发的价值</a>。</p>
+      <p>但在前端开发中经常要用到第三方js插件，它们很可能是一个未经过模块化处理的jquery插件，因此我们需要这样一个方法：可以动态载入并执行未模块化的js文件，这个文件可能还依赖了jquery，或其他的css、js，载入后可能还需要执行回调，基于以上需求，base层中封装了base.getScript()方法，作为外链第三方js插件的解决方案，<a href="#base-getScript">【点此了解】</a>。</p>
+      <h4>三层结构</h4>
+      <p>基于模块化加载方式，网站JS脚本被拆分为三层：</p>
+      <p><code>base</code>层提供底层工具来简化JS开发，例如jquery，框架另外增加了base.js提供更多常用功能；</p>
+      <p><code>module</code>层是对特定功能的封装，如轮显效果、视频播放器，日期选择器，表单验证等，<code>/static/modules/</code>里除了jquery、base和seajs以外，几乎全部都是已经封装的模块文件，包含了大部分建站常用效果；</p>
+      <p><code>app</code>层是具体业务脚本，每个页面模板都有一个对应的js文件放在项目内<code>app/</code>文件夹中，<code>app/</code>里还有一个<code>common.js</code>用于管理公用代码。</p>
+      <p>框架对base和module这两层做了大量封装，使开发者能基于这些封装快速、简单的实现前端需求，关于模块化开发的其他资料可以参考：<a href="https://github.com/seajs/seajs/issues/266" target="_blank">SeajsAPI快速参考</a></p>
+      <h3 id="js-app">业务</h3>
       <h4>为模板增加一个Js入口</h4>
       <p>seajs.use可以指定要启动的js文件，如首页底部的：</p>
       <pre>
@@ -534,7 +511,7 @@
       </tr>
       
    </table>
-      <h3 id="js-module">module</h3>
+      <h3 id="js-module">模块</h3>
       <p> module封装了大量js模块，模块封装相关文档见 <a href="https://github.com/seajs/seajs/issues/242" target="_blank">CMD模块定义规范</a>。 </p>
       <h4>模块目录</h4>
    <nav id="modules_index"></nav>
@@ -1669,12 +1646,25 @@
             <h5>方法</h5>
             <table class="table">
               <tr>
-                <th>$.box.hide()</th>
+                <th>$.box.hide([boxid])</th>
                 <td>
                   <p>关闭弹窗，接收弹窗id为参数，无参数将关闭页面上所有弹窗</p>
                   <pre>
                     <code>
-    $.box.hide([boxid]);
+    $.box.hide(boxid);
+                    </code>
+                  </pre>
+                </td>
+              </tr>
+              <th>$.box.setSize(boxid,[config])</th>
+                <td>
+                  <p>box尺寸重设，接收弹窗id和尺寸配置为参数，无配置时将重计算指定弹窗的尺寸</p>
+                  <pre>
+                    <code>
+    $.box.setSize(boxid,{
+      width:100,
+      height:68
+    });
                     </code>
                   </pre>
                 </td>
@@ -1852,7 +1842,7 @@
     })
     
     $('.boxAjax').on('click',function(){
-      $.box.ajax('/test/ajax.php', { 
+      $.box.ajax(seajs.root + '/test/ajax.php', { 
         param: "param1" //Ajax参数
       })
     })
@@ -2286,7 +2276,7 @@ $('.datepicker2').datepicker({
             <pre>
                <code>
   var etpl=require('etpl');
-  $.getJSON("/test/data.json",function(data){
+  $.getJSON(seajs.root + "/test/data.json",function(data){
     var render = etpl.compile('Hello ${name}!');
     var text = render({ name: 'etpl' });
     $('.demo').html(text);
@@ -4168,7 +4158,7 @@ always: null            // complete function(done|fail)
       </tr>
    </table>
    
-   <h3 id="js-base">base</h3>
+   <h3 id="js-base">基础</h3>
    <p>除jquery以外，base.js另外提供以下方法：</p>
    <table class="table table-bordered js-base-table">
       <tr>
@@ -4697,7 +4687,7 @@ always: null            // complete function(done|fail)
   });
   //第一批次合并请求
   $.ajax({
-    url: '/test/ajax.php',
+    url: seajs.root + '/test/ajax.php',
     data: {
       test: 'hello1',
       sign: 's1'
@@ -4709,7 +4699,7 @@ always: null            // complete function(done|fail)
   });
   $.ajax({
     type: 'post',
-    url: '/test/ajax.php',
+    url: seajs.root + '/test/ajax.php',
     data: {
       test: 'hello2',
       sign: 's2'
@@ -4722,7 +4712,7 @@ always: null            // complete function(done|fail)
   //第二批次合并请求
   setTimeout(function() {
     $.ajax({
-      url: '/test/ajax.php',
+      url: seajs.root + '/test/ajax.php',
       data: {
         test: 'hello3',
         sign: 's3'
@@ -4734,7 +4724,7 @@ always: null            // complete function(done|fail)
     });
     $.ajax({
       type: 'post',
-      url: '/test/ajax.php',
+      url: seajs.root + '/test/ajax.php',
       data: {
         test: 'hello4'
       },
@@ -4746,7 +4736,7 @@ always: null            // complete function(done|fail)
   }, 300);
   //不参与合并的请求
   $.ajax({
-    url: '/test/ajax.php',
+    url: seajs.root + '/test/ajax.php',
     data: {
       test: '普通未合并ajax'
     },

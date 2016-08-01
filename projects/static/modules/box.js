@@ -1,8 +1,8 @@
 /*
  * name: box.js
- * version: v3.9.2
- * update: UI调整
- * date: 2016-06-20                   
+ * version: v3.10.2
+ * update: confirm和alert确定按钮默认focus
+ * date: 2016-07-11              
  * base on: zhangxinxu
  */
 define('box', function(require, exports, module) {
@@ -21,11 +21,11 @@ define('box', function(require, exports, module) {
 			-webkit-transition:all 160ms ease-in-out;transition:all 160ms ease-in-out}\
 		.box_wrap_out_drag{-webkit-transition:none;transition:none}\
 		.box_wrap_bar{position:relative;height:52px;line-height:52px; -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}\
-		.box_wrap_title{padding-left:1em;margin:0;font-weight:400;font-size:16px;color:#fff}\
+		.box_wrap_title{padding-left:1em;margin:0;font-weight:400;font-size:16px;color:#fff;line-height:inherit}\
 		.box_wrap_close{position:absolute;right:0;top:0;}\
 		.box_wrap_close a,.box_wrap_msg_clo a{font:700 1.5em/20px Tahoma;padding:.5em}\
 		.box_img_close{background:#fff;border-radius:4px}\
-		.box_wrap_body {background:#fff}\
+		.box_wrap_body {background:#fff;overflow-x:hidden;overflow-y:auto}\
 		.box_wrap_remind{font-size:16px; padding:2em 2em;min-width:14em;overflow:hidden}\
 		.box_wrap_foot{position:relative; min-width:12em;overflow:hidden;text-align:right;border-top:1px solid #ccc;background:#f6f6f6;height:50px;line-height:50px}\
 		.box_wrap_foot .btn{border:0;background:none;margin:0 10px 0 0}\
@@ -200,7 +200,7 @@ define('box', function(require, exports, module) {
 		return $o;
 	};
 	$.extend($.box, {
-		setSize: function($o) {
+		setSize: function($o,config) {
 			if (!$o.bg.length || !$o.ele.length || !$o.out.length) {
 				return;
 			}
@@ -210,38 +210,41 @@ define('box', function(require, exports, module) {
 				outHeight,
 				xh,
 				xw;
-			if($o.s.width=='auto'){
-				xw = Math.min($o.out.width(),w);
-			}else{
-				xw = Math.min($o.s.width,w);
-			};
-			$o.out.css("width",xw);
-			if($o.s.height==='auto'){
-				outHeight = $o.out.height();
-				if(outHeight>h){
-					xh = h;
-				}else{
-					if($o.out.data('initHeight')===void(0)){
-						xh = outHeight;
-						$o.out.data('initHeight',xh);
-					}else if($o.out.data('initHeight')!==outHeight){
-						xh = $o.out.data('initHeight');
-					}else{
-						xh = outHeight;
-					}
+			if($.isPlainObject(config)){
+				if(config.width){
+					xw = config.width
 				};
+				if(config.height){
+					xw = config.height
+				}
 			}else{
-				xh = Math.min(parseFloat($o.s.height),h);
-				console.log('box高度自定调整为窗口最大高度：'+h);
+				if($o.s.width=='auto'){
+					xw = Math.min($o.out.width(),w);
+				}else{
+					xw = Math.min($o.s.width,w);
+				};
+				$o.out.css({
+					"width": xw
+				});
+				if($o.s.height==='auto'){
+					if($o.s.layout){
+						outHeight = $o.out.find('.box_wrap_body').removeAttr('style').outerHeight(true) 
+							+ $o.out.find('.box_wrap_bar').outerHeight(true);
+					}else{
+						outHeight = $o.out.height();
+					};
+					xh = Math.min(outHeight,h);
+				}else{
+					xh = Math.min(parseFloat($o.s.height),h);
+					console.log('box高度自定调整为窗口最大高度：'+h);
+				};
 			};
-			
 			$o.bg.height(h);
 			$o.out.css({
-				"width": xw,
 				"height": xh
 			});
 			if($o.s.layout){
-				$o.out.find('.box_wrap_body').height(xh-$o.out.find('.box_wrap_bar').outerHeight());
+				$o.out.find('.box_wrap_body').height(xh-$o.out.find('.box_wrap_bar').outerHeight(true));
 			};
 			if ($o.s.setposi) {
 				var l = (w - xw) / 2,
@@ -367,7 +370,7 @@ define('box', function(require, exports, module) {
 				if ($.isFunction(sureCall)) {
 					sureCall.call(this);
 				}
-			});
+			}).focus();
 			_o.out.find(".boxcancel").click(function() {
 				if (cancelCall && $.isFunction(cancelCall)) {
 					cancelCall.call(this);
@@ -386,7 +389,7 @@ define('box', function(require, exports, module) {
 					callback.call(this);
 				};
 				$.box.hide(_o);
-			});
+			}).focus();
 			return _o;
 		},
 		msg: function(message, options) {
