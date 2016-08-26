@@ -239,12 +239,11 @@ define(function(require, exports, module) {
 	});
 
 	//Bing壁纸
-	/*var bingApi = 'http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1';
 
 	$.getJSON('https://jsonp.afeld.me/?callback=?&url=http%3A%2F%2Fcn.bing.com%2FHPImageArchive.aspx%3Fformat%3Djs%26idx%3D0%26n%3D1', function(data){
 	    var bing = data.images[0].url;
 	    $('body').css('background-image','url('+bing+')');
-	});*/
+	});
 
 	module.exports = {
 		init:init
