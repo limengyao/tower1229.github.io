@@ -23,7 +23,7 @@
       <h3 id="overall-intro">概述</h3>
       <p> front-flow-cli是一个基于<a href="http://zangtao.org/projects/frontend/" target="_blank">frontend框架</a>的前端自动化工具，在继承frontend特性基础上，着重提高前端开发自动化程度，实现了项目自动初始化、前端模板引入、less编译、静态资源合并、图片压缩等常见前端需求。</p>
       <h4>front-flow项目结构</h4>
-      <p>front-flow项目中以下划线开头的目录为编译资源，开发完成后不需要部署到服务器</p>
+      <p>初始化命令将从<a href="https://github.com/tower1229/front-flow-template" target="_blank">github</a>获取一个空白front-flow项目，front-flow项目中以下划线开头的目录为编译资源，开发完成后不需要部署到服务器</p>
    <pre>
       <code class="javascript"> 
   |--_component/                //UI组件
@@ -42,15 +42,16 @@
   
         </code>
   </pre>
+
       <h3 id="getStart">使用</h3>
       <h4 id="download">安装</h4>
-      <p>安装<a href="https://nodejs.org/en/" target="_blank">nodejs</a></p>
-      <p>npm全局安装：<code>npm install front-flow-cli -g</code></p>
+      <p>1. 安装<a href="https://nodejs.org/en/" target="_blank">nodejs</a></p>
+      <p>2. npm全局安装：<code>npm install front-flow-cli -g</code></p>
       <h4>快速开始</h4>
-      <p>0. 新建项目目录，在资源管理器地址栏输入<code>cmd</code>回车打开命令行工具</p>
-      <p>1. 初始化项目：<code>flow init</code></p>
-      <p>2. 启动开发服务：<code>flow run</code></p>
-      <p>3. 打包编译：<code>flow build</code></p>
+      <p>1. 打开命令行工具，定位到项目目录</p>
+      <p>2. <code>flow init</code>将在当前目录初始化一个空白front-flow项目</p>
+      <p>3. <code>flow run</code>启动开发服务(localhost:3000)，实时监听文件修改，编译并刷新浏览器</p>
+      <p>4. <code>flow build</code>将编译当前项目至<code>./dist</code></p>
 
    </section>
    <section class="wrap" id="css">
@@ -107,7 +108,7 @@
    <section class="wrap" id="js">
       <h2>脚本</h2>
       <h3 id="js-system">js开发体系</h3>
-      <p>js开发体系与frontend完全一直，<a href="http://zangtao.org/projects/frontend/#js" target="_blank">点此了解</a></p>
+      <p>js开发体系与frontend一致，<a href="http://zangtao.org/projects/frontend/#js" target="_blank">点此了解</a></p>
       <h3 id="js-compile">编译过程</h3>
       <p>js编译包含两大部分，一是非模块化js及不需要处理的业务js直接发布，二是seajs相关文件会合并为一个sea.js文件并发布</p>
     </section>
