@@ -8,7 +8,7 @@
 		"icon": "&#xe64a;"
 	}, {
 		"title": "通用组件",
-		"icon": "&#xe6d6;",
+		"icon": "&#xe6bb;",
 		"list": [{
 			"title": "导航类",
 			"list": [{
@@ -156,7 +156,7 @@
 		}]
 	}, {
 		"title": "栏目组件",
-		"icon": "&#xe60f;",
+		"icon": "&#xe64d;",
 		"list": [{
 			"title": "产品列表",
 			"list": [{
@@ -464,10 +464,10 @@
 		}]
 	}, {
 		"title": "Js组件",
-		"icon": "&#xe653;",
+		"icon": "&#xe6b7;",
 		"list": []
 	}, {
 		"title": "工具",
-		"icon": "&#xe610;"
+		"icon": "&#xe663;"
 	}]
 }
