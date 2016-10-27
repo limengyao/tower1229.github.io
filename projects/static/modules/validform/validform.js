@@ -1,8 +1,8 @@
 /*
 * name: validform.js
-* version: v2.2.3
-* update: beforeSubmit必填bug
-* data: 2016-04-18
+* version: v2.3.1
+* update: 内置验证规则修改
+* data: 2016-08-08
 */
 
 define('validform',function(require, exports, module) {
@@ -17,11 +17,11 @@ define('validform',function(require, exports, module) {
 			tit: "提示信息",
 			w: {
 				"*": "不能为空！",
-				"*6-16": "请填写6到16位任意字符！",
+				"*4-16": "请填写4到16位任意字符！",
 				"n": "请填写数字！",
-				"n6-16": "请填写6到16位数字！",
+				"n4-16": "请填写4到16位数字！",
 				"s": "不能输入特殊字符！",
-				"s6-18": "请填写6到18位字符！",
+				"s4-16": "请填写4到16位字符！",
 				"p": "请填写邮政编码！",
 				"m": "请填写手机号码！",
 				"e": "邮箱地址格式不对！",
@@ -68,7 +68,10 @@ define('validform',function(require, exports, module) {
 			$this.data("tipmsg", brothers.tipmsg)
 				.on( "blur", "[datatype]", function() {
 					var subpost = arguments[1];
-					Validform.util.check.call(this, $this, subpost)
+					var that = this;
+					setTimeout(function(){
+						Validform.util.check.call(that, $this, subpost)
+					},100)
 				})
 				.on('submit',function(){
 					var subflag = Validform.util.submitForm.call($this, curform.settings);
@@ -97,11 +100,11 @@ define('validform',function(require, exports, module) {
 	Validform.util = {
 		dataType: {
 			"*": /[\w\W]+/,
-			"*6-16": /^[\w\W]{6,16}$/,
+			"*4-16": /^[\w\W]{4,16}$/,
 			"n": /^\d+$/,
-			"n6-16": /^\d{6,16}$/,
+			"n4-16": /^\d{4,16}$/,
 			"s": /^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]+$/,
-			"s6-18": /^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{6,18}$/,
+			"s4-16": /^[\u4E00-\u9FA5\uf900-\ufa2d\w\.\s]{4,16}$/,
 			"p": /^[0-9]{6}$/,
 			"m": /^13[0-9]{9}$|14[0-9]{9}|15[0-9]{9}$|18[0-9]{9}$/,
 			"e": /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/,
@@ -115,7 +118,6 @@ define('validform',function(require, exports, module) {
 			var inputval, curform = this;
 			if (obj.is(":radio")) {
 				inputval = curform.find(":radio[name='" + obj.attr("name") + "']:checked").val();
-				
 			} else if (obj.is(":checkbox")) {
 				inputval = "";
 				curform.find(":checkbox[name='" + obj.attr("name") + "']:checked").each(function() {
@@ -453,7 +455,7 @@ define('validform',function(require, exports, module) {
 				Validform.util.abort.call(_this[0]);
 				var ajaxsetup = $.extend(true, {}, settings.ajaxurl || {});
 				var localconfig = {
-					type: "POST",
+					type: seajs.develop ? 'get' : 'post',
 					cache: false,
 					url: ajaxurl,
 					data: "param=" + encodeURIComponent(inputval) + "&name=" + encodeURIComponent($(this).attr("name")),
@@ -628,7 +630,7 @@ define('validform',function(require, exports, module) {
 				}
 				curform[0].validform_status = "posting";
 				if (settings.ajaxPost || ajaxPost === "ajaxPost") {
-					var ajaxsetup = $.extend(true, {}, settings.ajaxpost || {});
+					var ajaxsetup = $.extend(true, {}, settings);
 					ajaxsetup.url = url || ajaxsetup.url || settings.url || curform.attr("action");
 					Validform.util.showmsg.call(curform, curform.data("tipmsg").p || tipmsg.p, settings.tiptype, {
 						obj: curform,

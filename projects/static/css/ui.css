@@ -1,8 +1,8 @@
 /*
 * name: ui.css
-* version: v1.2.6
-* update: 移除动画效果
-* date: 2016-07-29
+* version: v1.2.9
+* update: 添加justify工具类
+* date: 2016-10-26
 */
 
 /* reset */
@@ -29,7 +29,7 @@ input[type='file']:focus, input[type='radio']:focus, input[type='checkbox']:focu
   outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px;}
 fieldset { min-width: 0; margin: 0; padding: 0; border: 0;}
 legend { font-size: 1.3em; line-height: 2.5; display: block; width: 100%; margin-bottom: 20px; 
-  padding: 0; color: #333; border: 0; border-bottom: 1px solid #e5e5e5;}
+  padding: 0; color: #333; border: 0; border-bottom: 1px solid #e5e5e5;font-weight: 700;}
 table { border-spacing: 0; border-collapse: collapse;background-color: transparent;}
 td, th { padding: 0;}
 
@@ -42,12 +42,13 @@ td, th { padding: 0;}
 .l { float: left;}.r { float: right;}
 .dib { display: inline-block; *display: inline; *zoom: 1;}
 .pr { position: relative;}.pa { position: absolute;}
-.tc { text-align: center;}.tr { text-align: right;}
+.tl{text-align: left;}.tc { text-align: center;}.tr { text-align: right;}
 .el { overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.justify{text-align: justify;overflow: hidden;}
+.justify:after{content: " 1111111111"}
 .hide { display: none;}
 .hidetext { font: 0/0 a; letter-spacing: -9px;}
 .arr { display: inline-block; overflow: hidden; width: 0; height: 0;}
-.opc0 { opacity: 0 ; filter: alpha(opacity=0);}
 
 /* 等比填充 */
 *[class*="rect-"]{position: relative;display: block; width: 100%;height: 0;overflow: hidden;}
@@ -166,7 +167,7 @@ input[type='search'] { -webkit-appearance: none;}
 .radio, .checkbox { position: relative; display: block; margin-top: 10px; margin-bottom: 10px;}
 .radio label, .checkbox label { font-weight: normal; min-height: 20px; margin-bottom: 0; padding-left: 20px; cursor: pointer;}
 .radio input[type='radio'], .radio-inline input[type='radio'], .checkbox input[type='checkbox'], .checkbox-inline input[type='checkbox'] { 
-  float: left; margin-left: -20px;margin-top: 5px; *margin-top: -2px;}
+  float: left; margin-left: -20px;}
 .radio +.radio, .checkbox +.checkbox { margin-top: -5px;}
 .radio-inline, .checkbox-inline { font-weight: normal; position: relative; display: inline-block; margin-bottom: 0; padding-left: 20px; cursor: pointer; vertical-align: middle;}
 .radio-inline +.radio-inline, .checkbox-inline +.checkbox-inline { margin-top: 0; margin-left: 10px;}
@@ -191,7 +192,6 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 .form-group-lg .form-control-static { font-size: 18px; line-height: 1.3333333; height: 46px; min-height: 38px; padding: 10px 16px;}
 .has-feedback { position: relative;}
 .has-feedback .form-control { padding-right: 42.5px; *padding-right: 0;}
-.control-label { font-weight: bold;}
 .form-control-feedback { line-height: 38px; position: absolute; z-index: 2; top: 0; right: 0; display: block; width: 38px; height: 38px; text-align: center; pointer-events: none;}
 .input-lg +.form-control-feedback { line-height: 46px; width: 46px; height: 46px;}
 .input-sm +.form-control-feedback { line-height: 30px; width: 30px; height: 30px;}
@@ -224,7 +224,8 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 .form-inline .radio label, .form-inline .checkbox label { padding-left: 0;}
 .form-inline .radio input[type='radio'], .form-inline .checkbox input[type='checkbox'] { position: relative; margin-left: 0;}
 .form-inline .has-feedback .form-control-feedback { top: 0;}
-.form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline { margin-top: 0; margin-bottom: 0; padding-top: 0.4em;}
+.form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+ margin-top: 0; margin-bottom: 0; padding-top: 8px;}
 .form-horizontal .radio, .form-horizontal .checkbox { min-height: 27px;}
 .form-horizontal .control-label { margin-bottom: 0; height: 38px;line-height: 38px;overflow: hidden; text-align: right;}
 .form-horizontal .has-feedback .form-control-feedback { right: 15px;}

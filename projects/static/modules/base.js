@@ -1,8 +1,8 @@
 /*
  * name: base
- * version: 2.13.5
- * update: getScript支持第二个参数格式判定
- * date: 2016-06-27
+ * version: 2.14.2
+ * update: getScript css匹配bug
+ * date: 2016-08-26
  */
 define('base', function(require, exports, module) {
 	'use strict';
@@ -17,7 +17,7 @@ define('base', function(require, exports, module) {
 			if (value === null) {
 				value = '';
 				options.expires = -1;
-			}
+			};
 			var expires = '';
 			if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
 				var date;
@@ -404,6 +404,7 @@ define('base', function(require, exports, module) {
 					rely: false
 				},
 				opt = $.extend({}, def, $.isPlainObject(callback) ? callback : option || {}),
+				cssLoaded = false,
 				loadScript = function(road, hold){
 					/*
 					@road:请求url
@@ -432,7 +433,6 @@ define('base', function(require, exports, module) {
 								}else{
 									callback();
 								}
-								
 							}
 						},
 						load = function(errorCallback){
@@ -441,37 +441,55 @@ define('base', function(require, exports, module) {
 								window.$ = $;
 								window.jQuery = $;
 							};
-
 							script.type = "text/javascript";
-		                    script.onload = scriptOnload
-		                    script.onerror = errorCallback;
+		                    if (script.addEventListener) {
+						        script.addEventListener("load", scriptOnload, false);
+						    } else if (script.readyState) {
+						        script.onreadystatechange = function(){
+						        	if (script.readyState == "loaded" || script.readyState == "complete") {
+						        		script.onreadystatechange = null;
+						        		scriptOnload();
+						        	}
+						        };
+						    }else{
+						    	script.onload = scriptOnload;
+						    };
+						    script.onerror = errorCallback;
 		                    script.src = file;
 		                    headNode.appendChild(script);
 						};
-					if(opt.css){
-						var cssfile = '', 
-							_css;
+					if(opt.css && !cssLoaded){
+						var cssfile = '',
+							appendCss = function(href){
+								var href = seajs.resolve(href).replace(/\.css\.js$/,".css").replace(/\.js$/,".css");
+								var _css = document.createElement('link');
+								_css.rel = "stylesheet";
+								_css.onerror = function(e){
+									headNode.removeChild(_css);
+									_css = null;
+									return null;
+								};
+								_css.href = href;
+								headNode.appendChild(_css);
+							};
 						if(opt.css.split){
 							cssfile = opt.css;
+							appendCss(cssfile);
+							cssLoaded = true;
+						}else if($.isArray(opt.css)){
+							$.each(opt.css, function(i,href){
+								appendCss(href);
+							});
+							cssLoaded = true
 						}else{
-							cssfile = file.replace(/\.js$/,".css");
+							appendCss(file);
 						};
-						_css = document.createElement('link');
-						_css.rel = "stylesheet";
-						_css.onerror = function(e){
-							headNode.removeChild(_css);
-							cssfile = null;
-							_css = null;
-							return null;
-						};
-						_css.href = cssfile;
-						headNode.appendChild(_css);
 					};
 					load();
 				};
 			if(road.split){
 				loadScript(road);
-			}else if(road.length){
+			}else if($.isArray(road)){
 				var scriptsLength = road.length,
 					scriptsCount = 0;
 				if(opt.rely){
@@ -481,11 +499,11 @@ define('base', function(require, exports, module) {
 							if(!isLast){
 								hold = function(){
 									scriptsCount++;
-									getNext(scriptsLength>scriptsCount);
+									getNext(scriptsCount>=(scriptsLength-1));
 								}
-							}
+							};
 							loadScript(road[scriptsCount], hold);
-						}
+						};
 					getNext();
 				}else{
 					//同时发起

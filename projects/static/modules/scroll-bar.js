@@ -1,10 +1,11 @@
 /*
  * name:scrollbar
- * vertion: v2.2.7
- * update: 增加错误提示
- * date: 2016-04-06
+ * vertion: v2.2.8
+ * update: 滚动条两端释放滚动事件
+ * date: 2016-08-18
  */
 define('scroll-bar', function(require, exports, module) {
+    'use strict';
     seajs.importStyle('.scrollbar-ui .scroll_cont{position:relative}\
         .scrollbar-ui .scroll_bar{position:absolute;z-index:8;cursor:default;-moz-user-select:none;opacity:0;background:#efefef;transition:opacity ease .3s}\
         .scrollbar-ui-hover .scroll_bar{opacity:1}.scrollbar-ui .scroll_up,.scrollbar-ui .scroll_down{position:absolute;left:0;background:black}\
@@ -65,7 +66,7 @@ define('scroll-bar', function(require, exports, module) {
         return $(this).each(function(i, e) {
             
             var $this = $(e).addClass('scrollbar-ui').fadeIn(320),
-                scrollCont, sliderBar, sliderLength, prop, wheelHandler, init, passive, setSlider,
+                scrollCont, sliderBar, sliderLength, prop, init, passive, setSlider,
                 _length, _breadth, _posiLength, _posiBreadth, _scrollContLength, thisLength,
                 sliderGone = 0,
                 isWork = false,
@@ -77,11 +78,11 @@ define('scroll-bar', function(require, exports, module) {
                 btnUp = sliderBar.children('.scroll_up'),
                 btnDown = sliderBar.children('.scroll_down'),
                 scrollSlider = sliderBar.children('.scroll_slider'),
-                statusLock = false,
+                statusLock,
                 _thisInnerWidth = 0; //横向滚动内容宽度容器
             if ($(e).data('scrollbar')) {
                 return;
-            }
+            };
             //定义基本概念
             switch (opt.overflow) {
                 case 'x':
@@ -188,7 +189,7 @@ define('scroll-bar', function(require, exports, module) {
                 }
             });
             //主方法
-            setSlider = function() {
+            setSlider = function(e) {
                 if (sliderGone <= opt.btnLength) {
                     sliderGone = opt.btnLength;
                     if(!statusLock){
@@ -203,6 +204,10 @@ define('scroll-bar', function(require, exports, module) {
                     }
                 } else{
                     statusLock = false;
+                };
+                if(e && !statusLock){
+                    e.preventDefault();
+                    e.stopPropagation();
                 };
                 scrollSlider._css(_posiLength, sliderGone);
                 scrollCont._css(_posiLength, -((sliderGone - opt.btnLength) * prop));
@@ -248,22 +253,19 @@ define('scroll-bar', function(require, exports, module) {
                 if (fromMonitor && isWork) return;//监听高度改变不重复绑定事件
 
                 //滚轮事件
-                wheelHandler = function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                $this.on('mousewheel', function(e) {
                     if (_scrollContLength > thisLength) {
                         var delta = e.deltaY * opt.keyway;
                         sliderGone -= delta;
-                        setSlider();
+                        setSlider(e);
                     } else {
                         sliderGone = 0;
-                        setSlider();
+                        setSlider(e);
                         if (!isWork) {
                             $this.off('mousewheel');
                         }
                     }
-                }
-                $this.on('mousewheel', wheelHandler);
+                });
             };
             //监听
             passive = function(scrollCont) {

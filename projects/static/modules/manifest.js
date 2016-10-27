@@ -1,8 +1,8 @@
 /*
 * name: manifest.js
-* version: v1.0.1
-* update: 添加appcan通信插件
-* date: 2016-04-01
+* version: v1.2.0
+* update: 添加city-select,counter插件
+* date: 2016-10-26
 */
 define('manifest',function(){
     var mod = {
@@ -16,16 +16,18 @@ define('manifest',function(){
         'upload/upload'                     : 'v1.1.0',
         'upload/makethumb'                  : 'v0.0.1',
         'upload/localResizeIMG'             : 'v0.0.1',
-    	'validform/validform'				: 'v2.2.3',
+    	'validform/validform'				: 'v2.3.1',
     	'video/video'						: 'v0.0.1',
     	'webuploader/webuploader'			: 'v1.0.0',
         'album'                             : 'v2.2.10',
         'appcan'                            : 'v0.1.0',
     	'autocomplete'						: 'v0.0.1',
-        'base'								: 'v2.13.5',
+        'base'								: 'v2.14.2',
         'bdshare'							: 'v3.1.2',
-        'box'								: 'v3.10.2',
+        'box'								: 'v3.10.3',
+        'city-select'                       : 'v0.0.1',
         'countdown'							: 'v1.0.2',
+        'counter'                           : 'v0.0.1',
         'datepicker'                        : 'v1.0.0',
         'drag'								: 'v0.5.0',
         'easing'							: 'v0.0.1',
@@ -35,7 +37,6 @@ define('manifest',function(){
         'img-loaded'						: 'v0.0.1',
         'img-ready'							: 'v1.0.0',
         'instantclick'						: 'v0.0.1',
-        'json'								: 'v0.0.1',
         'lazyload'							: 'v2.0.1',
         'marquee'                           : 'v0.10.1',
         'masonry'							: 'v0.0.1',
@@ -47,13 +48,13 @@ define('manifest',function(){
         'photowall'							: 'v0.1.1',
         'pjax'								: 'v0.0.1',
         'qr'								: 'v0.1.0',
-        'scroll-bar'						: 'v2.2.7',
+        'scroll-bar'						: 'v2.2.8',
         'scroll-col'                        : 'v4.2.4',
-        'scroll-row'						: 'v3.0.6',
+        'scroll-row'						: 'v3.0.7',
         'select'							: 'v3.1.9',
         'slide'								: 'v4.1.8',
         'tab'								: 'v2.1.2',
-        'tip'								: 'v1.2.3',
+        'tip'								: 'v1.2.4',
         'touch'								: 'v0.1.1',
         'zoom'								: 'v2.0.2'
     }

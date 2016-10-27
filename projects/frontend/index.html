@@ -1009,24 +1009,24 @@
                   检测是否有输入，可以输入任何字符，不留空即可通过验证；
                 </td></tr>
                 <tr><td>
-                *6-16：</td>
-                <td>检测是否为6到16位任意字符；
+                *4-16：</td>
+                <td>检测是否为4到16位任意字符；
                 </td></tr>
                 <tr><td>
                 n：</td>
                 <td>数字类型；
                 </td></tr>
                 <tr><td>
-                n6-16：</td>
-                <td>6到16位数字；
+                n4-16：</td>
+                <td>4到16位数字；
                 </td></tr>
                 <tr><td>
                 s：</td>
                 <td>字符串类型；
                 </td></tr>
                 <tr><td>
-                s6-18：</td>
-                <td>6到18位字符串；
+                s4-16：</td>
+                <td>4到16位字符串；
                 </td></tr>
                 <tr><td>
                 p：</td>
@@ -1051,6 +1051,22 @@
               <h5>配置</h5>
               <p>这里只列举新增配置和开发中常见问题，普通使用参考演示demo，使用细节访问<a href="http://validform.rjboy.cn/document.html" target="_blank">官方文档</a>。</p>
               <table class="table">
+                <tr>
+                  <td>
+                    tiptype:
+                  </td>
+                  <td>
+                    验证结果显示方式，默认1，1:弹出提示，2:输入框后插入
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    tipSweep:
+                  </td>
+                  <td>
+                    是否只在提交前集中验证，默认false，每个输入框blur都会出发验证
+                  </td>
+                </tr>
                 <tr>
                   <td>
                     dataType：
@@ -1174,7 +1190,7 @@
   var loginForm = $('#reg_form').Validform({
       tiptype:1,              //1：弹出；其他：输入框后插入
       ajaxPost:true,
-      url:'/test/ajax.php',
+      url: seajs.root + '/test/ajax.php',
       usePlugin:{             //密码强度插件，不需要就删掉
         passwordstrength:{
           minLen:6,     //设置密码长度最小值，默认为0;
@@ -1546,103 +1562,6 @@
             <p>弹窗插件，具有弹出任意内容、提醒、消息、询问等模式。</p>
             <h5>多终端</h5>
             <p>支持</p>
-            <h5>配置</h5>
-            <table class="table table-hover">
-              <tr>
-                <th>top</th>
-                <td>默认无，若有值将固定弹窗据window顶部距离</td>
-              </tr>
-              <tr>
-                <th>title</th>
-                <td>默认“对话框”，对话框标题html</td>
-              </tr>
-              <tr>
-                <th>oktext</th>
-                <td>修改【确定】按钮的文字</td>
-              </tr>
-              <tr>
-                <th>canceltext</th>
-                <td>修改【取消】按钮的文字</td>
-              </tr>
-              <tr>
-                <th>shut</th>
-                <td>默认“×”，关闭按钮html，传入false将没有关闭按钮</td>
-              </tr>
-              <tr>
-                <th>width</th>
-                <td>默认auto，弹窗宽度</td>
-              </tr>
-              <tr>
-                <th>height</th>
-                <td>默认高度，弹窗高度</td>
-              </tr>
-              <tr>
-                <th>layout</th>
-                <td>默认true，是否包含边框</td>
-              </tr>
-              <tr>
-                <th>setposi</th>
-                <td>默认true，无layout的情况下，是否自动添加定位样式，手动定位需要设为false</td>
-              </tr>
-              <tr>
-                <th>bar</th>
-                <td>默认true，是否显示标题栏</td>
-              </tr>
-              <tr>
-                <th>bg</th>
-                <td>默认true，是否显示背景层</td>
-              </tr>
-              <tr>
-                <th>fix</th>
-                <td>默认true，弹窗是否框固定在页面上</td>
-              </tr>
-              <tr>
-                <th>bgclose</th>
-                <td>默认true，是否点击背景层关闭</td>
-              </tr>
-              <tr>
-                <th>drag</th>
-                <td>默认false，是否可拖拽</td>
-              </tr>
-              <tr>
-                <th>protect</th>
-                <td>默认false，若为true，关闭后会将弹出的元素<code>appendTo('body')</code></td>
-              </tr>
-              <tr>
-                <th>delay</th>
-                <td>默认0，弹窗自动关闭时间, 0和负值不触发</td>
-              </tr>
-              <tr>
-                <th>lang</th>
-                <td>默认0，语言选择，0：中文 1：英文</td>
-              </tr>
-              <tr>
-                <th>hook</th>
-                <td>自定义样式钩子，用于给弹窗附加class修改样式，默认无</td>
-              </tr>
-              <tr>
-                <th>color</th>
-                <td>$.box.msg方法的情景色，使用的是ui.css提供的几种背景色，默认info，可选info，primary，success，warning，danger</td>
-              </tr>
-              <tr>
-                <th>onshow(box)</th>
-                <td>默认无，弹窗打开事件，接收弹窗DOM对象为参数</td>
-              </tr>
-              <tr>
-                <th>onclose()</th>
-                <td>默认无，弹窗关闭事件</td>
-              </tr>
-            </table>
-            <h5>返回</h5>
-            <table class="table">
-              <tr>
-                <th>boxid</th>
-                <td>
-                  <p>每次$.box调用都将返回一个boxid，用于$.box.hide()的参数时，可关闭本弹窗实例</p>
-                  <p><code>var mybox = $.box(...);</code></p>
-                </td>
-              </tr>
-            </table>
             <h5>方法</h5>
             <table class="table">
               <tr>
@@ -1772,6 +1691,104 @@
               </tr>
 
             </table>
+            <h5>配置</h5>
+            <table class="table table-hover">
+              <tr>
+                <th>top</th>
+                <td>默认无，若有值将固定弹窗据window顶部距离</td>
+              </tr>
+              <tr>
+                <th>title</th>
+                <td>默认“对话框”，对话框标题html</td>
+              </tr>
+              <tr>
+                <th>oktext</th>
+                <td>修改【确定】按钮的文字</td>
+              </tr>
+              <tr>
+                <th>canceltext</th>
+                <td>修改【取消】按钮的文字</td>
+              </tr>
+              <tr>
+                <th>shut</th>
+                <td>默认“×”，关闭按钮html，传入false将没有关闭按钮</td>
+              </tr>
+              <tr>
+                <th>width</th>
+                <td>默认auto，弹窗宽度</td>
+              </tr>
+              <tr>
+                <th>height</th>
+                <td>默认高度，弹窗高度</td>
+              </tr>
+              <tr>
+                <th>layout</th>
+                <td>默认true，是否包含边框</td>
+              </tr>
+              <tr>
+                <th>setposi</th>
+                <td>默认true，无layout的情况下，是否自动添加定位样式，手动定位需要设为false</td>
+              </tr>
+              <tr>
+                <th>bar</th>
+                <td>默认true，是否显示标题栏</td>
+              </tr>
+              <tr>
+                <th>bg</th>
+                <td>默认true，是否显示背景层</td>
+              </tr>
+              <tr>
+                <th>fix</th>
+                <td>默认true，弹窗是否框固定在页面上</td>
+              </tr>
+              <tr>
+                <th>bgclose</th>
+                <td>默认true，是否点击背景层关闭</td>
+              </tr>
+              <tr>
+                <th>drag</th>
+                <td>默认false，是否可拖拽</td>
+              </tr>
+              <tr>
+                <th>protect</th>
+                <td>默认false，若为true，关闭后会将弹出的元素<code>appendTo('body')</code></td>
+              </tr>
+              <tr>
+                <th>delay</th>
+                <td>默认0，弹窗自动关闭时间, 0和负值不触发</td>
+              </tr>
+              <tr>
+                <th>lang</th>
+                <td>默认0，语言选择，0：中文 1：英文</td>
+              </tr>
+              <tr>
+                <th>hook</th>
+                <td>自定义样式钩子，用于给弹窗附加class修改样式，默认无</td>
+              </tr>
+              <tr>
+                <th>color</th>
+                <td>$.box.msg方法的情景色，使用的是ui.css提供的几种背景色，默认info，可选info，primary，success，warning，danger</td>
+              </tr>
+              <tr>
+                <th>onshow(box)</th>
+                <td>默认无，弹窗打开事件，接收弹窗DOM对象为参数</td>
+              </tr>
+              <tr>
+                <th>onclose()</th>
+                <td>默认无，弹窗关闭事件</td>
+              </tr>
+            </table>
+            <h5>返回</h5>
+            <table class="table">
+              <tr>
+                <th>boxid</th>
+                <td>
+                  <p>每次$.box调用都将返回一个boxid，用于$.box.hide()的参数时，可关闭本弹窗实例</p>
+                  <p><code>var mybox = $.box(...);</code></p>
+                </td>
+              </tr>
+            </table>
+            
             <h5>示例</h5>
             <pre>
               <code>
@@ -1889,6 +1906,58 @@
 </pre>
          </td>
       </tr>
+      <tr id="City-select（地区选择器）">
+         <td>city-select</td>
+         <td>
+            <h5>描述</h5>
+            <p>封装地区选择器插件，自带模板和样式，通过触发元素弹出选择器浮层。</p>
+            <h5>多终端</h5>
+            <p>不支持</p>
+            <h5>配置</h5>
+            <table class="table table-hover">
+              <tr>
+                <th>data</th>
+                <td>省市区数据，支持数组或能返回指定格式的地址字符串，格式如下：
+                    <code>
+[{"name":"北京","id":"001","city":[{"name":"北京","id":"001","area":[{"name":"东城区","id":"001"},{"name":"西城区","id":"002"},{"name":"崇文区","id":"003"},{"name":"宣武区","id":"004"},{"name":"朝阳区","id":"005"}]}]},{"name":"河北","id":"002","city":[{"name":"石家庄","id":"002","area":[{"id":"002","name":"长安区"},{"id":"002","name":"桥东区"},{"id":"002","name":"桥西区"},{"id":"002","name":"新华区"},{"id":"002","name":"郊  区"}]}]},{"name":"台湾","id":"003","city":[{"name":"台湾","id":"003","area":[{"id":"003","name":"台北市"},{"id":"003","name":"高雄市"},{"id":"003","name":"台北县"},{"id":"003","name":"桃园县"}]},{"name":"其他","id":"004","area":[{"name":"其他","id":"004"}]}]}]
+                    </code>
+                </td>
+              </tr>
+              <tr>
+                <td>callback</td>
+                <td>选择结束回调函数，接收选择结果为参数，结果格式为所选省市区三级数据组成的数组：
+                    <code>
+[{"name":"北京","id":"001","index":0},{"name":"北京","id":"001","index":0},{"name":"东城区","id":"001","index":0}]
+                    </code>
+                </td>
+              </tr>
+            </table>
+            <h5>示例</h5>
+            <pre>
+            <code>
+&lt;!-- html --&gt;
+&lt;div class=&quot;demo btn btn-default&quot;&gt;选择省市区&lt;/div&gt;
+            </code>
+          </pre>
+          <pre>
+            <code>
+//js
+require('city-select');
+$('.demo').citySelect({
+  data:[{"name":"北京","id":"001","city":[{"name":"北京","id":"001","area":[{"name":"东城区","id":"001"},{"name":"西城区","id":"002"},{"name":"崇文区","id":"003"},{"name":"宣武区","id":"004"},{"name":"朝阳区","id":"005"}]}]},{"name":"河北","id":"002","city":[{"name":"石家庄","id":"002","area":[{"id":"002","name":"长安区"},{"id":"002","name":"桥东区"},{"id":"002","name":"桥西区"},{"id":"002","name":"新华区"},{"id":"002","name":"郊  区"}]}]},{"name":"台湾","id":"003","city":[{"name":"台湾","id":"003","area":[{"id":"003","name":"台北市"},{"id":"003","name":"高雄市"},{"id":"003","name":"台北县"},{"id":"003","name":"桃园县"}]},{"name":"其他","id":"004","area":[{"name":"其他","id":"004"}]}]}],
+  callback:function(result){
+    var address = '';
+    $.each(result,function(i,e){
+        address+=e.name
+    });
+    $('body').append('&lt;p&gt;'+address+'&lt;/p&gt;')
+  }
+});
+          </code>
+         </pre>
+          </td>
+        </tr>
+
       <tr id="Countdown（倒计时）">
          <td>countdown</td>
          <td>
@@ -1957,8 +2026,62 @@
             </pre>
          </td>
       </tr>
-      <tr id="datepicker（日期选择器）">
-        <td>datepicker</td>
+      <tr id="Counter（加减计数器）">
+         <td>counter</td>
+         <td>
+            <h5>描述</h5>
+            <p>封装加减计数器插件，将触发元素插入/替换一个加减计数器，自带模板和两种样式</p>
+            <h5>多终端</h5>
+            <p>不支持</p>
+            <h5>配置</h5>
+            <table class="table table-hover">
+              <tr>
+                <th>mode</th>
+                <td>默认"replace"，生成模式，可选"insert"</td>
+              </tr>
+              <tr>
+                <td>init</td>
+                <td>默认0，初始数量</td>
+              </tr>
+              <tr>
+                <td>minbuycount</td>
+                <td>默认1，每次加减数量</td>
+              </tr>
+              <tr>
+                <td>max</td>
+                <td>默认无限大，最大数量</td>
+              </tr>
+              <tr>
+                <td>style</td>
+                <td>默认'default'，可选'inline'，计数器样式</td>
+              </tr>
+              <tr>
+                <td>callback</td>
+                <td>默认无，计数器操作回调，@param ($input)</td>
+              </tr>
+            </table>
+            <h5>示例</h5>
+            <pre>
+            <code>
+&lt;!-- html --&gt;
+&lt;div class=&quot;demo&quot;&gt;&lt;/div&gt;
+            </code>
+          </pre>
+          <pre>
+            <code>
+//js
+require('counter');
+$('.demo').counter({
+  callback:function($input){
+    $('body').append('&lt;p&gt;'+$input.val()+'&lt;/p&gt;')
+  }
+})
+          </code>
+         </pre>
+          </td>
+        </tr>
+      <tr id="DatePicker（日期选择器）">
+        <td>DatePicker</td>
          <td>
             <h5>描述</h5>
             <p>jQuery日期选择器插件，支持中英文，来自<a href="https://github.com/fengyuanchen/datepicker" target="_blank">fengyuanchen/datepicker</a></p>
@@ -2376,40 +2499,6 @@ $('.datepicker2').datepicker({
   )
              </code>
 </pre>
-         </td>
-      </tr>
-      <tr id="Json（JSON处理）">
-         <td>json</td>
-         <td>
-            <h5>描述</h5>
-            <p>封装jquery.json-2.4</p>
-            <h5>多终端</h5>
-            <p>移动端建议使用JSON原生语法</p>
-
-            <h5>示例</h5>
-          
-          <pre>
-            <code>
-  &lt;!-- html --&gt;
-  &lt;div class=&quot;demo&quot;&gt;&lt;/div&gt;
-            </code>
-          </pre>
-         <pre>
-         <code>
-  require('json');
-  var thing = { plugin: 'jquery-json', version: 2.4 };
-
-  var encoded = $.toJSON( thing );//字面量转JSON格式字符串
-  $('.demo').append("toJSON: "+encoded+'&lt;br&gt;');
-
-  var name = $.evalJSON( encoded ).plugin;//执行JSON格式字符串
-  $('.demo').append("getName: "+name+'&lt;br&gt;');
-
-  var version = $.secureEvalJSON( encoded ).version;//安全执行JSON格式字符串
-  $('.demo').append("secureGetVersion: "+version+'&lt;br&gt;');
-
-            </code>
-          </pre>
          </td>
       </tr>
       <tr id="Lazyload（图片懒加载）">
@@ -4052,7 +4141,7 @@ always: null            // complete function(done|fail)
     var uploader = new Uploader({
       trigger: '#selectFile',
       name: 'file',
-      action: "/test/fileupload.php",
+      action: seajs.root + "/test/fileupload.php",
       progress: function(event, position, total, percent) {
         console.log('已上传 ' + position + '/' + total + ' ' + percent + '%')
       },
@@ -4218,7 +4307,7 @@ always: null            // complete function(done|fail)
 
   base.toload({
     type:'get',
-    url:'/test/data.json',
+    url:seajs.root + '/test/data.json',
     data:{
       "method":"test"
     },
@@ -4366,12 +4455,12 @@ always: null            // complete function(done|fail)
   * @file:(string/array) 加载的js路径，规则与require/require.async方法相同
   * @callabck(function): 加载完成的回调，接收加载的js文本和返回状态，批量加载只返回最后一个js文本
   * @option(object): 若callback是object格式将被作为option使用
-  * @option.css(boolean/string): 是否同事加载依赖css，默认false，<br>传入true将加载同名同级css文件，传入路径字符串将加载该指定css文件
+  * @option.css(boolean/string/array): 是否依赖css，默认false，<br>传入true将加载与js同名同级css文件
   * @option.jquery(boolean): 被加载脚本是否依赖jquery，默认false
   * @option.rely(boolen): 批量加载的js是否保持线性顺序，默认false，将同时请求
   */
   //利用线性加载特定版本jquery的例子
-  base.getScript(['http://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js', '/test/test2'], function(data) {
+  base.getScript(['http://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js', seajs.root + '/test/test2'], function(data) {
       var $ = window.jQuery;
       $.fn.test2();
       }, {
@@ -4443,7 +4532,7 @@ always: null            // complete function(done|fail)
 
    <h3 id="mobileFixed">移动端屏幕适配</h3>
    <p>约定设计稿宽度：手机界面640px，pad界面1024px。</p>
-   <p>基于以上约定，通过vw单位将html字号（rem）设置为100px，因为vw单位的特性，使rem对屏幕宽度具有适应性，凡是使用rem为单位的尺寸/字号都将随屏幕宽度自动缩放，例如：</p>
+   <p>基于以上约定，通过vw单位<strong>将html字号（rem）设置为100px</strong>，因为vw单位的特性，使rem对屏幕宽度具有适应性，凡是使用rem为单位的尺寸/字号都将随屏幕宽度自动缩放，例如：</p>
    <pre>
      <code>
   &lt;style&gt;
@@ -4523,7 +4612,7 @@ always: null            // complete function(done|fail)
   <h5>base.scanpush()</h5>
   <p><code>base.scanpush()</code>方法会扫描页面上具有延迟渲染类名的元素，并按规则对其渲染。</p>
   <p>预置的四个按需渲染类是：<code>.PcPush</code>,<code>.UnpcPush</code>,<code>.MobilePush</code>,<code>.UnmobilePush</code>,
-  分别代表“只有Pc渲染”，“只有Pc不渲染”，“只有手机渲染”，“只有手机不渲染”,渲染完成后会触发该元素的渲染类同名事件，用<code>$(DOM).on([PcPush/UnpcPush/MobilePush/UnmobilePush])</code>可以捕捉到，事件也会冒泡到<code>body</code>上。</p>
+  分别代表“只有Pc渲染”，“只有非Pc渲染”，“只有手机渲染”，“只有非手机渲染”,渲染完成后会触发该元素的渲染类同名事件，用<code>$(DOM).on('PcPush'/'UnpcPush'/'MobilePush'/'UnmobilePush')</code>可以捕捉到，事件也会冒泡到<code>body</code>上。</p>
   <p>并且这四个类元素下的<code>textarea</code>标签将自动隐藏，不需要手动加隐藏类。</p>
   <p>示例：</p>
             <pre>
@@ -4559,7 +4648,7 @@ always: null            // complete function(done|fail)
   <p>整合<a href="http://instantclick.io" target="_blank">instantclick</a>插件，实现链接预加载、无刷新切换（PJAX）、加载进度条等特性，并扩展了页面切换后记住滚动位置的功能，<a href="../web/index-p1.html" target="_blank">测试页面</a>。</p>
   <h4>使用</h4>
   <p>预加载技术有一定特殊性，普通模块加载方式将失效，需要使用优化后的pjax专用模板，开发中基本保持了原有模块化开发体验，主要存在以下三点细节上的不同：</p>
-  <h5>区别1：页面底部引用js时增加回调并执行返回函数：</h5>
+  <h5>区别1：页面底部引用js时增加回调并执行返回函数（使用者无需关心）</h5>
     <pre>
       <code>
       //页面引用js的写法
@@ -4568,7 +4657,7 @@ always: null            // complete function(done|fail)
       })
       </code>
     </pre>
-    <h5>区别2：在页面js的返回函数里写业务代码：</h5>
+    <h5>区别2：在页面js的返回函数里写业务代码（使用者无需关心）</h5>
     <pre>
       <code>
   define(function(require) {
@@ -4587,7 +4676,7 @@ always: null            // complete function(done|fail)
   })
       </code>
     </pre>
-    <h5>区别3：原来common.js里的码要写在common_pjax.js的init方法里：</h5>
+    <h5>区别3：原来common.js里的码要写在common_pjax.js的init方法里，这里需要注意一下，common.js修改往往比较多</h5>
     <pre>
       <code>
   //common_pjax
