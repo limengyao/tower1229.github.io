@@ -3,6 +3,12 @@
 */
 // 网站根路径
 seajs.root = '/projects'; 
+// 插件设置
+seajs.set = {
+	util: {
+		timeout: 1.5e4
+	}
+};
 
 seajs.config({
 	base: seajs.root + "/static/modules",

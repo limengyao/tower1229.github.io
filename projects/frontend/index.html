@@ -1053,6 +1053,14 @@
               <table class="table">
                 <tr>
                   <td>
+                    allable:
+                  </td>
+                  <td>
+                    默认false，设置为true将提交属性为disable的元素值
+                  </td>
+                </tr>
+                <tr>
+                  <td>
                     tiptype:
                   </td>
                   <td>
@@ -4251,6 +4259,18 @@ always: null            // complete function(done|fail)
    <p>除jquery以外，base.js另外提供以下方法：</p>
    <table class="table table-bordered js-base-table">
       <tr>
+         <td>$.ajax扩展</td>
+         <td>
+          <ol>
+            <li>默认timeout使用配置文件设置seajs.set.util.timeout；</li>
+            <li>默认dataType为"json"；</li>
+            <li>支持localCache选项，传入数字（毫秒数）将作为超时时间，使用local Storage存储数据；传入0或任意假值将清除该缓存；</li>
+            <li>默认error处理；</li>
+          </ol>
+          
+         </td>
+      </tr>
+      <tr>
          <td>base.browser</td>
          <td>
           <p>浏览器信息：</p>
@@ -4482,6 +4502,7 @@ always: null            // complete function(done|fail)
           </pre>
         </td>
       </tr>
+      
    </table>
    
 </section>
