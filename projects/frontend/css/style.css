@@ -80,6 +80,7 @@ a[target]:hover{color:#89D6E6;}
 .tc{text-align:center;}
 .wrap{margin-bottom:2em;}
 p{text-indent:2em;margin:1em 0;}
+ol li{margin:1em 0;}
 h1{font-weight:normal;font-size:26px;}
 h2{color:#2185C5;font-size:24px;margin-bottom: 1em;}
 h3{font-size:22px; line-height:2;}

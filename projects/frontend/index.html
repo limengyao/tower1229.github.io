@@ -2407,11 +2407,9 @@ $('.datepicker2').datepicker({
             <pre>
                <code>
   var etpl=require('etpl');
-  $.getJSON(seajs.root + "/test/data.json",function(data){
-    var render = etpl.compile('Hello ${name}!');
-    var text = render({ name: 'etpl' });
-    $('.demo').html(text);
-  });
+  var render = etpl.compile('Hello ${name}!');
+  var text = render({ name: 'etpl' });
+  $('.demo').html(text);
                   </code>
 </pre>
          </td>
@@ -4259,13 +4257,47 @@ always: null            // complete function(done|fail)
    <p>除jquery以外，base.js另外提供以下方法：</p>
    <table class="table table-bordered js-base-table">
       <tr>
-         <td>$.ajax扩展</td>
+         <td>$.ajax增强</td>
          <td>
+          <p>对请求的json数据做如下格式要求：</p>
+          <pre>
+            <code>
+{
+  status: "Y/N",   //必须，代表操作是否成功
+  data: "...",     //请求返回的数据
+  msg: "..."       //操作提示信息
+}
+            </code>
+          </pre>
           <ol>
-            <li>默认timeout使用配置文件设置seajs.set.util.timeout；</li>
-            <li>默认dataType为"json"；</li>
-            <li>支持localCache选项，传入数字（毫秒数）将作为超时时间，使用local Storage存储数据；传入0或任意假值将清除该缓存；</li>
-            <li>默认error处理；</li>
+            <li>默认超时时间配置，见seajs.config.js文件：
+            <code>
+seajs.set = {
+  util: {
+    timeout: 1.5e4
+  }
+};
+              </code>
+            </li>
+            <li>默认<code>dataType</code>为<code>"json"</code>；</li>
+            <li>支持数据本地缓存，需浏览器支持localStorage，<code>localCache</code>参数传入数字将作为超时时间（毫秒数），传入0或任意假值将清除该缓存；</li>
+            <li><code>success</code>回调增强，success回调除了请求返回的数据以外还将收到一个err参数，布尔值，代表请求是否失败（根据status值判断，跟默认的error回调无关），如果返回数据带有msg信息，将以box插件的msg方法提示2s，提示结束后继续执行success，示例：
+              <pre>
+                <code>
+$.ajax({
+  url: seajs.root + '/test/data.json',
+  success:function(res, err){
+    if(err){
+      return console.warn('请求失败');
+    }
+    console.log(res);
+  }
+})
+                </code>
+              </pre>
+            </li>
+            <li><code>error</code>回调默认处理，根据ajax的四种错误原因使用box插件弹出提示，具体见源码</li>
+            <li>ajax请求合并，见 <a href="#ajaxcombo">【解决方案-AJAX合并】</a></li>
           </ol>
           
          </td>
