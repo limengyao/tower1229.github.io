@@ -1,29 +1,57 @@
 <!doctype html>
 <html lang="zh-cn">
+
 <head>
-	<title>项目</title>
-	<style>
-	body {
-		background-color: white;
-		text-align: center;
-		padding: 50px;
-		font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-	}
-	#logo {
-		margin-bottom: 40px;
-		max-width: 50%;
-	}
-	</style>
+    <meta charset="utf-8">
+    <title>项目</title>
+    <meta content="" name="Keywords">
+    <meta content="" name="Description">
+    <link href="./static/css/ui.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
 </head>
+
 <body>
-	<img id="logo" src="http://7xnt8z.com1.z0.glb.clouddn.com/view6.jpg" />
-	<h2>前端模块化开发框架 </h2>
-	<h5><a href="/projects/frontend/">查看文档</a>、<a href="http://git.oschina.net/tower1229/frontend" target="_blank">代码托管</a></h5>
-	<h2>前端自动化开发工具 </h2>
-	<h5><a href="/projects/front-flow-cli/">查看文档</a>、<a href="https://github.com/tower1229/front-flow-cli" target="_blank">代码托管</a></h5>
-	<h2>前端组件管理工具 </h2>
-	<h5><a href="/projects/WDP/">项目演示</a>、<a href="http://git.oschina.net/tower1229/Widgets" target="_blank">代码托管</a></h5>
-	<h2>iconfont图标库</h2>
-	<h5><a href="/projects/icons/">项目演示</a>、<a href="http://git.oschina.net/tower1229/Icons" target="_blank">代码托管</a></h5>
-	</body>
+    <div class="bg full"></div>
+    <div class="contain flex-row align-stretch">
+        <div style="width:1000px;margin:auto;">
+            <div class="flex-row">
+                <a href="https://github.com/tower1229/Flow-UI/" target="_blank" class="flex-1 card bg flex-col justify-center">
+                    <h3>Flow-UI</h3>
+                    <p>轻量级的前端UI框架</p>
+                </a>
+                <a href="https://github.com/tower1229/Flow-CLI/" target="_blank" class="flex-1 card bg flex-col justify-center">
+                    <h3>Flow-CLI</h3>
+                    <p>基于Flow-UI的前端自动化工具</p>
+                </a>
+                <a href="javascript:;" target="_blank" class="flex-1 card bg flex-col justify-center">
+                    <h3>WDP</h3>
+                    <p>前端组件开发平台</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="./static/modules/seajs/sea.js" id="seajsnode"></script>
+    <script src="./frontend/seajs.config.js"></script>
+    <script>
+    define('demo', function(require) {
+        var $ = require('jquery');
+        var setbg = function() {
+            var requestAnimationFrame = window.requestAnimationFrame || function(cb) {
+                setTimeout(cb, 0);
+            };
+            $('.card').each(function(i, e) {
+                var offset = $(e).offset();
+                var style = '-' + offset.left + 'px -' + offset.top + 'px';
+                requestAnimationFrame(function() {
+                    $(e).get(0).style.backgroundPosition = style;
+                });
+            });
+        };
+        setbg();
+        $(window).on('resize', setbg);
+    });
+    seajs.use('demo');
+    </script>
+</body>
+
 </html>
