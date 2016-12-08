@@ -1,7 +1,7 @@
 ﻿
 html,body{height: 100%;}
-html{font-size: 15.625vw;}
-body{position: relative;overflow-x: hidden;-webkit-user-select: none;user-select: none;-webkit-text-size-adjust: none;text-size-adjust: none;}
+body{position: relative;overflow-x: hidden;-webkit-user-select: none;user-select: none;-webkit-text-size-adjust: none;text-size-adjust: none;
+font-size:14px;}
 
 /* flex栅格 */
 .flex-col{display: -webkit-box;display: -webkit-flex;display: -ms-box;display: -ms-flexbox;display: flex;overflow: hidden;flex-direction: column;-webkit-box-orient: vertical;-webkit-flex-direction: column;-ms-flex-direction: column;}
