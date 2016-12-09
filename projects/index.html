@@ -79,7 +79,7 @@
             });
         };
         require.async('img-ready',function(ready){
-            ready('./img2.jpg',setbg);
+            ready('./img2.jpg',function(){},setbg);
         });
         $(window).on('resize', setbg);
         //codepen
