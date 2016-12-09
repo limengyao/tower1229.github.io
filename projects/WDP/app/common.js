@@ -7,7 +7,8 @@
 define(function(require, exports, module) {
 	var $ = require('jquery');
 	var base = require('base');
-	var typeCatch = base.getType();
+	var resp = require('responsive');
+	var typeCatch = resp.getType();
 
 	if(base.browser.ie==6){
 		alert('本站不支持IE6访问，请升级IE或使用chrome、Firefox等高级浏览器！');
@@ -16,7 +17,7 @@ define(function(require, exports, module) {
 	//pc模拟多终端检测
 	if(window.sessionStorage && sessionStorage.getItem('PcMode')){
 		$('body').addClass('PcMode');
-		typeCatch = base.getType();
+		typeCatch = resp.getType();
 	}
 	(function() { 
 		if( window.sessionStorage && sessionStorage.getItem('browserRedirectLock') ) return;
@@ -37,7 +38,7 @@ define(function(require, exports, module) {
 	
 	//跨屏刷新
 	var throttleResize = base.throttle(function(){
-			if(base.getType()!==typeCatch) document.location.reload();
+			if(resp.getType()!==typeCatch) document.location.reload();
 		});
 	$(window).on('resize',function(){
 		throttleResize();
@@ -69,20 +70,19 @@ define(function(require, exports, module) {
 	})
 	//延时显示
 	$('.opc0').animate({'opacity':'1'},160);
-	// placeholder
-	$('input, textarea').placeholder();
+	
 	//按需渲染
-	base.scanpush();
+	resp.scanpush();
 	//响应图片
-	base.resImg();
+	resp.resImg();
 	/*
 	* 输出
 	*/
 	module.exports = {
 		demo:function(){
-			console.log('hello '+base.getType());
+			console.log('hello '+resp.getType());
 		}
-	}
+	};
 
 	/*
 	* 站内公用
@@ -95,4 +95,4 @@ define(function(require, exports, module) {
 	
 	
 	
-})
+});

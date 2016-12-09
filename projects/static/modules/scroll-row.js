@@ -1,8 +1,8 @@
 /*
  * name: scroll-row
- * version: v3.0.7
- * update: 全局变量污染bug
- * date: 2016-08-26
+ * version: v3.0.6
+ * update: DOM移除后释放全局变量
+ * date: 2016-03-11
  */
 define('scroll-row', function(require, exports, module) {
 	require('easing');
@@ -26,7 +26,7 @@ define('scroll-row', function(require, exports, module) {
 			var $this = $(e),
 				opt = $.extend({}, def, config || {}),
 				nowRow = 1,
-				$wrap, $cell, lineH, cols, rows, rowsall, line, upHeight, timer, totalRow, lasted, scrollRow, _btnUp, _btnDown;
+				$wrap, $cell, timer, lasted, scrollRow, _btnUp, _btnDown;
 			if ($this.data('scrollrowing')) return $this;
 			//添加左右按钮
 			if ($(opt.prev).length || $(opt.next).length) {

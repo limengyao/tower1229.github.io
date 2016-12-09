@@ -23,7 +23,7 @@
                     <h3>Flow-CLI</h3>
                     <p>基于Flow-UI的前端自动化工具</p>
                 </a>
-                <a href="javascript:;" target="_blank" class="flex-1 card bg flex-col justify-center">
+                <a href="WDP/" target="_blank" class="flex-1 card bg flex-col justify-center">
                     <h3>WDP</h3>
                     <p>前端组件开发平台</p>
                 </a>
@@ -31,7 +31,29 @@
         </div>
     </div>
     <script src="./static/modules/seajs/sea.js" id="seajsnode"></script>
-    <script src="./frontend/seajs.config.js"></script>
+    <script>
+    seajs.config({
+        base: "/projects/static/modules",
+        alias: {
+            "audio": "audio/audio",
+            "copy": "copy/ZeroClipboard",
+            "flv": "flv/flv",
+            "hook": "hook/hook",
+            "jquery": "jquery/1/jquery",
+            "validform": "validform/validform",
+            "My97DatePicker": "My97DatePicker/WdatePicker",
+            "raty": "raty/raty",
+            "upload": "upload/upload",
+            "makethumb": "upload/makethumb",
+            "localResizeIMG": "upload/localResizeIMG",
+            "video": "video/video",
+            "webuploader": "webuploader/webuploader"
+        },
+        localcache: {
+            timeout: 2e4
+        }
+    });
+    </script>
     <script>
     define('demo', function(require) {
         var $ = require('jquery');

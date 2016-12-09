@@ -1,12 +1,13 @@
 //扫描按需加载
-base.scanpush();
+var resp = require('responsive');
+resp.scanpush();
 
 require('select');
 $('#year').select();
 $('#mon').select();
 
 var slide_effect;
-if(base.getType()!=='Mobile'){
+if(resp.getType()!=='Mobile'){
 	slide_effect = '${slideEffect.value}';
 }else{
 	slide_effect = 'slide';
@@ -18,4 +19,4 @@ $('.topnews').slide({
 	cell:'.tn_cell',
 	prevHtml:'<i class="ion">&#xe6c3;</i>',
 	nextHtml:'<i class="ion">&#xe6c4;</i>'
-})
+});

@@ -13,8 +13,9 @@ z-index: 51;color:#fff;}
 .head_right{position: absolute;right:0;top:0; margin:0 1em; line-height: 45px;}
 .head_right .ion{font-size:1.2em;}
 .head_right .userMenu{width:100px;}
-.search{ width: 440px;margin:auto;opacity: .5;transition:all ease .3s;}
+.search{ width: 440px;margin:auto;opacity: .5;transition:all ease .3s;height: 100%;}
 .search.focus{width: 1040px;opacity: 1;}
+.search .input-lg{height: 45px;line-height: 45px;}
 
 .foot{background: #333; padding: 24px; overflow: hidden;color:#666;margin:50px 0 0 45px;
 border-top:10px solid #ff6908;font-size:14px;}
