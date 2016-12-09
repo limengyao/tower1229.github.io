@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>项目</title>
+    <title>Projects of tower1229</title>
     <meta content="" name="Keywords">
     <meta content="" name="Description">
     <link href="./static/css/ui.css" rel="stylesheet">
@@ -12,6 +12,14 @@
 
 <body>
     <div class="bg full"></div>
+    <!-- codepen -->
+    <ul class="codepen">
+        <li class="_toggle" title="代码笔"></li>
+        <li class="_code">
+            <a href="codes/startmenu.html" title="HTML5拖拽布局">drag</a>
+        </li>
+        
+    </ul>
     <div class="contain flex-row align-stretch">
         <div style="width:1000px;margin:auto;">
             <div class="flex-row">
@@ -30,6 +38,7 @@
             </div>
         </div>
     </div>
+
     <script src="./static/modules/seajs/sea.js" id="seajsnode"></script>
     <script>
     seajs.config({
@@ -69,8 +78,30 @@
                 });
             });
         };
-        setbg();
+        require.async('img-ready',function(ready){
+            ready('./img2.jpg',setbg);
+        });
         $(window).on('resize', setbg);
+        //codepen
+        var codepen = $('.codepen');
+        codepen.isOpen = codepen.hasClass('isOpen');
+        codepen.on('click','._toggle',function(e){
+            e.preventDefault();
+            if(codepen.isOpen){
+                codepen.removeClass('isopen').find('._code').each(function(i,e){
+                    setTimeout(function(){
+                        $(e).removeClass('_visible');
+                    },i*120);
+                });
+            }else{
+                codepen.addClass('isopen').find('._code').each(function(i,e){
+                    setTimeout(function(){
+                        $(e).addClass('_visible');
+                    },i*150);
+                });
+            }
+            codepen.isOpen = !codepen.isOpen;
+        });
     });
     seajs.use('demo');
     </script>

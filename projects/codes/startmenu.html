@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <title>HTML5拖拽</title>
+    <meta content="" name="Keywords">
+    <meta content="" name="Description">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <style>
+    body,
+    html {
+        height: 100%;
+    }
+    
+    body {
+        background: url(../img2.jpg) center no-repeat;
+        background-size: cover;
+    }
+    
+    .startmenu {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 500px;
+        height: 600px;
+        background: rgba(0, 0, 0, .3);
+        padding: 20px;
+        max-height: 100%;
+    }
+    
+    .flex-cell {
+        height: 140px;
+        transition: all ease 1s;
+        margin: 4px;
+        text-align: center;
+    }
+    
+    .flex-cell.dragstart {
+        opacity: 0;
+    }
+    </style>
+    <div class="startmenu" id="wrapper">
+        <div class="flex-row">
+            <div class="flex-1 flex-cell flex-col justify-center bg-primary" draggable="true">Your APP</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">Your APP</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">Your APP</div>
+        </div>
+        <div class="flex-row">
+            <div class="flex-1 flex-cell flex-col justify-center bg-info" draggable="true">Your APP</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-warning" draggable="true">Your APP</div>
+        </div>
+        <div class="flex-row">
+            <div class="flex-1 flex-cell flex-col justify-center bg-danger" draggable="true">Your APP</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-primary" draggable="true">Your APP</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">Your APP</div>
+        </div>
+    </div>
+    <script src="../static/modules/seajs/sea.js" id="seajsnode"></script>
+    <script>
+    seajs.root = '/projects';
+    seajs.config({
+        base: seajs.root + "/static/modules",
+        alias: {
+            "audio": "audio/audio",
+            "copy": "copy/ZeroClipboard",
+            "flv": "flv/flv",
+            "hook": "hook/hook",
+            "jquery": "jquery/1/jquery.js",
+            "validform": "validform/validform",
+            "My97DatePicker": "My97DatePicker/WdatePicker",
+            "raty": "raty/raty",
+            "upload": "upload/upload",
+            "makethumb": "upload/makethumb",
+            "localResizeIMG": "upload/localResizeIMG",
+            "video": "video/video",
+            "webuploader": "webuploader/webuploader",
+            // localstorage缓存
+            "seajs-localcache": "seajs/seajs-localcache",
+            // debug
+            "seajs-debug": "seajs/seajs-debug"
+        }
+    });
+    </script>
+    <script>
+    /**
+     * index
+     */
+    define('startmenu', function(require) {
+        var $ = require('jquery');
+
+        var dragshadow = $('<div id="dragshadow" style="position:absolute;z-index:99;overflow:hidden;pointer-events:none" />').appendTo('body');
+        var documentMoveInit;
+        var dragData;
+        var clearnode = function(that) {
+            $(that).removeClass('dragstart');
+            documentMoveInit = null;
+            dragshadow
+                .empty()
+                .css({
+                    width: 0,
+                    height: 0,
+                    left: 0,
+                    top: 0
+                })
+                .get(0).style.transform = '';
+        };
+        $('#wrapper')
+            .find('.flex-cell').each(function(i, e) {
+                $(e).attr('id', 'wrapper-drag-cell-' + i);
+            })
+            .end()
+            .on('mousedown', '.flex-cell', function(e) {
+                var dragele = $(this);
+                documentMoveInit = {
+                    left: e.originalEvent.pageX,
+                    top: e.originalEvent.pageY
+                };
+                dragshadow
+                    .css({
+                        width: dragele.outerWidth(true),
+                        height: dragele.outerHeight(true),
+                        left: dragele.offset().left,
+                        top: dragele.offset().top
+                    })
+                    .html(dragele.get(0).outerHTML);
+                dragele.addClass('dragstart');
+            })
+            .on('dragstart', '.flex-cell', function(e) {
+                e.originalEvent.dropEffect = "move";
+                dragData = $(this).attr('id');
+                e.originalEvent.dataTransfer.setData('text/plain', $(this).attr('id'));
+            })
+            .on('dragover', '.flex-cell', function(e) {
+                e.preventDefault();
+                var step = 'translate(' + (e.originalEvent.pageX - documentMoveInit.left) + 'px,' + (e.originalEvent.pageY - documentMoveInit.top) + 'px)';
+                dragshadow.get(0).style.transform = step;
+                var dropdata = dragData; //e.originalEvent.dataTransfer.getData('text/plain');
+                var target = $('#' + dropdata);
+                var mycenter = parseInt($(this).offset().left) + $(this).outerWidth() / 2;
+                //console.log(mycenter);
+                if (e.originalEvent.pageX > mycenter) {
+                    $(this).after(target);
+                } else {
+                    $(this).before(target);
+                }
+            })
+            .on('dragend', '.flex-cell', function(e) {
+                e.preventDefault();
+                clearnode(this);
+            })
+            .on('mouseup', '.flex-cell', function(e) {
+                clearnode(this);
+            });
+    });
+    seajs.use('startmenu');
+    </script>
+</body>
+
+</html>
