@@ -1,1 +1,0 @@
-$('#${id}').find('li:even').addClass('odd');

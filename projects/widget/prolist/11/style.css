@@ -1,5 +1,0 @@
-.widget-prolist-11 li { margin-bottom: ${proMB.value}px; }
-.widget-prolist-11 li ._border { border: 1px solid ${borderColor.value}; }
-.widget-prolist-11 li ._canshu { background: ${infoBG.value}; padding: 0 ${infoPD.value}px; }
-.widget-prolist-11 li ._canshu p { border-bottom: 1px dotted ${infoBorderBC.value}; height: ${infoHeight.value}px; line-height: ${infoHeight.value}px; word-break:break-all; overflow:hidden; }
-.widget-prolist-11 li ._canshu p:last-child { border-bottom: none;  }

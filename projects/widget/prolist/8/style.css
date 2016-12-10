@@ -1,6 +1,0 @@
-.widget-prolist-8 li { position: relative; margin-bottom: ${proMB.value}px; }
-.widget-prolist-8 ._border { border: 1px solid ${proBorderC.value}; }
-.widget-prolist-8 ._nr { height: ${titleHeight.value}px; line-height: ${titleHeight.value}px; overflow: hidden; }
-.widget-prolist-8 ._nr ._name { float: left; width: 80%; text-indent: ${titleIndent.value}px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: ${titleSize.value}px; font-weight:${titleWeight.value}; }
-.widget-prolist-8 ._nr ._dgico { float: right; width: 19%; text-align: center; height: ${titleHeight.value}px; }
-.widget-prolist-8 ._nr .ion { font-size: 16px; }

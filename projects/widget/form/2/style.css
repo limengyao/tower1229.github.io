@@ -1,4 +1,0 @@
-.widget-form-2 ._act{margin-top: 30px;}
-.widget-form-2 .form-control{border-radius: ${borderRadius.value};border-color:${borderColor.value}}
-.widget-form-2 .btn-primary{background:${okColor.value};border-color:${okBorderColor.value};}
-.widget-form-2 .btn-default{background:${resetColor.value};border-color:${resetBorderColor.value}}
