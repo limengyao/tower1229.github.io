@@ -10,7 +10,7 @@
     <meta content="" name="Keywords">
     <meta content="" name="Description">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="ui.css">
 </head>
 
 <body>
@@ -63,11 +63,10 @@
             <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">Your APP</div>
         </div>
     </div>
-    <script src="../static/modules/seajs/sea.js" id="seajsnode"></script>
+    <script src="../sea.js" id="seajsnode"></script>
     <script>
-    seajs.root = '/projects';
     seajs.config({
-        base: seajs.root + "/static/modules",
+        base: "http://static-zt.oss-cn-qingdao.aliyuncs.com/modules",
         alias: {
             "audio": "audio/audio",
             "copy": "copy/ZeroClipboard",
