@@ -18,11 +18,9 @@
         <li class="_code">
             <a href="codes/startmenu.html" title="HTML5拖拽布局">drag</a>
         </li>
-        
     </ul>
-    <div class="contain flex-row align-stretch">
-        <div style="width:1000px;margin:auto;">
-            <div class="flex-row">
+    <div class="contain">
+        <div class="flex-row align-center" style="width:1000px;margin:auto;height: 100%;">
                 <a href="https://github.com/tower1229/Flow-UI/" target="_blank" class="flex-1 card bg flex-col justify-center">
                     <h3>Flow-UI</h3>
                     <p>轻量级的前端UI框架</p>
@@ -39,7 +37,6 @@
                     <h3>HybridStart</h3>
                     <p>混合应用开发框架</p>
                 </a>
-            </div>
         </div>
     </div>
 
@@ -70,6 +67,12 @@
     <script>
     define('demo', function(require) {
         var $ = require('jquery');
+        var base = require('base');
+        if(base.browser.ie<10){
+            require.async('box',function(){
+                $.box.alert('此处不欢迎IE10以下浏览器，请使用chrome');
+            });
+        }
         var setbg = function() {
             var requestAnimationFrame = window.requestAnimationFrame || function(cb) {
                 setTimeout(cb, 0);

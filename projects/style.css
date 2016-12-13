@@ -2285,7 +2285,7 @@ html,body{height: 100%;}
 .bg{background: url(./img2.jpg) no-repeat;}
 .contain{position: relative;z-index: 2;height: 100%;}
 .card{height: 400px;height: 38.2vh;margin: 20px;transition: all ease 1s;text-align: center;color: #eee;box-shadow: 0 0 12px rgba(0, 0, 0, .3);}
-.card p{transition: opacity ease 1s;opacity: 0;color: rgba(0, 0, 0, .5);}
+.card p{transition: opacity ease 1s;opacity: 0;color: rgba(0, 0, 0, .6);}
 .card .url{font-family: tahoma;visibility: hidden;margin-bottom: -2em;transition: opacity ease 1s;opacity: 0;color: rgba(0, 0, 0, .5);}
 .card .check:checked + .url{visibility: visible;opacity: 1;}
 .card:hover{color: #fff;box-shadow: 0 0 24px rgba(0, 0, 0, .5);}
