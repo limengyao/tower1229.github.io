@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <title>贪吃蛇</title>
+    <meta content="" name="Keywords">
+    <meta content="" name="Description">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="ui.css">
+</head>
+
+<body>
+    <style>
+    #snake-layer {
+        margin: 40px auto;
+    }
+    
+    .line {
+        position: absolute;
+    }
+    
+    .lineH {
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+    }
+    
+    .lineS {
+        border-right: 1px solid #ccc;
+        height: 100%;
+    }
+    
+    .noborder .line {
+        border: 0;
+    }
+    </style>
+    <script src="../sea.js" id="seajsnode"></script>
+    <script>
+    seajs.config({
+        base: "http://static-zt.oss-cn-qingdao.aliyuncs.com/modules",
+        alias: {
+            "audio": "audio/audio",
+            "copy": "copy/ZeroClipboard",
+            "flv": "flv/flv",
+            "hook": "hook/hook",
+            "jquery": "jquery/1/jquery.js",
+            "validform": "validform/validform",
+            "My97DatePicker": "My97DatePicker/WdatePicker",
+            "raty": "raty/raty",
+            "upload": "upload/upload",
+            "makethumb": "upload/makethumb",
+            "localResizeIMG": "upload/localResizeIMG",
+            "video": "video/video",
+            "webuploader": "webuploader/webuploader",
+            // localstorage缓存
+            "seajs-localcache": "seajs/seajs-localcache",
+            // debug
+            "seajs-debug": "seajs/seajs-debug"
+        }
+    });
+    </script>
+    <script>
+    /**
+     * index
+     */
+    define('scripts', function(require) {
+        var $ = require('jquery');
+
+        var length = 20, //画布边长
+            cellLength = 20, //单位长度
+            enemyNum = length * 0.5, //食物数量
+            snakeLength = 3, //蛇初始长度
+            widthLine = true, //显示辅助线
+            direct = '+x', //初始方向
+            speed = 1000; //初始速度，数值越小越快
+
+        var layer = $('<div id="snake-layer"/>');
+        var snake = '<div class="snake bg-success" />';
+        //蛇头位置
+        var snakePlace = {};
+        var drawMap = function(widthLine) {
+            layer.css({
+                position: 'relative',
+                width: length * cellLength,
+                height: length * cellLength,
+                border: '1px solid #ccc'
+            });
+
+            $('body').append(layer);
+        };
+        var drawLine = function() {
+            var lineH = '<div class="line lineH" />';
+            var lineS = '<div class="line lineS" />';
+            for (var i = 0; i < length - 1; i++) {
+                layer.append($(lineH).css({
+                    top: i * cellLength,
+                    height: cellLength
+                }).add($(lineS).css({
+                    left: i * cellLength,
+                    width: cellLength
+                })));
+            }
+        };
+        var addPoint = function(dom, x, y, cb) {
+            dom.css({
+                width: cellLength,
+                height: cellLength,
+                position: 'absolute',
+                left: x * cellLength,
+                top: y * cellLength
+            });
+            dom.x = x;
+            dom.y = y;
+            layer.append(dom);
+            if (typeof(cb) === 'function') {
+                cb(dom);
+            }
+        };
+        var checkPointInSnake = function(point, correct) {
+            var result = false;
+            var checkArray = snakes.slice(0);
+            for (var i = 0; i < checkArray.length; i++) {
+                if (point.x === checkArray[i].x && point.y === checkArray[i].y) {
+                    if (correct) {
+                        point = {
+                            x: createRandom(),
+                            y: createRandom()
+                        };
+                        checkPointInSnake(point);
+                    } else {
+                        result = true;
+                    }
+                    break;
+                }
+            }
+            if (correct) {
+                return point;
+            } else {
+                return result;
+            }
+
+        };
+        var createRandom = function() {
+            return Math.floor(Math.random() * length);
+        };
+        //创建食物
+        var ememys = [];
+        var addEmemy = function(enemyNum) {
+            for (var i = 0; i < enemyNum; i++) {
+                var ememy_x = createRandom();
+                var ememy_y = createRandom();
+                var enemy = $('<div class="bg-danger" />');
+                var point = checkPointInSnake({
+                    x: ememy_x,
+                    y: ememy_y
+                }, true);
+                point.dom = enemy;
+                ememys.push(point);
+                addPoint(enemy, point.x, point.y);
+            }
+        };
+        //运动
+        var run = function() {
+            switch (direct) {
+                case "+x":
+                    snakePlace.x = snakePlace.x + 1;
+                    break;
+                case "+y":
+                    snakePlace.y = snakePlace.y - 1;
+                    break;
+                case "-x":
+                    snakePlace.x = snakePlace.x - 1;
+                    break;
+                case "-y":
+                    snakePlace.y = snakePlace.y + 1;
+                    break;
+                default:
+
+            }
+            //边界检测
+            if (snakePlace.x >= length || snakePlace.x < 0 || snakePlace.y >= length || snakePlace.y < 0) {
+                clearInterval(runner);
+                console.warn('碰到边缘！');
+                return alert('游戏结束！');
+            }
+            //自身检测
+            if (checkPointInSnake(snakePlace)) {
+                clearInterval(runner);
+                console.warn('碰到自身！');
+                return alert('游戏结束！');
+            }
+            //食物检测
+            var hasFood;
+            for (var i = 0; i < ememys.length; i++) {
+                if (snakePlace.x === ememys[i].x && snakePlace.y === ememys[i].y) {
+                    var _part = $(snake);
+                    addPoint(_part, snakePlace.x, snakePlace.y, function(dom) {
+                        snakes.push(dom);
+                    });
+                    hasFood = true;
+                    ememys[i].dom.remove();
+                    ememys.splice(i, 1);
+                    console.warn('吞掉食物');
+                    break;
+                }
+            }
+            if (!hasFood) {
+                var footer = snakes.shift();
+                footer.css({
+                    top: snakePlace.y * cellLength,
+                    left: snakePlace.x * cellLength
+                });
+                footer.x = snakePlace.x;
+                footer.y = snakePlace.y;
+                snakes.push(footer);
+            } else {
+                addEmemy(1);
+                speed = Math.round(speed * 0.8);
+                clearInterval(runner);
+                runner = setInterval(run, speed);
+            }
+        };
+        var snakes = [];
+        var runner;
+        drawMap(widthLine);
+
+        if (widthLine) {
+            drawLine();
+        }
+        //画蛇
+        for (var i = 0; i < snakeLength; i++) {
+            var _part = $(snake);
+            var _x = Math.floor(length / 2);
+            var _y = _x;
+            switch (direct) {
+                case "+x":
+                    _x += i;
+                    break;
+                case "+y":
+                    _y -= i;
+                    break;
+                case "-x":
+                    _x -= i;
+                    break;
+                case "-y":
+                    _y += i;
+                    break;
+                default:
+
+            }
+            if (i === snakeLength - 1) {
+                snakePlace = {
+                    x: _x,
+                    y: _y
+                };
+            }
+            addPoint(_part, _x, _y, function(dom) {
+                snakes.push(dom);
+            });
+        }
+
+        addEmemy(enemyNum);
+
+        //控制
+        document.onkeydown = function(e) {
+            switch (e.keyCode) {
+                case 38:
+                    //up
+                    direct = '+y';
+                    break;
+                case 40:
+                    //down
+                    direct = '-y';
+                    break;
+                case 37:
+                    //left
+                    direct = '-x';
+                    break;
+                case 39:
+                    //right
+                    direct = '+x';
+                    break;
+                default:
+            }
+        };
+
+
+        $('body')
+            .append('<div class="tc"><button class="btn btn-success" id="snakeStart">开始</button> <button class="btn btn-warning" id="snakePause">暂停</button> <button class="btn btn-default" id="toggleLine">切换辅助线</button></div>')
+            .on('click', '#snakeStart', function() {
+                runner = setInterval(run, speed);
+            }).on('click', '#snakePause', function() {
+                clearInterval(runner);
+            }).on('click', '#toggleLine', function() {
+                layer.toggleClass('noborder');
+            })
+    });
+    seajs.use('scripts');
+    </script>
+</body>
+
+</html>
