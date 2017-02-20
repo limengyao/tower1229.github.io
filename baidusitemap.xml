@@ -5,7 +5,7 @@
     
     
   <url>
-    <loc>http://zangtao.org/2016/06/01/hello-hexo/</loc>
+    <loc>http://refined-x.com/2016/06/01/hello-hexo/</loc>
     <lastmod>2016-06-01T08:49:42.673Z</lastmod>
     <data>
         <display>
@@ -20,6 +20,47 @@
     </data>
     </url>
 
+    <url>
+    <loc>http://refined-x.com/projects/index.html</loc>
     
+    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
+    <data>
+        <display>
+        <title>Projects of tower1229</title>
+        <pubTime>2016-06-01T08:48:55.000Z</pubTime>
+        
+        <tag>Projects</tag>
+           
+        </display>
+    </data>
+  </url>
+  <url>
+    <loc>http://refined-x.com/projects/codes/startmenu.html</loc>
+    
+    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
+    <data>
+        <display>
+        <title>HTML5拖拽</title>
+        <pubTime>2016-06-01T08:48:55.000Z</pubTime>
+        
+        <tag>HTML5拖拽</tag>
+           
+        </display>
+    </data>
+  </url>
+  <url>
+    <loc>http://refined-x.com/projects/snake.html</loc>
+    
+    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
+    <data>
+        <display>
+        <title>贪吃蛇</title>
+        <pubTime>2016-06-01T08:48:55.000Z</pubTime>
+        
+        <tag>贪吃蛇</tag>
+           
+        </display>
+    </data>
+  </url>
     
 </urlset>

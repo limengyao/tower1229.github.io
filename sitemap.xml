@@ -2,28 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://zangtao.org/404.html</loc>
+    <loc>http://refined-x.com/404.html</loc>
     
     <lastmod>2016-06-01T08:58:04.450Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zangtao.org/2016/06/01/hello-hexo/</loc>
+    <loc>http://refined-x.com/2016/06/01/hello-hexo/</loc>
     
     <lastmod>2016-06-01T08:49:42.673Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zangtao.org/about/index.html</loc>
+    <loc>http://refined-x.com/about/index.html</loc>
     
     <lastmod>2016-06-01T08:40:56.889Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zangtao.org/tags/index.html</loc>
+    <loc>http://refined-x.com/tags/index.html</loc>
+    
+    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
+    
+  </url>
+
+  <url>
+    <loc>http://refined-x.com/projects/index.html</loc>
+    
+    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
+    
+  </url>
+  <url>
+    <loc>http://refined-x.com/projects/codes/startmenu.html</loc>
+    
+    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
+    
+  </url>
+  <url>
+    <loc>http://refined-x.com/projects/snake.html</loc>
     
     <lastmod>2016-06-01T08:38:00.097Z</lastmod>
     
