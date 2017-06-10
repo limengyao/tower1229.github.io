@@ -38,7 +38,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端路上, 雅X共赏" />
+  <meta name="keywords" content="Nodejs爬虫," />
 
 
 
@@ -54,15 +54,35 @@
 
 
 
-<meta name="description" content="web前端技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端路上">
-<meta property="og:url" content="http://refined-x.com/index.html">
+<meta name="description" content="Nodejs将前端开发语言移植到服务器端，如今一个前端开发者使用Nodejs很容易就能实现一个网络爬虫，这在之前是不可想象的，本文介绍一个简单的Nodejs爬虫的开发过程，只想看代码的直接拉到最后。
+爬取原理
+首先爬虫程序要发起http请求得到页面HTML，进而获取到你希望得到的信息，例如正文或图片
+然后爬虫要捕获页面间的链接关系，通常是”上一篇下一篇”这种外链
+通过外链继续重复第一步，从而实现自">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nodejs爬虫实践小记">
+<meta property="og:url" content="http://refined-x.com/2017/06/09/Nodejs爬虫实践小记/index.html">
 <meta property="og:site_name" content="前端路上">
-<meta property="og:description" content="web前端技术博客">
+<meta property="og:description" content="Nodejs将前端开发语言移植到服务器端，如今一个前端开发者使用Nodejs很容易就能实现一个网络爬虫，这在之前是不可想象的，本文介绍一个简单的Nodejs爬虫的开发过程，只想看代码的直接拉到最后。
+爬取原理
+首先爬虫程序要发起http请求得到页面HTML，进而获取到你希望得到的信息，例如正文或图片
+然后爬虫要捕获页面间的链接关系，通常是”上一篇下一篇”这种外链
+通过外链继续重复第一步，从而实现自">
+<meta property="og:image" content="https://github.com/tower1229/tower1229.github.io/raw/master/asset/QQ%E6%88%AA%E5%9B%BE20170609154821.png">
+<meta property="og:image" content="https://github.com/tower1229/tower1229.github.io/raw/master/asset/QQ%E6%88%AA%E5%9B%BE20170609154855.png">
+<meta property="og:image" content="https://github.com/tower1229/tower1229.github.io/raw/master/asset/QQ%E6%88%AA%E5%9B%BE20170609154920.png">
+<meta property="og:image" content="https://github.com/tower1229/tower1229.github.io/raw/master/asset/QQ%E6%88%AA%E5%9B%BE20170609154946.png">
+<meta property="og:image" content="https://github.com/tower1229/tower1229.github.io/raw/master/asset/QQ%E6%88%AA%E5%9B%BE20170609155011.png">
+<meta property="og:image" content="https://github.com/tower1229/tower1229.github.io/raw/master/asset/QQ%E6%88%AA%E5%9B%BE20170609155046.png">
+<meta property="og:updated_time" content="2017-06-09T15:27:49.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端路上">
-<meta name="twitter:description" content="web前端技术博客">
+<meta name="twitter:title" content="Nodejs爬虫实践小记">
+<meta name="twitter:description" content="Nodejs将前端开发语言移植到服务器端，如今一个前端开发者使用Nodejs很容易就能实现一个网络爬虫，这在之前是不可想象的，本文介绍一个简单的Nodejs爬虫的开发过程，只想看代码的直接拉到最后。
+爬取原理
+首先爬虫程序要发起http请求得到页面HTML，进而获取到你希望得到的信息，例如正文或图片
+然后爬虫要捕获页面间的链接关系，通常是”上一篇下一篇”这种外链
+通过外链继续重复第一步，从而实现自">
+<meta name="twitter:image" content="https://github.com/tower1229/tower1229.github.io/raw/master/asset/QQ%E6%88%AA%E5%9B%BE20170609154821.png">
 
 
 
@@ -80,7 +100,7 @@
   };
 </script>
 
-  <title> 前端路上 </title>
+  <title> Nodejs爬虫实践小记 | 前端路上 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -104,9 +124,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -203,9 +221,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -225,10 +243,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/06/09/Nodejs爬虫实践小记/" itemprop="url">
-                  Nodejs爬虫实践小记
-                </a>
+                Nodejs爬虫实践小记
               
             
           </h1>
@@ -268,9 +283,7 @@
       
 
       
-        
-          
-            <p>Nodejs将前端开发语言移植到服务器端，如今一个前端开发者使用Nodejs很容易就能实现一个网络爬虫，这在之前是不可想象的，本文介绍一个简单的Nodejs爬虫的开发过程，只想看代码的直接拉到最后。</p>
+        <p>Nodejs将前端开发语言移植到服务器端，如今一个前端开发者使用Nodejs很容易就能实现一个网络爬虫，这在之前是不可想象的，本文介绍一个简单的Nodejs爬虫的开发过程，只想看代码的直接拉到最后。</p>
 <h2 id="爬取原理"><a href="#爬取原理" class="headerlink" title="爬取原理"></a>爬取原理</h2><ul>
 <li>首先爬虫程序要发起http请求得到页面HTML，进而获取到你希望得到的信息，例如正文或图片</li>
 <li>然后爬虫要捕获页面间的链接关系，通常是”上一篇下一篇”这种外链</li>
@@ -305,130 +318,58 @@
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>实现一个爬虫说起来很简单，但健壮性真的很难保证，在爬取cnBeta过程中就发现另一个301跳转的坑，url发生跳转时程序捕获的HTML是空的，无法拿到真正的内容，所以在请求响应后还需要判断响应头是否是301，如果是就要从响应信息中找到跳转后的url重新发起请求。幸亏cnBeta不需要用户登录，如果是一个必须登录才能访问的站点，抓取会麻烦很多。</p>
 <p>本项目的完整代码见 <a href="https://github.com/tower1229/crawler" target="_blank" rel="external">Nodejs crawler</a>，感谢cnBeta^ ^。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/01/hello-hexo/" itemprop="url">
-                  hello hexo!
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-06-01T16:48:55+08:00" content="2016-06-01">
-              2016-06-01
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/Nodejs爬虫/" rel="tag">#Nodejs爬虫</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p><img src="/images/bird.jpg" alt="hello hexo !"></p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/01/hello-hexo/" rel="next" title="hello hexo!">
+                <i class="fa fa-chevron-left"></i> hello hexo!
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -436,6 +377,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -455,8 +400,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars0.githubusercontent.com/u/4016839?v=3&s=460"
@@ -528,6 +482,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#爬取原理"><span class="nav-number">1.</span> <span class="nav-text">爬取原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标分析"><span class="nav-number">2.</span> <span class="nav-text">目标分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现过程"><span class="nav-number">3.</span> <span class="nav-text">实现过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序结构"><span class="nav-number">3.1.</span> <span class="nav-text">程序结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能点"><span class="nav-number">3.2.</span> <span class="nav-text">功能点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -608,6 +573,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

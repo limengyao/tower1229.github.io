@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://refined-x.com/about/index.html</loc>
+    
+    <lastmod>2017-06-09T15:35:15.064Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://refined-x.com/2017/06/09/Nodejs%E7%88%AC%E8%99%AB%E5%AE%9E%E8%B7%B5%E5%B0%8F%E8%AE%B0/</loc>
+    
+    <lastmod>2017-06-09T15:27:49.447Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://refined-x.com/2016/06/01/hello-hexo/</loc>
+    
+    <lastmod>2017-05-28T10:04:55.140Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://refined-x.com/404.html</loc>
     
     <lastmod>2016-06-01T08:58:04.450Z</lastmod>
@@ -9,40 +30,7 @@
   </url>
   
   <url>
-    <loc>http://refined-x.com/2016/06/01/hello-hexo/</loc>
-    
-    <lastmod>2016-06-01T08:49:42.673Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://refined-x.com/about/index.html</loc>
-    
-    <lastmod>2016-06-01T08:40:56.889Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://refined-x.com/tags/index.html</loc>
-    
-    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
-    
-  </url>
-
-  <url>
-    <loc>http://refined-x.com/projects/index.html</loc>
-    
-    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
-    
-  </url>
-  <url>
-    <loc>http://refined-x.com/projects/codes/startmenu.html</loc>
-    
-    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
-    
-  </url>
-  <url>
-    <loc>http://refined-x.com/projects/snake.html</loc>
     
     <lastmod>2016-06-01T08:38:00.097Z</lastmod>
     

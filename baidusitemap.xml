@@ -5,8 +5,25 @@
     
     
   <url>
+    <loc>http://refined-x.com/2017/06/09/Nodejs%E7%88%AC%E8%99%AB%E5%AE%9E%E8%B7%B5%E5%B0%8F%E8%AE%B0/</loc>
+    <lastmod>2017-06-09T15:27:49.447Z</lastmod>
+    <data>
+        <display>
+        <title>Nodejs爬虫实践小记</title>
+        <pubTime>2017-06-09T01:13:17.000Z</pubTime>
+        
+        <tag>Nodejs爬虫</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://refined-x.com/2016/06/01/hello-hexo/</loc>
-    <lastmod>2016-06-01T08:49:42.673Z</lastmod>
+    <lastmod>2017-05-28T10:04:55.140Z</lastmod>
     <data>
         <display>
         <title>hello hexo!</title>
@@ -20,47 +37,6 @@
     </data>
     </url>
 
-    <url>
-    <loc>http://refined-x.com/projects/index.html</loc>
     
-    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
-    <data>
-        <display>
-        <title>Projects of tower1229</title>
-        <pubTime>2016-06-01T08:48:55.000Z</pubTime>
-        
-        <tag>Projects</tag>
-           
-        </display>
-    </data>
-  </url>
-  <url>
-    <loc>http://refined-x.com/projects/codes/startmenu.html</loc>
-    
-    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
-    <data>
-        <display>
-        <title>HTML5拖拽</title>
-        <pubTime>2016-06-01T08:48:55.000Z</pubTime>
-        
-        <tag>HTML5拖拽</tag>
-           
-        </display>
-    </data>
-  </url>
-  <url>
-    <loc>http://refined-x.com/projects/snake.html</loc>
-    
-    <lastmod>2016-06-01T08:38:00.097Z</lastmod>
-    <data>
-        <display>
-        <title>贪吃蛇</title>
-        <pubTime>2016-06-01T08:48:55.000Z</pubTime>
-        
-        <tag>贪吃蛇</tag>
-           
-        </display>
-    </data>
-  </url>
     
 </urlset>
