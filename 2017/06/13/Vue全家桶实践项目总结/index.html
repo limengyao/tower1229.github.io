@@ -8,7 +8,7 @@
 <html class="theme-next muse use-motion">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -33,7 +33,7 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="前端路上">
 <meta property="og:description" content="从前端的角度看，Vue可以说是目前最理想的前端MVVM框架，一切为界面服务，上手难度低，本文就将记录使用Vue全家桶（Vue+Vue-router+Vuex）重构一个jQuery+template项目的过程，以及期间的收获。
 入门Vue的官方文档就是学习Vue的最佳教程，没有之一，可能因为框架作者是设计出身，没有后端背景，因此各种抽象概念在Vue里都得以用最容易理解的方式被恰到好处的阐述，这里只简">
-<meta property="og:updated_time" content="2017-06-13T02:34:39.015Z">
+<meta property="og:updated_time" content="2017-06-15T01:40:42.362Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue全家桶实践项目总结">
 <meta name="twitter:description" content="从前端的角度看，Vue可以说是目前最理想的前端MVVM框架，一切为界面服务，上手难度低，本文就将记录使用Vue全家桶（Vue+Vue-router+Vuex）重构一个jQuery+template项目的过程，以及期间的收获。
@@ -70,19 +70,26 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
     sidebar: {"position":"right","display":"always"},
     fancybox: false,
     motion: true,
-    duoshuo: {
-      userId: undefined,
-      author: '博主'
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
     }
   };
 </script>
+
+
+
 
   <title> Vue全家桶实践项目总结 | 前端路上 </title>
 </head>
@@ -189,6 +196,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-留言">
+          <a href="/comment" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-send"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -247,6 +264,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/06/13/Vue全家桶实践项目总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/13/Vue全家桶实践项目总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -382,9 +406,14 @@
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" id="cyReping" role="cylabs" data-use="reping"></div>
+
 
           
   <div class="comments" id="comments">
+    
+      <div id="cyHotnews" role="cylabs" data-use="hotnews"></div>
     
   </div>
 
@@ -587,12 +616,19 @@
   <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
+
+	<script src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+	<script src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyt41dRMv"></script>
+
+
   
 
 
   <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
   <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
 
 
 
@@ -607,29 +643,29 @@
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="Vue全家桶实践项目总结" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyt41dRMv'; 
+var conf = 'prod_4a4c59fe7143d67b7030c92134d6560c'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+
+
 
 
 
   
-
-
-
-  
-
-
-
-  
   
   
 
   
 
   
-<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
-</script>
-
 
 </body>
 </html>
