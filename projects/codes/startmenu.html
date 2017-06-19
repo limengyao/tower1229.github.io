@@ -10,12 +10,12 @@
     <meta content="HTML5拖拽" name="Keywords">
     <meta content="HTML5拖拽" name="Description">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" type="text/css" href="ui.css">
+    <link rel="stylesheet" type="text/css" href="../asset/ui.css">
 </head>
 
 <body>
 <h1 class="hide">HTML5拖拽</h1>
-<a href="/" style="position: absolute;right: 0;top:0;padding:.5em;">前端路上</a>
+<a href="//refined-x.com" title="前端路上" style="position: absolute;right: 0;top:0;padding:.5em;">前端路上</a>
     <style>
     body,
     html {
@@ -23,7 +23,7 @@
     }
     
     body {
-        background: url(../img2.jpg) center no-repeat;
+        background: url(../asset/img2.jpg) center no-repeat;
         background-size: cover;
     }
     
@@ -32,40 +32,44 @@
         left: 0;
         bottom: 0;
         width: 500px;
-        height: 600px;
-        background: rgba(0, 0, 0, .3);
+        height: 540px;
+        background: rgba(0, 0, 0, .6);
         padding: 20px;
         max-height: 100%;
+        box-shadow: 0 0 3px rgba(0,0,0,.5);
     }
     
     .flex-cell {
         height: 140px;
-        transition: all ease 1s;
+        transition: all ease 700ms;
         margin: 4px;
         text-align: center;
     }
     
     .flex-cell.dragstart {
-        opacity: 0;
+        opacity: 0 !important;
+    }
+    .isDraging .flex-cell{
+        opacity: .7;
     }
     </style>
     <div class="startmenu" id="wrapper">
         <div class="flex-row">
-            <div class="flex-1 flex-cell flex-col justify-center bg-primary" draggable="true">Your APP</div>
-            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">Your APP</div>
-            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">Your APP</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-primary" draggable="true">日历</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">腾讯QQ</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">应用商店</div>
         </div>
         <div class="flex-row">
-            <div class="flex-1 flex-cell flex-col justify-center bg-info" draggable="true">Your APP</div>
-            <div class="flex-1 flex-cell flex-col justify-center bg-warning" draggable="true">Your APP</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-info" draggable="true">Xbox</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-warning" draggable="true">OneNote</div>
         </div>
         <div class="flex-row">
-            <div class="flex-1 flex-cell flex-col justify-center bg-danger" draggable="true">Your APP</div>
-            <div class="flex-1 flex-cell flex-col justify-center bg-primary" draggable="true">Your APP</div>
-            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">Your APP</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-danger" draggable="true">Chrome</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-primary" draggable="true">Microsoft Edge</div>
+            <div class="flex-1 flex-cell flex-col justify-center bg-success" draggable="true">记事本</div>
         </div>
     </div>
-    <script src="../sea.js" id="seajsnode"></script>
+    <script src="../asset/sea.js" id="seajsnode"></script>
     <script>
     seajs.config({
         base: "http://static-zt.oss-cn-qingdao.aliyuncs.com/modules",
@@ -138,6 +142,7 @@
                 e.originalEvent.dropEffect = "move";
                 dragData = $(this).attr('id');
                 e.originalEvent.dataTransfer.setData('text/plain', $(this).attr('id'));
+                $('#wrapper').addClass('isDraging');
             })
             .on('dragover', '.flex-cell', function(e) {
                 e.preventDefault();
@@ -156,6 +161,7 @@
             .on('dragend', '.flex-cell', function(e) {
                 e.preventDefault();
                 clearnode(this);
+                $('#wrapper').removeClass('isDraging');
             })
             .on('mouseup', '.flex-cell', function(e) {
                 clearnode(this);
