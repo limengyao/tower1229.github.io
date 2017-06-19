@@ -81,6 +81,9 @@
 
         var layer = $('<div id="snake-layer"/>');
         var snake = '<div class="snake bg-success" />';
+        var random = function() {
+            return Math.floor(Math.random() * length);
+        };
         //蛇头位置
         var snakePlace = {};
         var drawMap = function(widthLine) {
@@ -128,8 +131,8 @@
                 if (point.x === checkArray[i].x && point.y === checkArray[i].y) {
                     if (correct) {
                         point = {
-                            x: createRandom(),
-                            y: createRandom()
+                            x: random(),
+                            y: random()
                         };
                         checkPointInSnake(point);
                     } else {
@@ -143,24 +146,20 @@
             } else {
                 return result;
             }
-
-        };
-        var createRandom = function() {
-            return Math.floor(Math.random() * length);
         };
         //创建食物
-        var ememys = [];
-        var addEmemy = function(enemyNum) {
+        var foods = [];
+        var addFood = function(enemyNum) {
             for (var i = 0; i < enemyNum; i++) {
-                var ememy_x = createRandom();
-                var ememy_y = createRandom();
+                var ememy_x = random();
+                var ememy_y = random();
                 var enemy = $('<div class="bg-danger" />');
                 var point = checkPointInSnake({
                     x: ememy_x,
                     y: ememy_y
                 }, true);
                 point.dom = enemy;
-                ememys.push(point);
+                foods.push(point);
                 addPoint(enemy, point.x, point.y);
             }
         };
@@ -196,15 +195,15 @@
             }
             //食物检测
             var hasFood;
-            for (var i = 0; i < ememys.length; i++) {
-                if (snakePlace.x === ememys[i].x && snakePlace.y === ememys[i].y) {
+            for (var i = 0; i < foods.length; i++) {
+                if (snakePlace.x === foods[i].x && snakePlace.y === foods[i].y) {
                     var _part = $(snake);
                     addPoint(_part, snakePlace.x, snakePlace.y, function(dom) {
                         snakes.push(dom);
                     });
                     hasFood = true;
-                    ememys[i].dom.remove();
-                    ememys.splice(i, 1);
+                    foods[i].dom.remove();
+                    foods.splice(i, 1);
                     console.warn('吞掉食物');
                     break;
                 }
@@ -219,7 +218,7 @@
                 footer.y = snakePlace.y;
                 snakes.push(footer);
             } else {
-                addEmemy(1);
+                addFood(1);
                 speed = Math.round(speed * 0.8);
                 clearInterval(runner);
                 runner = setInterval(run, speed);
@@ -264,8 +263,7 @@
             });
         }
 
-        addEmemy(enemyNum);
-
+        addFood(enemyNum);
         //控制
         document.onkeydown = function(e) {
             switch (e.keyCode) {
@@ -289,7 +287,6 @@
             }
         };
 
-
         $('body')
             .append('<div class="tc"><button class="btn btn-success" id="snakeStart">开始</button> <button class="btn btn-warning" id="snakePause">暂停</button> <button class="btn btn-default" id="toggleLine">切换辅助线</button></div>')
             .on('click', '#snakeStart', function() {
@@ -298,7 +295,7 @@
                 clearInterval(runner);
             }).on('click', '#toggleLine', function() {
                 layer.toggleClass('noborder');
-            })
+            });
     });
     seajs.use('scripts');
     </script>
