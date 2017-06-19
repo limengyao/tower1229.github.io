@@ -20,7 +20,7 @@
     #snake-layer {
         margin: 40px auto;
     }
-    
+    .snakeHead{background:#fc0;}
     .line {
         position: absolute;
     }
@@ -72,29 +72,28 @@
         var box = require('box');
 
         var length = 20, //画布边长
-            cellLength = 20, //单位长度
+            cellLength = 16, //单位长度px
             enemyNum = length * 0.5, //食物数量
             snakeLength = 3, //蛇初始长度
             mapLine = true, //显示辅助线
             direct = '+x', //初始方向
-            speed = 750; //初始速度，数值越小越快
+            speed = 600; //初始速度，数值越小越快
 
+        var myLevel = 1;
         var myScore = 0;    //得分
-        var layer = $('<div id="snake-layer"/>');
+        var layer = $('<div id="snake-layer"/ style="position: relative;border: 1px solid #ccc">');
         var snake = '<div class="snake bg-success" />';
         var random = function() {
             return Math.floor(Math.random() * length);
         };
-        //蛇头位置
-        var snakePlace = {};
+        var snakes = [];
+        var runner;
+        var snakePlace = {}; //蛇头位置
         var drawMap = function(mapLine) {
             layer.css({
-                position: 'relative',
                 width: length * cellLength,
-                height: length * cellLength,
-                border: '1px solid #ccc'
+                height: length * cellLength
             });
-
             $('body').append(layer);
         };
         var drawLine = function() {
@@ -144,9 +143,8 @@
             }
             if (correct) {
                 return point;
-            } else {
-                return result;
-            }
+            } 
+            return result;
         };
         //创建食物
         var foods = [];
@@ -167,6 +165,10 @@
         //游戏得分
         var getScore = function(){
             $('#myScore').text(++myScore);
+            if (myScore % 10 === 0) {
+                $('#myLevel').text(++myLevel);
+                speed = Math.round(speed * 0.8);
+            }
         };
         //运动
         var run = function() {
@@ -207,12 +209,12 @@
                 clearInterval(runner);
                 return box.alert('游戏结束！');
             }
+            $('.snakeHead').removeClass('snakeHead');
             //食物检测
             var hasFood;
             for (var i = 0; i < foods.length; i++) {
                 if (snakePlace.x === foods[i].x && snakePlace.y === foods[i].y) {
-                    var _part = $(snake);
-                    addPoint(_part, snakePlace.x, snakePlace.y, function(dom) {
+                    addPoint($(snake).addClass('snakeHead'), snakePlace.x, snakePlace.y, function(dom) {
                         snakes.push(dom);
                     });
                     hasFood = true;
@@ -224,7 +226,6 @@
             if (hasFood) {
                 addFood(1);
                 getScore();
-                speed = Math.round((speed + 40) * 0.8);
                 clearInterval(runner);
                 runner = setInterval(run, speed);
             } else {
@@ -232,14 +233,12 @@
                 footer.css({
                     top: snakePlace.y * cellLength,
                     left: snakePlace.x * cellLength
-                });
+                }).addClass('snakeHead');
                 footer.x = snakePlace.x;
                 footer.y = snakePlace.y;
                 snakes.push(footer);
             }
         };
-        var snakes = [];
-        var runner;
         //画地图
         drawMap(mapLine);
         if (mapLine) {
@@ -247,7 +246,6 @@
         }
         //画蛇
         for (var i = 0; i < snakeLength; i++) {
-            var _part = $(snake);
             var _x = Math.floor(length / 2);
             var _y = _x;
             switch (direct) {
@@ -264,15 +262,16 @@
                     _y += i;
                     break;
                 default:
-
             }
-            if (i === snakeLength - 1) {
-                snakePlace = {
-                    x: _x,
-                    y: _y
-                };
-            }
-            addPoint(_part, _x, _y, function(dom) {
+            addPoint($(snake), _x, _y, function(dom) {
+                //蛇头
+                if (i === snakeLength - 1) {
+                    snakePlace = {
+                        x: _x,
+                        y: _y
+                    };
+                    dom.addClass('snakeHead');
+                }
                 snakes.push(dom);
             });
         }
@@ -301,7 +300,7 @@
             }
         };
         $('body')
-        .append('<div class="tc"><div class="h1">得分：<span id="myScore">'+ myScore +'</span></div><button class="btn btn-success" id="snakeStart">开始</button> <button class="btn btn-warning" id="snakePause">暂停</button> <button class="btn btn-info" id="snakeRestart">重新开始</button> <button class="btn btn-default" id="toggleLine">切换辅助线</button><p class="m">点击开始，使用上、下、左、右箭头操作</p></div>')
+        .append('<div class="tc"><div class="h1">关卡：<span id="myLevel">'+ myLevel +'</span> 得分：<span id="myScore">'+ myScore +'</span></div><button class="btn btn-success" id="snakeStart">开始</button> <button class="btn btn-warning" id="snakePause">暂停</button> <button class="btn btn-info" id="snakeRestart">重新开始</button> <button class="btn btn-default" id="toggleLine">切换辅助线</button><p class="m">点击开始，使用上、下、左、右箭头操作</p></div>')
             .on('click', '.btn', function() {
                 var btnid = $(this).attr('id');
                 switch(btnid){
